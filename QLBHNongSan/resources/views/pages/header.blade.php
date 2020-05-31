@@ -56,7 +56,7 @@ i<!doctype html>
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
 							<div class="beta-dropdown cart-body">
 
-
+								
 								<div class="cart-item">
 									<div class="media">
 										<a class="pull-left" href="#"><img src="images/imagesDemo/products/cart/2.png" alt=""></a>
