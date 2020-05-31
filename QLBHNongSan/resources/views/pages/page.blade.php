@@ -67,9 +67,9 @@
                             <a href="product.html"><img src="images/imagesDemo/products/2.jpg" alt=""></a>
                         </div>
                         <div class="single-item-body">
-                            <p class="single-item-title">Sản Phẩm 1</p>
+                            <p class="single-item-title">Dưa Hấu</p>
                             <p class="single-item-price">
-                                <span class="flash-del">50.000đ</span>
+                                <span class="flash-del">30.000đ</span>
                                 <span class="flash-sale">15.000đ</span>
                             </p>
                         </div>
@@ -99,9 +99,9 @@
                             <a href="product.html"><img src="images/imagesDemo/products/1.jpg" alt=""></a>
                         </div>
                         <div class="single-item-body">
-                            <p class="single-item-title">Sản Phẩm 1</p>
+                            <p class="single-item-title">Rau Muống</p>
                             <p class="single-item-price">
-                                <span>$34.55</span>
+                                <span>5.000đ</span>
                             </p>
                         </div>
                         <div class="single-item-caption">
@@ -119,10 +119,10 @@
                             <a href="product.html"><img src="images/imagesDemo/products/2.jpg" alt=""></a>
                         </div>
                         <div class="single-item-body">
-                            <p class="single-item-title">Sản Phẩm 2</p>
+                            <p class="single-item-title">Dưa Hấu</p>
                             <p class="single-item-price">
-                                <span class="flash-del">$34.55</span>
-                                <span class="flash-sale">$33.55</span>
+                                <span class="flash-del">50.000đ</span>
+                                <span class="flash-sale">35.000đ</span>
                             </p>
                         </div>
                         <div class="single-item-caption">
@@ -145,9 +145,9 @@
                             <a href="product.html"><img src="images/imagesDemo/products/3.jpg" alt=""></a>
                         </div>
                         <div class="single-item-body">
-                            <p class="single-item-title">Sản Phẩm 1</p>
+                            <p class="single-item-title">Dưa Lưới Hà Lan</p>
                             <p class="single-item-price">
-                                <span>$34.55</span>
+                                <span>88.000đ</span>
                             </p>
                         </div>
                         <div class="single-item-caption">
@@ -160,12 +160,12 @@
                 <div class="col-sm-3">
                     <div class="single-item">
                         <div class="single-item-header">
-                            <a href="product.html"><img src="images/imagesDemo/products/3.jpg" alt=""></a>
+                            <a href="product.html"><img src="images/imagesDemo/products/4.jpg" alt=""></a>
                         </div>
                         <div class="single-item-body">
-                            <p class="single-item-title">Sản Phẩm 2</p>
+                            <p class="single-item-title">Dưa Leo</p>
                             <p class="single-item-price">
-                                <span>$34.55</span>
+                                <span>16.000đ</span>
                             </p>
                         </div>
                         <div class="single-item-caption">
