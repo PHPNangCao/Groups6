@@ -21,13 +21,15 @@ class CreateDonhangTable extends Migration
             $table->string('donhang_nguoi_nhan_dia_chi');
             $table->longText('donhang_ghi_chu');
             $table->decimal('donhang_tong_tien');
+            
             $table->integer('khachhang_id')->unsigned();
             $table->foreign('khachhang_id')->references('id')->on('khachhang')->onUpdate('cascade');
+            
             $table->integer('hinhthucthanhtoan_id')->unsigned();
             $table->foreign('hinhthucthanhtoan_id')->references('id')->on('hinhthucthanhtoan')->onUpdate('cascade');
-            $table->unsignedBigInteger('tinhtranghd_id');
+            
+            $table->integer('tinhtranghd_id')->unsigned();
             $table->foreign('tinhtranghd_id')->references('id')->on('tinhtranghd')->onUpdate('cascade');
-            $table->timestamps();
         });
     }
 
