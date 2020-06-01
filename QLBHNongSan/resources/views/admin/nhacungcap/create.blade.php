@@ -2,9 +2,9 @@
 @section('content')
 <div id="layoutSidenav_content">
 
-    <main>
+    <main>  
         <div class="container-fluid">
-        <h1 class="mt-4">Thêm sản phẩm</a> </h1>
+        <h1 class="mt-4">Thêm nhà cung cấp</a> </h1>
             
           <form action="" method="POST">
             <div class="form-group">

@@ -14,7 +14,7 @@ class AdminController extends Controller
         return view('admin.danhmuc.danhmuc');
     }
 
-    function create(){
+    function create_danhmuc(){
         return view('admin.danhmuc.create');
     }
 
@@ -58,4 +58,11 @@ class AdminController extends Controller
         return view('admin.vanchuyen.vanchuyen');
     }
 
+    function nhacungcap(){
+        return view('admin.nhacungcap.nhacungcap');
+    }
+
+    function create_nhacungcap(){
+        return view('admin.nhacungcap.create');
+    }
 }

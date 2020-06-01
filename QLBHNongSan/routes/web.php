@@ -21,7 +21,7 @@ Route::get('admin', 'AdminController@admin')->name('admin');
 Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::get('danhmuc', 'AdminController@danhmuc')->name('danhmuc');
-    Route::get('create', 'AdminController@create')->name('create');
+    Route::get('create_danhmuc', 'AdminController@create_danhmuc')->name('create_danhmuc');
 
     Route::get('sanpham', 'AdminController@sanpham')->name('sanpham');
     Route::get('nguoidung', 'AdminController@nguoidung')->name('nguoidung');
@@ -33,6 +33,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('khuyenmai', 'AdminController@khuyenmai')->name('khuyenmai');
     Route::get('khohang', 'AdminController@khohang')->name('khohang');
     Route::get('vanchuyen', 'AdminController@vanchuyen')->name('vanchuyen');
+
+    Route::get('nhacungcap', 'AdminController@nhacungcap')->name('nhacungcap');
+    Route::get('create_nhacungcap', 'AdminController@create_nhacungcap')->name('create_nhacungcap');
 
 
 });
