@@ -21,16 +21,12 @@
               </div>
             <div class="form-group">
                 <label>Đơn Vị Tính</label>
-                <input type="int" class="form-control" name="dvtsp" placeholder="Đơn vị tính">
-                <tr>
-                    <td>
-                    <input type="checkbox" name="kl" value="1"/>KG
-                    <br>
-                    <input type="checkbox" name="kl" value="2"/>Tạ
-                    <br>
-                    <input type="checkbox" name="kl" value="3"/>Tấn
-                    </td>
-                </tr>
+                <br>
+                <input type="radio" name="kl" value="1"/> KG
+                {{-- <br>
+                <input type="radio" name="kl" value="2"/> 
+                <br>
+                <input type="radio" name="kl" value="3"/>  --}}
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Thêm</button>
