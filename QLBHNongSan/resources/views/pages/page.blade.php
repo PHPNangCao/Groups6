@@ -69,8 +69,8 @@
                         <div class="single-item-body">
                             <p class="single-item-title">Dưa Hấu</p>
                             <p class="single-item-price">
-                                <span class="flash-del">30.000đ</span>
-                                <span class="flash-sale">15.000đ</span>
+                                <span class="flash-del">50.000đ</span>
+                                <span class="flash-sale">35.000đ</span>
                             </p>
                         </div>
                         <div class="single-item-caption">
@@ -80,6 +80,52 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-3">
+                    <div class="single-item">
+                        <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+
+                        <div class="single-item-header">
+                            <a href="product.html"><img src="images/imagesDemo/products/sales/1.png" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">Sầu Riêng</p>
+                            <p class="single-item-price">
+                                <span class="flash-del">78.000đ</span>
+                                <span class="flash-sale">70.000đ</span>
+                            </p>
+                        </div>
+                        <div class="single-item-caption">
+                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="single-item">
+                        <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+
+                        <div class="single-item-header">
+                            <a href="product.html"><img src="images/imagesDemo/products/sales/2.png" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">Rau Mồng Tơi</p>
+                            <p class="single-item-price">
+                                <span class="flash-del">20.000đ</span>
+                                <span class="flash-sale">18.000đ</span>
+                            </p>
+                        </div>
+                        <div class="single-item-caption">
+                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+
                 
             </div>
         </div> <!-- .beta-products-list -->
@@ -157,6 +203,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-sm-3">
                     <div class="single-item">
                         <div class="single-item-header">
@@ -175,6 +222,84 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-3">
+                    <div class="single-item">
+                        <div class="single-item-header">
+                            <a href="product.html"><img src="images/imagesDemo/products/5.jpg" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">Cà Chua</p>
+                            <p class="single-item-price">
+                                <span>88.000đ</span>
+                            </p>
+                        </div>
+                        <div class="single-item-caption">
+                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="single-item">
+                        <div class="single-item-header">
+                            <a href="product.html"><img src="images/imagesDemo/products/6.jpg" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">Ổi</p>
+                            <p class="single-item-price">
+                                <span>88.000đ</span>
+                            </p>
+                        </div>
+                        <div class="single-item-caption">
+                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="single-item">
+                        <div class="single-item-header">
+                            <a href="product.html"><img src="images/imagesDemo/products/7.jpg" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">Cà Tím</p>
+                            <p class="single-item-price">
+                                <span>88.000đ</span>
+                            </p>
+                        </div>
+                        <div class="single-item-caption">
+                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="single-item">
+                        <div class="single-item-header">
+                            <a href="product.html"><img src="images/imagesDemo/products/8.jpg" alt=""></a>
+                        </div>
+                        <div class="single-item-body">
+                            <p class="single-item-title">Thanh Long Ruột Đỏ</p>
+                            <p class="single-item-price">
+                                <span>88.000đ</span>
+                            </p>
+                        </div>
+                        <div class="single-item-caption">
+                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div> <!-- .beta-products-list -->
     </div>
