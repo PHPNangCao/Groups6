@@ -1,13 +1,10 @@
 @extends('admin.header')
 @section('content')
 <div id="layoutSidenav_content">
-    <ol class="breadcrumd">
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Danh mục sản phẩm</a></li>
-        <li class="active">Danh mục</li>
+
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Danh mục sản phẩm  <a href="" class="pull-right">Thêm mới</a> </h1>
+            <h1 class="mt-4">Danh mục sản phẩm  <a href="" class="themmoi">Thêm mới</a> </h1>
 
 
 

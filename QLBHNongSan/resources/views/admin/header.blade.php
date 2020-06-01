@@ -10,6 +10,8 @@
         <base href="{{asset('')}}">
         <link href="themes/css/styles.css" rel="stylesheet" />
         <link href="themes/css/bootstrap4.min.css" rel="stylesheet" />
+        <link href="themes/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="themes/css/bootstrap.css" rel="stylesheet" />
         <script src="themes/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -60,7 +62,7 @@
 
                             <a class="nav-link" href="{{route('admin.khachhang')}}"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Khách Hàng</a>
 
-                            <a class="nav-link" href="{{route('admin.binhluan')}}"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Đơn Hàng</a>
+                            <a class="nav-link" href="{{route('admin.donhang')}}"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Đơn Hàng</a>
 
                             <a class="nav-link" href="{{route('admin.binhluan')}}"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Bình Luận</a>
 
