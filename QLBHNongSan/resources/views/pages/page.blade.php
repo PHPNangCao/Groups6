@@ -177,14 +177,8 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                </div>
-                
-                
-            </div>
-            <div class="space40">&nbsp;</div>
-            <div class="row">
-                
-                
+                </div>                           
+                               
                 <div class="col-sm-3">
                     <div class="single-item">
                         <div class="single-item-header">
@@ -222,6 +216,10 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+            <div class="space40">&nbsp;</div>
+            <div class="row">
 
                 <div class="col-sm-3">
                     <div class="single-item">
@@ -298,8 +296,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div> <!-- .beta-products-list -->
     </div>

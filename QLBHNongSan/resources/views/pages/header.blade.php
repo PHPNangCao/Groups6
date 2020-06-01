@@ -23,15 +23,15 @@ i<!doctype html>
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> Địa chỉ của doanh nghiệp</a></li>
-						<li><a href=""><i class="fa fa-phone"></i> số điện thoại </a></li>
+						<li><a href=""><i class="fa fa-home"></i> Địa Chỉ Doanh Nghiệp</a></li>
+						<li><a href=""><i class="fa fa-phone"></i> Số Điện Thoại </a></li>
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
-						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+						<li><a href="#"><i class="fa fa-user"></i>Tài Khoản</a></li>
+						<li><a href="#">Đăng Ký</a></li>
+						<li><a href="#">Đăng Nhập</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -40,7 +40,7 @@ i<!doctype html>
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="images/imagesDemo/logo-cake.png" width="200px" alt=""></a>
+					<a href="index.html" id="logo"><img src="images/imagesDemo/logo-cake.png" width="120px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
@@ -55,7 +55,6 @@ i<!doctype html>
 						<div class="cart">
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
 							<div class="beta-dropdown cart-body">
-
 								
 								<div class="cart-item">
 									<div class="media">
@@ -156,7 +155,7 @@ i<!doctype html>
 						<div>
 							<div class="contact-info">
 								<i class="fa fa-map-marker"></i>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Link Đăng Kí</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Link Đăng Ký</a></li>
 								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Thông Tin Việc Làm</a></li>
 							</div>
 						</div>
