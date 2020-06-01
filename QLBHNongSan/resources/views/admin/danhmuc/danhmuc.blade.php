@@ -4,7 +4,7 @@
 
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Danh mục sản phẩm  <a href="" class="themmoi">Thêm mới</a> </h1>
+        <h1 class="mt-4">Danh mục sản phẩm  <a href="{{route('admin.create')}}" class="themmoi">Thêm mới</a> </h1>
 
 
 
