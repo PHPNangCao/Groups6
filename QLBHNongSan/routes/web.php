@@ -13,30 +13,54 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@pages')->name('trang-chu');
-
-
-Route::get('admin', 'AdminController@admin')->name('admin');
-
-Route::prefix('admin')->name('admin.')->group(function(){
-
-    Route::get('danhmuc', 'AdminController@danhmuc')->name('danhmuc');
-    Route::get('create_danhmuc', 'AdminController@create_danhmuc')->name('create_danhmuc');
-
-    Route::get('sanpham', 'AdminController@sanpham')->name('sanpham');
-    Route::get('nguoidung', 'AdminController@nguoidung')->name('nguoidung');
-    Route::get('khachhang', 'AdminController@khachhang')->name('khachhang');
-    Route::get('donhang', 'AdminController@donhang')->name('donhang');
-    Route::get('binhluan', 'AdminController@binhluan')->name('binhluan');
-    Route::get('monngon', 'AdminController@monngon')->name('monngon');
-    Route::get('tuyendung', 'AdminController@tuyendung')->name('tuyendung');
-    Route::get('khuyenmai', 'AdminController@khuyenmai')->name('khuyenmai');
-    Route::get('khohang', 'AdminController@khohang')->name('khohang');
-    Route::get('vanchuyen', 'AdminController@vanchuyen')->name('vanchuyen');
-
-    Route::get('nhacungcap', 'AdminController@nhacungcap')->name('nhacungcap');
-    Route::get('create_nhacungcap', 'AdminController@create_nhacungcap')->name('create_nhacungcap');
-
-
+Route::get('/', function () {
+    return view('welcome');
 });
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::prefix('category')->name('category.')->group(function(){
+        Route::get('index', 'CategoryController@index')->name('index');
+        Route::get('create', 'CategoryController@create')->name('create');
+        Route::post('store', 'CategoryController@store')->name('store');
 
+        Route::get('edit/{id}', 'CategoryController@edit')->name('edit');
+        Route::post('update/{id}', 'CategoryController@update')->name('update');
+
+        Route::post('destroy/{id}', 'CategoryController@destroy')->name('destroy');
+
+    });
+    Route::prefix('user')->name('user.')->group(function(){
+        Route::get('index', 'UserController@index')->name('index');
+        Route::get('create', 'UserController@create')->name('create');
+        Route::post('store', 'UserController@store')->name('store');
+
+        Route::get('edit/{id}', 'UserController@edit')->name('edit');
+        Route::post('update/{id}', 'UserController@update')->name('update');
+
+        Route::post('destroy/{id}', 'UserController@destroy')->name('destroy');
+
+    });
+
+    Route::prefix('product')->name('product.')->group(function(){
+        Route::get('index', 'ProductController@index')->name('index');
+        Route::get('create', 'ProductController@create')->name('create');
+        Route::post('store', 'ProductController@store')->name('store');
+
+        Route::get('edit/{id}', 'ProductController@edit')->name('edit');
+        Route::post('update/{id}', 'ProductController@update')->name('update');
+
+        Route::post('destroy/{id}', 'ProductController@destroy')->name('destroy');
+
+    });
+
+    Route::prefix('group')->name('group.')->group(function(){
+        Route::get('index', 'GroupsController@index')->name('index');
+        Route::get('create', 'GroupsController@create')->name('create');
+        Route::post('store', 'GroupsController@store')->name('store');
+
+        Route::get('edit/{id}', 'GroupsController@edit')->name('edit');
+        Route::post('update/{id}', 'GroupsController@update')->name('update');
+
+        Route::post('destroy/{id}', 'GroupsController@destroy')->name('destroy');
+
+    });
+});
