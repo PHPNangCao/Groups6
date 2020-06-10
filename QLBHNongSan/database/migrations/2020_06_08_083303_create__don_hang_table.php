@@ -23,6 +23,8 @@ class CreateDonHangTable extends Migration
             $table->boolean('tinhtrang')->default(0);
             $table->unsignedBigInteger('sanpham_id');
             $table->foreign('sanpham_id')->references('id')->on('SanPham');
+            $table->unsignedBigInteger('khachhang_id')->nullable();
+            $table->foreign('khachhang_id')->references('id')->on('KhachHang');
             $table->unsignedBigInteger('phuongthucthanhtoan_id');
             $table->foreign('phuongthucthanhtoan_id')->references('id')->on('PhuongThucThanhToan');
             $table->unsignedBigInteger('nhavanchuyen_id')->nullable();
