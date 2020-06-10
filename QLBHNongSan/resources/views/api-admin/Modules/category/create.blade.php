@@ -1,10 +1,10 @@
 @extends('api-admin.master')
-@section('title','Thêm thể loại')
+@section('title','Thêm loại sản phẩm')
 @section('content')
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thêm danh mục</h3>
+        <h3 class="card-title">Thêm loại sản phẩm</h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
             <i class="fas fa-minus"></i></button>
@@ -16,12 +16,27 @@
         <form action="{{route('admin.category.store')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label>Tên danh mục</label>
-                <input type="text" name="ten" class="form-control" placeholder="Name Category">
+                <label>Tên loại sản phẩm</label>
+                <input type="text" name="ten" class="form-control" placeholder="Tên loại sản phẩm">
             </div>
             <div class="form-group">
                 <label>Mô tả</label>
-                <input type="text" name="mota" class="form-control" placeholder="Name Category">
+                <textarea class="form-control" name="mota" rows="3" placeholder="Mô tả"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Ảnh</label>
+                <input type="file" class="form-control-file" name="anh">
+            </div>
+            <div class="form-group">
+                <label>Nhóm sản phẩm</label>
+                <select name="nhom_id" class="form-control">
+                <option >--Chọn nhóm sản phẩm</option>
+
+                @foreach ($NhomSanPham as $NhomSP)
+                    <option value="{{$NhomSP->id}}">{{$NhomSP->ten}}</option>
+                @endforeach
+
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>

@@ -13,7 +13,40 @@
         </div>
     </div>
     <div class="card-body">
-        Start creating your amazing application!
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Images</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($NhomSanPham as $NhomSP)
+                <tr>
+                    <td>{{$loop->iteration }}</td>
+                    <td>{{ $NhomSP->ten }}</td>
+                    <td>{{ $NhomSP->mota }}</td>
+                    <td>{{ $NhomSP->anh }}</td>
+                <td><a href="{{route('admin.group.edit',['id' => $NhomSP->id])}}">Edit</a></td>
+                    <td><a href="{{route('admin.group.destroy',['id' => $NhomSP->id])}}" onclick="return checkDelete('Bạn có muốn xóa nhóm này không?')">Delete</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Images</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </tfoot>
+        </table>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">

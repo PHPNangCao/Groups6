@@ -24,7 +24,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('edit/{id}', 'CategoryController@edit')->name('edit');
         Route::post('update/{id}', 'CategoryController@update')->name('update');
 
-        Route::post('destroy/{id}', 'CategoryController@destroy')->name('destroy');
+        Route::get('destroy/{id}', 'CategoryController@destroy')->name('destroy');
 
     });
     Route::prefix('user')->name('user.')->group(function(){
@@ -35,7 +35,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('edit/{id}', 'UserController@edit')->name('edit');
         Route::post('update/{id}', 'UserController@update')->name('update');
 
-        Route::post('destroy/{id}', 'UserController@destroy')->name('destroy');
+        Route::get('destroy/{id}', 'UserController@destroy')->name('destroy');
 
     });
 
@@ -47,7 +47,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('edit/{id}', 'ProductController@edit')->name('edit');
         Route::post('update/{id}', 'ProductController@update')->name('update');
 
-        Route::post('destroy/{id}', 'ProductController@destroy')->name('destroy');
+        Route::get('destroy/{id}', 'ProductController@destroy')->name('destroy');
 
     });
 
@@ -59,7 +59,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('edit/{id}', 'GroupsController@edit')->name('edit');
         Route::post('update/{id}', 'GroupsController@update')->name('update');
 
-        Route::post('destroy/{id}', 'GroupsController@destroy')->name('destroy');
+        Route::get('destroy/{id}', 'GroupsController@destroy')->name('destroy');
 
     });
 });

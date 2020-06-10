@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('api-admin.modules.category.index');
+        $data = DB::table('LoaiSanPham')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.category.index', ['LoaiSanPham' => $data]);
     }
 
     /**
@@ -25,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('api-admin.modules.category.create');
+        $NhomSanPham = DB::table('NhomSanPham')->get();
+        return view('api-admin.modules.category.create',['NhomSanPham' => $NhomSanPham]);
     }
 
     /**
@@ -39,7 +41,7 @@ class CategoryController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-        DB::table('category')->insert($data);
+        DB::table('LoaiSanPham')->insert($data);
         return redirect()->route('admin.category.index');
     }
 
@@ -62,7 +64,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('api-admin.modules.category.edit');
+        $LoaiSanPham = DB::table('LoaiSanPham')->where('id',$id)->first();
+        return view('api-admin.modules.category.edit', ['LoaiSanPham' => $LoaiSanPham]);
     }
 
     /**
@@ -74,7 +77,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_at'] = new DateTime;
+        DB::table('LoaiSanPham')->where('id',$id)->update($data);
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -85,6 +91,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('LoaiSanPham')->where('id',$id)->delete();
+        return redirect()->route('admin.category.index');
     }
 }

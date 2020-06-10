@@ -15,7 +15,8 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        return view('api-admin.modules.group.index');
+        $data = DB::table('NhomSanPham')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.group.index', ['NhomSanPham' => $data]);
     }
 
     /**
@@ -62,7 +63,8 @@ class GroupsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $NhomSanPham = DB::table('NhomSanPham')->where('id',$id)->first();
+        return view('api-admin.modules.group.edit', ['NhomSanPham' => $NhomSanPham]);
     }
 
     /**
@@ -74,7 +76,10 @@ class GroupsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_at'] = new DateTime;
+        DB::table('NhomSanPham')->where('id',$id)->update($data);
+        return redirect()->route('admin.group.index');
     }
 
     /**
@@ -85,6 +90,7 @@ class GroupsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('NhomSanPham')->where('id',$id)->delete();
+        return redirect()->route('admin.group.index');
     }
 }
