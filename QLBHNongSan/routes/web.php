@@ -65,4 +65,13 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 });
 
 
-Route::get('trang-chu', 'TrangChu\PageController@page');
+Route::get('trang-chu', 'TrangChu\PageController@page')->name('trang-chu');
+
+Route::get('dang-ki', 'TrangChu\PageController@dangki')->name('dangki');
+Route::post('dang-ki', 'TrangChu\PageController@xulydangki')->name('xulydangki');
+
+
+Route::get('tin-tuc', 'TrangChu\PageController@tintuc')->name('tin-tuc');
+Route::get('khuyen-mai', 'TrangChu\PageController@khuyenmai')->name('khuyen-mai');
+Route::get('mon-ngon', 'TrangChu\PageController@monngon')->name('mon-ngon');
+Route::get('lien-he', 'TrangChu\PageController@lienhe')->name('lien-he');

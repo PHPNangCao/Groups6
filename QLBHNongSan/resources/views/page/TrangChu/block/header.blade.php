@@ -9,7 +9,7 @@
         <div class="pull-right auto-width-right">
             <ul class="top-details menu-beta l-inline">
                 <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-                <li><a href="#">Đăng kí</a></li>
+            <li><a href="{{route('dangki')}}">Đăng kí</a></li>
                 <li><a href="#">Đăng nhập</a></li>
             </ul>
         </div>
@@ -84,17 +84,17 @@
         <nav class="main-menu">
             <ul class="l-inline ov">
                 <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="#">Sản phẩm</a>
+            <li><a href="{{route('trang-chu')}}">Sản phẩm</a>
                     <ul class="sub-menu">
                         <li><a href="product_type.html">Danh Mục SP 1</a></li>
                         <li><a href="product_type.html">Danh Mục SP 2</a></li>
                         <li><a href="product_type.html">Danh Mục SP 3</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Tin Tức</a></li>
-                <li><a href="#">Khuyến Mãi</a></li>
-                <li><a href="#">Món Ngon</a></li>
-                <li><a href="contacts.html">Liên hệ</a></li>
+            <li><a href="{{route('tin-tuc')}}">Tin Tức</a></li>
+                <li><a href="{{route('khuyen-mai')}}">Khuyến Mãi</a></li>
+                <li><a href="{{route('mon-ngon')}}">Món Ngon</a></li>
+                <li><a href="{{route('lien-he')}}">Liên hệ</a></li>
             </ul>
             <div class="clearfix"></div>
         </nav>
