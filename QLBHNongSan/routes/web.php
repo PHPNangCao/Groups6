@@ -72,7 +72,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::post('update/{id}', 'CustomerController@update')->name('update');
 
         Route::get('destroy/{id}', 'CustomerController@destroy')->name('destroy');
-
     });
 });
 
