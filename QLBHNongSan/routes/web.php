@@ -63,3 +63,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 });
+
+
+Route::get('trang-chu', 'TrangChu\PageController@page');

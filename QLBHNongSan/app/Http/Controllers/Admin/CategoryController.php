@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use DateTime;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
@@ -41,7 +42,12 @@ class CategoryController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
+        //$request->anh->store('images', 'public');
+
         DB::table('LoaiSanPham')->insert($data);
+        
+
+
         return redirect()->route('admin.category.index');
     }
 
