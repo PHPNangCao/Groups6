@@ -62,6 +62,18 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'GroupsController@destroy')->name('destroy');
 
     });
+
+    Route::prefix('customer')->name('customer.')->group(function(){
+        Route::get('index', 'CustomerController@index')->name('index');
+        Route::get('create', 'CustomerController@create')->name('create');
+        Route::post('store', 'CustomerController@store')->name('store');
+
+        Route::get('edit/{id}', 'CustomerController@edit')->name('edit');
+        Route::post('update/{id}', 'CustomerController@update')->name('update');
+
+        Route::get('destroy/{id}', 'CustomerController@destroy')->name('destroy');
+
+    });
 });
 
 
