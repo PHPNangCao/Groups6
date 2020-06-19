@@ -20,10 +20,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Tên khách hàng</th>\
+                        <th>Tên khách hàng</th>
                         <th>Email</th>
                         <th>Số điện thoại </th>
                         <th>Địa chỉ</th>
+                        <th>Mật Khẩu</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -36,6 +37,7 @@
                         <td>{{ $kh->email }}</td>
                         <td>{{ $kh->sdt }}</td>
                         <td>{{ $kh->diachi }}</td>
+                        <td>{{ $kh->matkhau }}</td>
                     <td><a href="{{route('admin.category.edit',['id' => $kh->id])}}">Edit</a></td>
                         <td><a href="{{route('admin.category.destroy',['id' => $kh->id])}}" onclick="return checkDelete('Bạn có muốn xóa thông tin khách hàng này không?')">Delete</a></td>
                     </tr>
@@ -44,10 +46,11 @@
                 <tfoot>
                     <tr>
                         <th>ID</th>
-                        <th>Tên khách hàng</th>\
+                        <th>Tên khách hàng</th>
                         <th>Email</th>
                         <th>Số điện thoại </th>
                         <th>Địa chỉ</th>
+                        <th>Mật Khẩu</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>

@@ -31,6 +31,10 @@
                 <label>Địa chỉ</label>
                 <input type="text" name="diachi" class="form-control" placeholder="Địa Chỉ">
             </div>
+            <div class="form-group">
+                <label>Mật Khẩu</label>
+                <input type="password" name="matkhau" class="form-control" placeholder="Mật Khẩu">
+            </div>
             {{-- <div class="form-group">
                 <label>Nhóm sản phẩm</label>
                 <select name="nhom_id" class="form-control">
