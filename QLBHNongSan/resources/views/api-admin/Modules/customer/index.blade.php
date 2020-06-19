@@ -38,8 +38,8 @@
                         <td>{{ $kh->sdt }}</td>
                         <td>{{ $kh->diachi }}</td>
                         <td>{{ $kh->matkhau }}</td>
-                    <td><a href="{{route('admin.category.edit',['id' => $kh->id])}}">Edit</a></td>
-                        <td><a href="{{route('admin.category.destroy',['id' => $kh->id])}}" onclick="return checkDelete('Bạn có muốn xóa thông tin khách hàng này không?')">Delete</a></td>
+                    <td><a href="{{route('admin.customer.edit',['id' => $kh->id])}}">Edit</a></td>
+                        <td><a href="{{route('admin.customer.destroy',['id' => $kh->id])}}" onclick="return checkDelete('Bạn có muốn xóa thông tin khách hàng này không?')">Delete</a></td>
                     </tr>
                     @endforeach
                 </tbody>
