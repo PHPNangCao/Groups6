@@ -113,6 +113,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     
         Route::get('destroy/{id}', 'MonNgonController@destroy')->name('destroy');
     });
+
+
+
     Route::prefix('unit')->name('unit.')->group(function(){
         Route::get('index', 'UnitController@index')->name('index');
         Route::get('create', 'UnitController@create')->name('create');
@@ -124,6 +127,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'UnitController@destroy')->name('destroy');
 
     });
+
+
+    
     Route::prefix('supplier')->name('supplier.')->group(function(){
         Route::get('index', 'SupplierController@index')->name('index');
         Route::get('create', 'SupplierController@create')->name('create');

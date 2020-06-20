@@ -27,8 +27,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $SanPham = DB::table('SanPham')->get();
-        return view('api-admin.modules.product.create',['SanPham' => $SanPham]);
+        $LoaiSanPham = DB::table('LoaiSanPham')->get();
+        return view('api-admin.modules.product.create',['LoaiSanPham' => $LoaiSanPham]);
+
+        $DonViTinh = DB::table('DonViTinh')->get();
+        return view('api-admin.modules.product.create',['DonViTinh' => $DonViTinh]);
     }
 
     /**

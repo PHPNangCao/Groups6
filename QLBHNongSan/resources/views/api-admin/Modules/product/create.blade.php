@@ -28,20 +28,26 @@
                 <input type="file" class="form-control-file" name="anh">
               </div>
 
-              <div class="form-product">
-                <label>Khối Lượng</label>
-                <input type="text" class="form-control-file" name="donvitinh_id">
-              </div>
+              <div class="form-group">
+                <label>Đơn vị tính</label>
+                <select name="donvitinh_id" class="form-control">
+                <option >----Chọn đơn vị tính----</option>
+                @foreach ($DonViTinh as $DVT)
+                    <option value="{{$DVT->id}}">{{$DVT->ten}}</option>
+                @endforeach
+                </select>
+            </div>
 
               <div class="form-group">
                 <label>Loại sản phẩm</label>
-                <select name="nhom_id" class="form-control">
+                <select name="loaisanpham_id" class="form-control">
                 <option >----Chọn loại sản phẩm----</option>
                 @foreach ($LoaiSanPham as $LoaiSP)
                     <option value="{{$LoaiSP->id}}">{{$LoaiSP->ten}}</option>
                 @endforeach
                 </select>
             </div>
+            
               <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>

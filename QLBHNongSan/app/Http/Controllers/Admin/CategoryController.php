@@ -69,7 +69,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $LoaiSanPham = DB::table('LoaiSanPham')->where('id',$id)->first();
-        return view('api-admin.modules.category.edit', ['LoaiSanPham' => $LoaiSanPham]);
+        return view('api-admin.modules.unit.edit', ['LoaiSanPham' => $LoaiSanPham]);
     }
 
     /**

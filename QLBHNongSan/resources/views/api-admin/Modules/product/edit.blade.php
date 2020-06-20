@@ -32,8 +32,8 @@
                 <input type="text" class="form-control-file" placeholder="Loại sản phẩm" name="loaisp" value="{{$SanPham->loaisanpham_id}}">
               </div>
               <div class="form-product">
-                <label>Khối Lượng</label>
-                <input type="text" class="form-control-file" placeholder="Khối Lượng sản phẩm" name="kl" value="{{$SanPham->donvitinh_id}}">
+                <label>Đơn Vị Tính</label>
+                <input type="text" class="form-control-file" placeholder="Đơn vị tính" name="dvt" value="{{$SanPham->donvitinh_id}}">
               </div>
               <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>

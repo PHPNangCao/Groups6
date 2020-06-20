@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DateTime, DB;
 
 class UnitController extends Controller
 {
@@ -14,7 +15,8 @@ class UnitController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::table('DonViTinh')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.unit.index', ['DonViTinh' => $data]);
     }
 
     /**
@@ -24,7 +26,7 @@ class UnitController extends Controller
      */
     public function create()
     {
-        //
+        return view('api-admin.modules.unit.create');
     }
 
     /**
@@ -35,7 +37,15 @@ class UnitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> except('_token');
+        $data['created_at'] = new DateTime;
+        $data['updated_at'] = new DateTime;
+        
+        DB::table('DonViTinh')->insert($data);
+
+        return redirect()->route('admin.unit.index');
+
+
     }
 
     /**
@@ -57,7 +67,8 @@ class UnitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $DVT = DB::table('DonViTinh')->where('id',$id)->first();
+        return view('api-admin.modules.unit.edit', ['DonViTinh' => $DVT]);
     }
 
     /**
@@ -69,7 +80,10 @@ class UnitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_at'] = new DateTime;
+        DB::table('DonViTinh')->where('id',$id)->update($data);
+        return redirect()->route('admin.unit.index');
     }
 
     /**
@@ -80,6 +94,7 @@ class UnitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('DonViTinh')->where('id',$id)->delete();
+        return redirect()->route('admin.unit.index');
     }
 }
