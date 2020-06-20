@@ -27,11 +27,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $LoaiSanPham = DB::table('LoaiSanPham')->get();
-        return view('api-admin.modules.product.create',['LoaiSanPham' => $LoaiSanPham]);
-
         $DonViTinh = DB::table('DonViTinh')->get();
-        return view('api-admin.modules.product.create',['DonViTinh' => $DonViTinh]);
+        $LoaiSanPham = DB::table('LoaiSanPham')->get();
+        return view('api-admin.modules.product.create',['LoaiSanPham' => $LoaiSanPham],['DonViTinh' => $DonViTinh]);
     }
 
     /**
@@ -70,8 +68,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $DonViTinh = DB::table('DonViTinh')->get();
+        $LoaiSanPham = DB::table('LoaiSanPham')->get();
         $SanPham = DB::table('SanPham')->where('id',$id)->first();
-        return view('api-admin.modules.product.edit', ['SanPham' => $SanPham]);    }
+        return view('api-admin.modules.product.edit', ['SanPham' => $SanPham],['LoaiSanPham' => $LoaiSanPham],['DonViTinh' => $DonViTinh]);    
+    }
 
     /**
      * Update the specified resource in storage.
