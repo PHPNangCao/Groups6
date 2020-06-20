@@ -17,13 +17,13 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Images</th>
+                    <th>Tên Sản phẩm </th>
+                    <th>Mô Tả</th>
+                    <th>Hình ảnh</th>
                     <th>Edit</th>
                     <th>Delete</th>
-                    <th>Kind of Product</th> {{-- Loại sản phẩm  --}}
-                    <th>Unit</th> {{-- Khối lượng --}}
+                    <th>Loại Sản phẩm</th>
+                    <th>Khối Lượng</th> 
                 </tr>
             </thead>
             <tbody>
@@ -40,18 +40,18 @@
                 </tr>
                 @endforeach
             </tbody>
-            <tfoot>
+            {{-- <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Images</th>
+                    <th>Tên Sản phẩm </th>
+                    <th>Mô Tả</th>
+                    <th>Hình ảnh</th>
                     <th>Edit</th>
                     <th>Delete</th>
-                    <th>Kind of Product</th> {{-- Loại sản phẩm  --}}
-                    <th>Unit</th> {{-- Khối lượng --}}
+                    <th>Loại Sản phẩm</th>
+                    <th>Khối Lượng</th> 
                 </tr>
-            </tfoot>
+            </tfoot> --}}
         </table>
     </div>
     <!-- /.card-body -->

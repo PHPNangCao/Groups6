@@ -27,14 +27,22 @@
                 <label>Ảnh</label>
                 <input type="file" class="form-control-file" name="anh">
               </div>
-              <div class="form-product">
-                <label>Loại Sản phẩm</label>
-                <input type="text" class="form-control-file" name="loaisanpham_id">
-              </div>
+
               <div class="form-product">
                 <label>Khối Lượng</label>
                 <input type="text" class="form-control-file" name="donvitinh_id">
               </div>
+
+              <div class="form-product">
+                <label>Loại Sản phẩm</label>
+                <select name="loaisanpham_id" class="form-control">
+                    <option >----Chọn Loại sản phẩm----</option>
+                    @foreach ($SanPham as $SP)
+                        <option value="{{$SP->id}}">{{$SP->ten}}</option>
+                    @endforeach
+                </select>
+              </div>
+              <br>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
     </div>
