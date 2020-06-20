@@ -1,10 +1,9 @@
 @extends('api-admin.master')
-@section('title','Danh sách loại sản phẩm')
+@section('title','Danh sách tin tức')
 @section('content')
-<!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Danh sách loại Sản Phẩm <a href="{{route('admin.category.create')}}">Thêm mới</a></h3>
+        <h3 class="card-title">Danh sách tin tức <a href="{{route('admin.category.create')}}">Thêm mới</a></h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
             <i class="fas fa-minus"></i></button>
@@ -28,7 +27,7 @@
             <tbody>
                 @foreach ($LoaiSanPham as $LoaiSP)
                 <tr>
-                    <td>{{$loop->iteration }}</td>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $LoaiSP->ten }}</td>
                     <td>{{ $LoaiSP->mota }}</td>
                     <td>{{ $LoaiSP->anh }}</td>
@@ -57,5 +56,4 @@
     </div>
     <!-- /.card-footer-->
 </div>
-
 @endsection
