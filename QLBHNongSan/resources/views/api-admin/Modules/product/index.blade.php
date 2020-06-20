@@ -16,14 +16,15 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Mã</th>
                     <th>Tên Sản phẩm </th>
                     <th>Mô Tả</th>
                     <th>Hình ảnh</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
                     <th>Loại Sản phẩm</th>
                     <th>Khối Lượng</th> 
+                    <th>Trạng Thái</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,28 +36,17 @@
                     <td>{{ $SP->anh }}</td>
                     <td>{{ $SP->loaisanpham_id }}</td>
                     <td>{{ $SP->donvitinh_id }}</td>
-                <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Edit</a></td>
-                    <td><a href="{{route('admin.product.destroy',['id' => $SP->id])}}" onclick="return checkDelete('Bạn có muốn xóa nhóm này không?')">Delete</a></td>
+                    <td>{{ $SP->trangthai }}</td>
+                <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
+                    <td><a href="{{route('admin.product.destroy',['id' => $SP->id])}}" onclick="return checkDelete('Bạn có muốn xóa nhóm này không?')">Xoá</a></td>
                 </tr>
                 @endforeach
             </tbody>
-            {{-- <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Tên Sản phẩm </th>
-                    <th>Mô Tả</th>
-                    <th>Hình ảnh</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Loại Sản phẩm</th>
-                    <th>Khối Lượng</th> 
-                </tr>
-            </tfoot> --}}
         </table>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
+        
     </div>
     <!-- /.card-footer-->
 </div>

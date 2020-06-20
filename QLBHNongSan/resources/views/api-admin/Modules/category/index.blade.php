@@ -16,7 +16,7 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Mã</th>
                     <th>Tên</th>
                     <th>Mô tả</th>
                     <th>Ảnh</th>
@@ -38,22 +38,11 @@
                 </tr>
                 @endforeach
             </tbody>
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Images</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </tfoot>
         </table>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
+        
     </div>
     <!-- /.card-footer-->
 </div>

@@ -13,11 +13,35 @@
         </div>
     </div>
     <div class="card-body">
-        Start creating your amazing application!
-    </div>
+        <form action="{{route('admin.group.update',['id' => $LoaiSanPham->id])}}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label>Tên loại sản phẩm</label>
+            <input type="text" name="ten" class="form-control" placeholder="Tên nhóm sản phẩm" value="{{$LoaiSanPham->ten}}">
+            </div>
+            <div class="form-group">
+                <label>Mô tả</label>
+            <textarea class="form-control" name="mota" rows="3" placeholder="Mô tả">{{$LoaiSanPham->mota}}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Ảnh</label>
+            <input type="file" class="form-control-file" name="anh" value="{{$LoaiSanPham->anh}}" >
+              </div>
+              <div class="form-product">
+                <label>Trạng thái</label>
+                <td>
+                    <br>
+                    <input type="radio" name="trangthai" value="1" {{ ($LoaiSanPham->trangthai == 1 ) ? 'checked' : ''}} /> Bán
+                    <br>
+                    <input type="radio" name="trangthai" value="0" {{ ($LoaiSanPham->trangthai == 0 ) ? 'checked' : ''}}/> Ngừng Bán
+                </td>              
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+        </form>    </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
+        
     </div>
     <!-- /.card-footer-->
 </div>

@@ -45,8 +45,6 @@ class CategoryController extends Controller
         //$request->anh->store('images', 'public');
 
         DB::table('LoaiSanPham')->insert($data);
-        
-
 
         return redirect()->route('admin.category.index');
     }

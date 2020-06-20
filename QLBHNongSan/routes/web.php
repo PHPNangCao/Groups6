@@ -39,6 +39,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
+
     Route::prefix('product')->name('product.')->group(function(){
         Route::get('index', 'ProductController@index')->name('index');
         Route::get('create', 'ProductController@create')->name('create');
@@ -50,6 +51,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'ProductController@destroy')->name('destroy');
 
     });
+
 
     Route::prefix('group')->name('group.')->group(function(){
         Route::get('index', 'GroupsController@index')->name('index');
@@ -63,6 +65,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
+
     Route::prefix('customer')->name('customer.')->group(function(){
         Route::get('index', 'CustomerController@index')->name('index');
         Route::get('create', 'CustomerController@create')->name('create');
@@ -73,6 +76,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
         Route::get('destroy/{id}', 'CustomerController@destroy')->name('destroy');
     });
+
+
     Route::prefix('news')->name('news.')->group(function(){
         Route::get('index', 'NewsController@index')->name('index');
         Route::get('create', 'NewsController@create')->name('create');
@@ -82,7 +87,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::post('update/{id}', 'NewsController@update')->name('update');
     
         Route::get('destroy/{id}', 'NewsController@destroy')->name('destroy');
+
     });
+
+
     Route::prefix('recruitment')->name('recruitment.')->group(function(){
         Route::get('index', 'RecruitmentController@index')->name('index');
         Route::get('create', 'RecruitmentController@create')->name('create');
@@ -93,6 +101,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     
         Route::get('destroy/{id}', 'RecruitmentController@destroy')->name('destroy');
     });
+
+    
     Route::prefix('monngon')->name('monngon.')->group(function(){
         Route::get('index', 'MonNgonController@index')->name('index');
         Route::get('create', 'MonNgonController@create')->name('create');

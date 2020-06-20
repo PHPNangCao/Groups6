@@ -35,12 +35,13 @@
                 <label>Khối Lượng</label>
                 <input type="text" class="form-control-file" placeholder="Khối Lượng sản phẩm" name="kl" value="{{$SanPham->donvitinh_id}}">
               </div>
+              <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
+        
     </div>
     <!-- /.card-footer-->
 </div>

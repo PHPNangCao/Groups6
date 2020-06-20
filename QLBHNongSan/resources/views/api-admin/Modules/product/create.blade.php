@@ -33,22 +33,22 @@
                 <input type="text" class="form-control-file" name="donvitinh_id">
               </div>
 
-              <div class="form-product">
-                <label>Loại Sản phẩm</label>
-                <select name="loaisanpham_id" class="form-control">
-                    <option >----Chọn Loại sản phẩm----</option>
-                    @foreach ($SanPham as $SP)
-                        <option value="{{$SP->id}}">{{$SP->ten}}</option>
-                    @endforeach
+              <div class="form-group">
+                <label>Loại sản phẩm</label>
+                <select name="nhom_id" class="form-control">
+                <option >----Chọn loại sản phẩm----</option>
+                @foreach ($LoaiSanPham as $LoaiSP)
+                    <option value="{{$LoaiSP->id}}">{{$LoaiSP->ten}}</option>
+                @endforeach
                 </select>
-              </div>
-              <br>
+            </div>
+              <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
+        
     </div>
     <!-- /.card-footer-->
 </div>
