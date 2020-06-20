@@ -113,28 +113,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     
         Route::get('destroy/{id}', 'MonNgonController@destroy')->name('destroy');
     });
-    Route::prefix('unit')->name('unit.')->group(function(){
-        Route::get('index', 'UnitController@index')->name('index');
-        Route::get('create', 'UnitController@create')->name('create');
-        Route::post('store', 'UnitController@store')->name('store');
-
-        Route::get('edit/{id}', 'UnitController@edit')->name('edit');
-        Route::post('update/{id}', 'UnitController@update')->name('update');
-
-        Route::get('destroy/{id}', 'UnitController@destroy')->name('destroy');
-
-    });
-    Route::prefix('supplier')->name('supplier.')->group(function(){
-        Route::get('index', 'SupplierController@index')->name('index');
-        Route::get('create', 'SupplierController@create')->name('create');
-        Route::post('store', 'SupplierController@store')->name('store');
-
-        Route::get('edit/{id}', 'SupplierController@edit')->name('edit');
-        Route::post('update/{id}', 'SupplierController@update')->name('update');
-
-        Route::get('destroy/{id}', 'SupplierController@destroy')->name('destroy');
-
-    });
 });
 
 
