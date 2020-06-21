@@ -27,23 +27,22 @@
                 <label>Ảnh</label>
                 <input type="file" class="form-control-file" name="anh">
             </div>
+            
             <div class="form-group">
                 <label>Nhóm sản phẩm</label>
                 <select name="nhom_id" class="form-control">
                 <option >----Chọn nhóm sản phẩm----</option>
-
                 @foreach ($NhomSanPham as $NhomSP)
                     <option value="{{$NhomSP->id}}">{{$NhomSP->ten}}</option>
                 @endforeach
-
                 </select>
             </div>
+            <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
     </div>
     <!-- /.card-footer-->
 </div>

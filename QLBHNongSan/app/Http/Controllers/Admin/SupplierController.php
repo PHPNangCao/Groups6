@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use DateTime;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class CategoryController extends Controller
+
+class SupplierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data = DB::table('LoaiSanPham')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.category.index', ['LoaiSanPham' => $data]);
+        $data = DB::table('NhaCungCap')->orderBy('id', 'DESC')->get();
+        return view('api-admin.Modules.supplier.index',['NhaCungCap' => $data]);
     }
 
     /**
@@ -27,8 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $NhomSanPham = DB::table('NhomSanPham')->get();
-        return view('api-admin.modules.category.create',['NhomSanPham' => $NhomSanPham]);
+        return view('api-admin.Modules.supplier.create');
     }
 
     /**
@@ -42,11 +41,8 @@ class CategoryController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-        //$request->anh->store('images', 'public');
-
-        DB::table('LoaiSanPham')->insert($data);
-
-        return redirect()->route('admin.category.index');
+        DB::table('NhaCungCap')->insert($data);
+        return redirect()->route('admin.supplier.index');
     }
 
     /**
@@ -68,8 +64,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $LoaiSanPham = DB::table('LoaiSanPham')->where('id',$id)->first();
-        return view('api-admin.modules.unit.edit', ['LoaiSanPham' => $LoaiSanPham]);
+        $NhaCungCap = DB::table('NhaCungCap')->where('id', $id)->first();
+        return view('api-admin.modules.supplier.edit', ['NhaCungCap' => $NhaCungCap]);
     }
 
     /**
@@ -83,8 +79,8 @@ class CategoryController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('LoaiSanPham')->where('id',$id)->update($data);
-        return redirect()->route('admin.category.index');
+        DB::table('NhaCungCap')->where('id', $id)->update($data);
+        return redirect()->route('admin.supplier.index');
     }
 
     /**
@@ -95,7 +91,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('LoaiSanPham')->where('id',$id)->delete();
-        return redirect()->route('admin.category.index');
+        DB::table('NhaCungCap')->where('id',$id)->delete();
+        return redirect()->route('admin.supplier.index');
     }
+    
 }

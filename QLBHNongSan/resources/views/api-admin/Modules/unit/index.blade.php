@@ -1,10 +1,9 @@
 @extends('api-admin.master')
-@section('title','Danh sách sản phẩm')
+@section('title','Đơn Vị Tính')
 @section('content')
-<!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Danh sách Sản Phẩm <a href="{{route('admin.product.create')}}">Thêm Sản phẩm </a></h3>
+        <h3 class="card-title">Danh sách Đơn Vị Tính <a href="{{route('admin.unit.create')}}">Thêm Mới</a></h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
             <i class="fas fa-minus"></i></button>
@@ -17,28 +16,20 @@
             <thead>
                 <tr>
                     <th>Mã</th>
-                    <th>Tên Sản phẩm </th>
-                    <th>Mô Tả</th>
-                    <th>Hình ảnh</th>
-                    <th>Loại Sản phẩm</th>
-                    <th>Khối Lượng</th> 
-                    <th>Trạng Thái</th>
+                    <th>Tên</th>
+                    <th>Mô tả</th>
                     <th>Sửa</th>
                     <th>Xóa</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($SanPham as $SP)
+                @foreach ($DonViTinh as $DVT)
                 <tr>
                     <td>{{$loop->iteration }}</td>
-                    <td>{{ $SP->ten }}</td>
-                    <td>{{ $SP->mota }}</td>
-                    <td>{{ $SP->anh }}</td>
-                    <td>{{ $SP->loaisanpham_id }}</td>
-                    <td>{{ $SP->donvitinh_id }}</td>
-                    <td>{{ $SP->trangthai }}</td>
-                <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
-                    <td><a href="{{route('admin.product.destroy',['id' => $SP->id])}}" onclick="return checkDelete('Bạn có muốn xóa nhóm này không?')">Xoá</a></td>
+                    <td>{{ $DVT->ten }}</td>
+                    <td>{{ $DVT->mota }}</td>
+                    <td><a href="{{route('admin.unit.edit',['id' => $DVT->id])}}">Sửa</a></td>
+                    <td><a href="{{route('admin.unit.destroy',['id' => $DVT->id])}}" onclick="return checkDelete('Bạn có muốn xóa loại sản phẩm này không?')">Xóa</a></td>
                 </tr>
                 @endforeach
             </tbody>
@@ -50,5 +41,4 @@
     </div>
     <!-- /.card-footer-->
 </div>
-
 @endsection

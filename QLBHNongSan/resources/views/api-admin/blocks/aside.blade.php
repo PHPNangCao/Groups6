@@ -59,6 +59,12 @@
                                 <p>Nhóm sản phẩm</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.unit.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Đơn vị tính</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
@@ -67,6 +73,14 @@
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Người dùng
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.supplier.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Nhà cung cấp
                         </p>
                     </a>
                 </li>

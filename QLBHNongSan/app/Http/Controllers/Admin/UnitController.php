@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use DateTime;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-class CategoryController extends Controller
+use DateTime, DB;
+
+class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data = DB::table('LoaiSanPham')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.category.index', ['LoaiSanPham' => $data]);
+        $data = DB::table('DonViTinh')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.unit.index', ['DonViTinh' => $data]);
     }
 
     /**
@@ -27,8 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $NhomSanPham = DB::table('NhomSanPham')->get();
-        return view('api-admin.modules.category.create',['NhomSanPham' => $NhomSanPham]);
+        return view('api-admin.modules.unit.create');
     }
 
     /**
@@ -39,14 +37,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except('_token');
+        $data = $request -> except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-        //$request->anh->store('images', 'public');
+        
+        DB::table('DonViTinh')->insert($data);
 
-        DB::table('LoaiSanPham')->insert($data);
+        return redirect()->route('admin.unit.index');
 
-        return redirect()->route('admin.category.index');
+
     }
 
     /**
@@ -68,8 +67,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $LoaiSanPham = DB::table('LoaiSanPham')->where('id',$id)->first();
-        return view('api-admin.modules.unit.edit', ['LoaiSanPham' => $LoaiSanPham]);
+        $DVT = DB::table('DonViTinh')->where('id',$id)->first();
+        return view('api-admin.modules.unit.edit', ['DonViTinh' => $DVT]);
     }
 
     /**
@@ -83,8 +82,8 @@ class CategoryController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('LoaiSanPham')->where('id',$id)->update($data);
-        return redirect()->route('admin.category.index');
+        DB::table('DonViTinh')->where('id',$id)->update($data);
+        return redirect()->route('admin.unit.index');
     }
 
     /**
@@ -95,7 +94,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('LoaiSanPham')->where('id',$id)->delete();
-        return redirect()->route('admin.category.index');
+        DB::table('DonViTinh')->where('id',$id)->delete();
+        return redirect()->route('admin.unit.index');
     }
 }
