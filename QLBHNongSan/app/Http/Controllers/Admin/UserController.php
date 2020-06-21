@@ -82,7 +82,7 @@ class UserController extends Controller
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
         
-        DB::table('user')->update($data);
+        DB::table('user')->where('id',$id)->update($data);
 
         return redirect()->route('admin.user.index');
     }

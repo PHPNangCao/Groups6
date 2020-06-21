@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB,DateTime;
 class RecruitmentController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class RecruitmentController extends Controller
      */
     public function index()
     {
-        //
+        $monngon = DB::table('monngon')->get();
+        return view('api-admin.modules.recruitment.index',['monngon'=>$monngon]);
     }
 
     /**
@@ -24,7 +25,8 @@ class RecruitmentController extends Controller
      */
     public function create()
     {
-        //
+        $sanpham = DB::table('sanpham')->get();
+        return view('api-admin.modules.recruitment.create',['sanpham'=>$sanpham]);
     }
 
     /**
@@ -35,7 +37,12 @@ class RecruitmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        $data['created_up'] = new DateTime;
+        $data['updated_up'] = new DateTime;
+
+        DB::table('monngon')->insert($data);
+        return redirect()->route('admin.recruitment.index');
     }
 
     /**
@@ -57,7 +64,9 @@ class RecruitmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $monngon = DB::table('monngon')->where('id',$id)->first();
+        $sanpham = DB::table('monngon')->get();
+        return view('api-admin.modules.recruitment.edit',['monngon'=>$monngon],['sanpham'=>$sanpham]);
     }
 
     /**
@@ -69,7 +78,11 @@ class RecruitmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_up'] = new DateTime;
+
+        DB::table('monngon')->where('id',$id)->update($data);
+        return redirect()->route('admin.recruitment.index');
     }
 
     /**
@@ -80,6 +93,7 @@ class RecruitmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('monngon')->where('id',$id)->delete();
+        return redirect()->route('admin.recruiment.index');
     }
 }

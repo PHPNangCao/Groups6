@@ -15,7 +15,7 @@
                 <img src="api-admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Q.Thịnh Đẹp Trai</a>
+                <a href="#" class="d-block">Nhóm 6</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -109,7 +109,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                    <a href="{{route('admin.recruitment.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Món Ngon
