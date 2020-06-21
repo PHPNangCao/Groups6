@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {   
-        $data = DB::table('user')->orderBy('id','DESC')->get();
-        return view('api-admin.modules.user.index',['nguoidung'=>$data]);
+        $nguoidung = DB::table('user')->get();
+        return view('api-admin.modules.user.index',['nguoidung' => $nguoidung]);
     }
 
     /**
@@ -25,8 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $data = DB::table('user')->get();
-        return view('api-admin.modules.user.create',['nguoidung'=>$data]);
+        $loainguoidung = DB::table('loainguoidung')->get();
+        return view('api-admin.modules.user.create',['loainguoidung'=>$loainguoidung]);
     }
 
     /**
@@ -41,7 +41,7 @@ class UserController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
         
-        DB::insert('user')->insert($data);
+        DB::table('user')->insert($data);
 
         return redirect()->route('admin.user.index');
     }
@@ -64,8 +64,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $loainguoidung = DB::table('user')->get();
+        $nguoidung = DB::table('user')->where('id',$id)->first();
+        return redirect()->route('admin.user.index',['nguoidung'=>$nguoidung],['loainguoidung'=>$loainguoidung]);
     }
 
     /**
@@ -77,7 +79,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_at'] = new DateTime;
+        
+        DB::table('user')->update($data);
+
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -88,6 +95,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('user')->where('id',$id)->delete();
+        return redirect()->route('admin.user.index');
     }
 }

@@ -13,10 +13,11 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('User', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->id();
             $table->string('email');
             $table->string('pass');
+
             $table->unsignedBigInteger('loainguoidung_id')->nullable();
             $table->foreign('loainguoidung_id')->references('id')->on('LoaiNguoiDung');
             $table->timestamps();
@@ -30,6 +31,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('User');
+        Schema::dropIfExists('user');
     }
 }

@@ -30,8 +30,8 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $nd->email }}</td>
                     <td>{{ $nd->pass }}</td>
-                    <td>{{ $nd->loainguodung }}</td>
-                <td><a href="{{route('admin.user.edit',['id' => $nd->id])}}">Sửa</a></td>
+                    <td>{{ $nd->loainguoidung_id }}</td>
+                    <td><a href="{{route('admin.user.edit',['id' => $nd->id])}}">Sửa</a></td>
                     <td><a href="{{route('admin.user.destroy',['id' => $nd->id])}}" onclick="return checkDelete('Bạn có muốn xóa người dùng này không?')">Xóa</a></td>
                 </tr>
                 @endforeach

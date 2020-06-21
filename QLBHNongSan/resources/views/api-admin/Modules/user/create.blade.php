@@ -26,9 +26,9 @@
             <div class="form-product">
                 <label>Loại người dùng</label>
                 <select name="loainguoidung_id" class="form-control">
-                    <option >----Chọn loại người dùng----</option>
-                    @foreach ($nguoidung as $nd)
-                        <option value="{{$nd->id}}">{{$nd->ten}}</option>
+                    <option > ----Chọn loại người dùng----</option>
+                    @foreach($loainguoidung as $lnd)
+                    <option value="{{ $lnd->id }}">{{ $lnd->ten }}</option>
                     @endforeach
                 </select>
               </div>
