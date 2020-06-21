@@ -34,7 +34,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-list"></i>
+                        <i class="nav-icon fas fa-laptop"></i>
                         <p>
                             Danh mục sản phẩm
                             <i class="right fas fa-angle-left"></i>
@@ -68,46 +68,17 @@
                     </ul>
                 </li>
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
+                <li class="nav-item">
+                    <a href="{{ route('admin.user.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
                         <p>
-                            Danh mục người dùng
-                            <i class="right fas fa-angle-left"></i>
+                            Người dùng
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.user.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Người dùng
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Thông tin
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Loại người dùng
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-
-                
                 <li class="nav-item">
                     <a href="{{route('admin.supplier.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-home"></i>
+                        <i class="nav-icon far fa-image"></i>
                         <p>
                             Nhà cung cấp
                         </p>
@@ -142,14 +113,6 @@
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Món Ngon
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Quảng Cáo
                         </p>
                     </a>
                 </li>
