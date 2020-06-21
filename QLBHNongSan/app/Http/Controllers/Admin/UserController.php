@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB, DateTime;
 class UserController extends Controller
 {
     /**
@@ -13,8 +13,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $data = DB::table('user')->orderBy('id','DESC')->get();
+        return view('api-admin.modules.user.index',['nguoidung'=>$data]);
     }
 
     /**
@@ -24,7 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $data = DB::table('user')->get();
+        return view('api-admin.modules.user.create',['nguoidung'=>$data]);
     }
 
     /**
@@ -35,7 +37,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        $data['created_at'] = new DateTime;
+        $data['updated_at'] = new DateTime;
+        
+        DB::insert('user')->insert($data);
+
+        return redirect()->route('admin.user.index');
     }
 
     /**
