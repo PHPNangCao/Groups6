@@ -21,7 +21,7 @@
                     <th>Mô Tả</th>
                     <th>Hình ảnh</th>
                     <th>Loại Sản phẩm</th>
-                    <th>Khối Lượng</th> 
+                    <th>Đơn vị tính</th> 
                     <th>Trạng Thái</th>
                     <th>Sửa</th>
                     <th>Xóa</th>
