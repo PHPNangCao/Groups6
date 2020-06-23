@@ -4,14 +4,9 @@
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Danh sách Sản Phẩm 
-            <hr> <a href="{{route('admin.product.create')}}">Thêm Sản phẩm </a></h3>
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
+        <h3 class="card-title">
+            <a href="{{route('admin.product.create')}}">Thêm Sản phẩm </a>
+        </h3>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
@@ -30,7 +25,7 @@
             </thead>
             <tbody>
                 @foreach ($SanPham as $SP)
-                <tr>
+                <tr> 
                     <td>{{$loop->iteration }}</td>
                     <td>{{ $SP->ten }}</td>
                     <td>{{ $SP->mota }}</td>
@@ -38,7 +33,7 @@
                     <td>{{ $SP->loaisanpham_id }}</td>
                     <td>{{ $SP->donvitinh_id }}</td>
                     <td>{{ $SP->trangthai }}</td>
-                <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
+                    <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
                     <td><a href="{{route('admin.product.destroy',['id' => $SP->id])}}" onclick="return checkDelete('Bạn có muốn xóa sản phẩm này không?')">Xoá</a></td>
                 </tr>
                 @endforeach

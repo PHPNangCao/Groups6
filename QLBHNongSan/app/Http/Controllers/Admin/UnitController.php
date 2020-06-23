@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DateTime, DB;
+use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class UnitController extends Controller
 {

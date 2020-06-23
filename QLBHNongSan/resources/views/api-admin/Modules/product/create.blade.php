@@ -5,12 +5,6 @@
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Thêm sản phẩm</h3>
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
     </div>
     <div class="card-body">
         <form action="{{route('admin.product.store')}}" method="POST">
@@ -27,7 +21,7 @@
                 <label>Ảnh</label>
                 <input type="file" class="form-control-file" name="anh">
               </div>
-
+            
               <div class="form-group">
                 <label>Đơn vị tính</label>
                 <select name="donvitinh_id" class="form-control">

@@ -1,7 +1,7 @@
 @extends('api-admin.master')
 @section('title','Tạo Đơn vị tính')
 @section('content')
-<form action="{{ route ('admin.unit.store')}}"" method = "POST" >
+<form action="{{ route ('admin.unit.store')}}" method = "POST" >
     @csrf
     <div class="form-group">
       <label >Tên đơn vị tính :</label>
@@ -12,7 +12,7 @@
         <textarea class="form-control" name="mota" rows="3" placeholder="Mô tả"></textarea>
     </div>
     <hr>
-    <button type="submit" class="btn btn-default">Lưu thông tin</button>
+    <button type="submit" class="btn btn-primary">Lưu thông tin</button>
   </form>
 
 @endsection
