@@ -13,11 +13,11 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.group.update',['id' => $SanPham->id])}}" method="POST">
+        <form action="{{route('admin.product.update',['id' => $SanPham->id])}}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Tên sản phẩm</label>
-            <input type="text" name="ten" class="form-control" placeholder="Tên nhóm sản phẩm" value="{{$SanPham->ten}}">
+            <input type="text" name="ten" class="form-control" placeholder="Tên sản phẩm" value="{{$SanPham->ten}}">
             </div>
             <div class="form-group">
                 <label>Mô tả</label>

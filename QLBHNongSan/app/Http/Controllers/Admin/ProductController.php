@@ -71,7 +71,6 @@ class ProductController extends Controller
         $DonViTinh = DB::table('DonViTinh')->get();
         $LoaiSanPham = DB::table('LoaiSanPham')->get();
         $SanPham = DB::table('SanPham')->where('id',$id)->first();
-        // return view('api-admin.modules.product.edit', ['LoaiSanPham' => $LoaiSanPham, 'DonViTinh' => $DonViTinh], ['SanPham' => $SanPham]);    
         return view('api-admin.modules.product.edit', ['LoaiSanPham' => $LoaiSanPham, 'DonViTinh' => $DonViTinh], ['SanPham' => $SanPham]);
     }
 

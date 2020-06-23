@@ -16,7 +16,7 @@
             @csrf
             <div class="form-group">
                 <label>Tên Đơn Vị Tính</label>
-            <input type="text" name="ten" class="form-control" placeholder="Tên loại sản phẩm" value="{{$DonViTinh->ten}}">
+            <input type="text" name="ten" class="form-control" placeholder="Tên đơn vị tính" value="{{$DonViTinh->ten}}">
             </div>
             <div class="form-group">
                 <label>Mô tả</label>
@@ -24,7 +24,8 @@
             </div>
             <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
-        </form>    </div>
+        </form>    
+    </div>
     <!-- /.card-body -->
     <div class="card-footer">
         
