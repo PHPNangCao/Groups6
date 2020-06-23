@@ -29,7 +29,7 @@
                     <td>{{ $DVT->ten }}</td>
                     <td>{{ $DVT->mota }}</td>
                     <td><a href="{{route('admin.unit.edit',['id' => $DVT->id])}}">Sửa</a></td>
-                    <td><a href="{{route('admin.unit.destroy',['id' => $DVT->id])}}" onclick="return checkDelete('Bạn có muốn xóa loại sản phẩm này không?')">Xóa</a></td>
+                    <td><a href="{{route('admin.unit.destroy',['id' => $DVT->id])}}" onclick="return checkDelete('Bạn có muốn xóa đơn vị tính này không?')">Xóa</a></td>
                 </tr>
                 @endforeach
             </tbody>

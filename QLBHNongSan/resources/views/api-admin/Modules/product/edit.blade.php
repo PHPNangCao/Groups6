@@ -38,14 +38,14 @@
                 </select>
             </div>
 
-              <div class="form-group">
+            <div class="form-group">
                 <label>Loại sản phẩm</label>
                 <select name="loaisanpham_id" class="form-control">
                 <option >----Chọn loại sản phẩm----</option>
                 @foreach ($LoaiSanPham as $LoaiSP)
                     <option value="{{$LoaiSP->id}}">{{$LoaiSP->ten}}</option>
                 @endforeach
-                
+            </div>
               <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>

@@ -38,7 +38,8 @@
             </div>
             <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
-        </form>    </div>
+        </form>    
+    </div>
     <!-- /.card-body -->
     <div class="card-footer">
         
