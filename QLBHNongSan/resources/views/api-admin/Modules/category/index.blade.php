@@ -24,7 +24,7 @@
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
-            </thead>
+            </thead> 
             <tbody>
                 @foreach ($LoaiSanPham as $LoaiSP)
                 <tr>

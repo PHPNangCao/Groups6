@@ -26,7 +26,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
         Route::get('destroy/{id}', 'CategoryController@destroy')->name('destroy');
 
-    });
+    }); 
     Route::prefix('user')->name('user.')->group(function(){
         Route::get('index', 'UserController@index')->name('index');
         Route::get('create', 'UserController@create')->name('create');
