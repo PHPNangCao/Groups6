@@ -4,7 +4,7 @@
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Sửa thể thoại</h3>
+        <h3 class="card-title">Sửa thể loại</h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
             <i class="fas fa-minus"></i></button>
@@ -13,11 +13,53 @@
         </div>
     </div>
     <div class="card-body">
-        Start creating your amazing application!
+        <form action="{{route('admin.category.update',['id' => $LoaiSanPham->id])}}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label>Tên loại sản phẩm</label>
+            <input type="text" name="ten" class="form-control" placeholder="Tên loại sản phẩm" value="{{$LoaiSanPham->ten}}">
+            </div>
+            <div class="form-group">
+                <label>Mô tả</label>
+            <textarea class="form-control" name="mota" rows="3" placeholder="Mô tả">{{$LoaiSanPham->mota}}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Ảnh</label>
+            <input type="file" class="form-control-file" name="anh" value="{{$LoaiSanPham->anh}}" >
+              </div>
+              {{-- <div class="form-product">
+                <label>Trạng thái</label>
+                <td>
+                    <br>
+                    <input type="radio" name="trangthai" value="Bán" {{ ($LoaiSanPham->trangthai == 1 ) ? 'checked' : ''}} /> Bán
+                    <br>
+                    <input type="radio" name="trangthai" value="Ngừng Bán" {{ ($LoaiSanPham->trangthai == 0 ) ? 'checked' : ''}}/> Ngừng Bán
+                </td>              
+            </div> --}}
+
+            <tr>
+                <td>Trạng thái</td>
+                <td>
+                    <select name ="Trang_Thai">
+                          @if($sanpham->Trang_Thai == 0)
+                              <option value="0"  selected> Hết Hàng</option>
+                              <option value="1"  > Còn Hàng</option>
+                          @else
+                              <option value="1"  selected> Còn Hàng</option>
+                              <option value="0"  > Hết Hàng</option>
+                          @endif
+                    </select>
+                </td>
+            </tr>
+
+            <hr>
+            
+            <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+        </form>    
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
+        
     </div>
     <!-- /.card-footer-->
 </div>

@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use DateTime;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('api-admin.modules.product.index');
+        $data = DB::table('SanPham')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.product.index', ['SanPham' => $data]);
     }
 
     /**
@@ -24,7 +27,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $DonViTinh = DB::table('DonViTinh')->get();
+        $LoaiSanPham = DB::table('LoaiSanPham')->get();
+        return view('api-admin.modules.product.create',['LoaiSanPham' => $LoaiSanPham],['DonViTinh' => $DonViTinh]);
     }
 
     /**
@@ -35,7 +40,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        $data['created_at'] = new DateTime;
+        $data['updated_at'] = new DateTime;
+
+        DB::table('SanPham')->insert($data);
+
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -57,7 +68,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $DonViTinh = DB::table('DonViTinh')->get();
+        $LoaiSanPham = DB::table('LoaiSanPham')->get();
+        $SanPham = DB::table('SanPham')->where('id',$id)->first();
+        return view('api-admin.modules.product.edit', ['LoaiSanPham' => $LoaiSanPham, 'DonViTinh' => $DonViTinh], ['SanPham' => $SanPham]);
     }
 
     /**
@@ -69,7 +83,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_at'] = new DateTime;
+        DB::table('SanPham')->where('id',$id)->update($data);
+        return redirect()->route('admin.product.index');
+
     }
 
     /**
@@ -80,6 +98,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('SanPham')->where('id',$id)->delete();
+        return redirect()->route('admin.product.index');
+
     }
 }

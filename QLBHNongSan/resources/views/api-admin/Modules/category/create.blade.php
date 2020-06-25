@@ -5,12 +5,6 @@
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Thêm loại sản phẩm</h3>
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
     </div>
     <div class="card-body">
         <form action="{{route('admin.category.store')}}" method="POST">
@@ -27,23 +21,22 @@
                 <label>Ảnh</label>
                 <input type="file" class="form-control-file" name="anh">
             </div>
+            
             <div class="form-group">
                 <label>Nhóm sản phẩm</label>
                 <select name="nhom_id" class="form-control">
-                <option >--Chọn nhóm sản phẩm</option>
-
+                <option >----Chọn nhóm sản phẩm----</option>
                 @foreach ($NhomSanPham as $NhomSP)
                     <option value="{{$NhomSP->id}}">{{$NhomSP->ten}}</option>
                 @endforeach
-
                 </select>
             </div>
+            <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
     </div>
     <!-- /.card-footer-->
 </div>
