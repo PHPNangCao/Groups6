@@ -141,6 +141,18 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'SupplierController@destroy')->name('destroy');
 
     });
+
+    Route::prefix('lot-order')->name('lot-order.')->group(function(){
+        Route::get('index', 'LotOrđerController@index')->name('index');
+        Route::get('create', 'LotOrđerController@create')->name('create');
+        Route::post('store', 'LotOrđerController@store')->name('store');
+
+        Route::get('edit/{id}', 'LotOrđerController@edit')->name('edit');
+        Route::post('update/{id}', 'LotOrđerController@update')->name('update');
+
+        Route::get('destroy/{id}', 'LotOrđerController@destroy')->name('destroy');
+
+    });
 });
 
 

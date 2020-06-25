@@ -130,6 +130,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                <a href="{{route('admin.lot-order.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Lô đặt hàng
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="../gallery.html" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
