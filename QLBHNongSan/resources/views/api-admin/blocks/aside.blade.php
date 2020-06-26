@@ -154,7 +154,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                    <a href="{{route('admin.promotional.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Quảng Cáo
@@ -170,7 +170,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                    <a href="{{route('admin.sale.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Khuyến mãi
