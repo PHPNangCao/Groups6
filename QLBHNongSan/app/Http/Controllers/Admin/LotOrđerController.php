@@ -1,23 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use DateTime;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-class ProductController extends Controller
+use DateTime;
+class LotOrđerController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = DB::table('SanPham')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.product.index', ['SanPham' => $data]);
+        $data = DB::table('LoHang')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.Lot_Order.index', ['LoHang' => $data]);
     }
 
     /**
@@ -27,9 +26,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $DonViTinh = DB::table('DonViTinh')->get();
-        $LoaiSanPham = DB::table('LoaiSanPham')->get();
-        return view('api-admin.modules.product.create',['LoaiSanPham' => $LoaiSanPham],['DonViTinh' => $DonViTinh]);
+        $SanPham = DB::table('SanPham')->get();
+        $NhaCungCap = DB::table('NhaCungCap')->get();
+        return view('api-admin.modules.Lot_Order.create',['SanPham' => $SanPham], ['NhaCungCap' => $NhaCungCap]);
     }
 
     /**
@@ -43,10 +42,8 @@ class ProductController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-
-        DB::table('SanPham')->insert($data);
-
-        return redirect()->route('admin.product.index');
+        DB::table('LoHang')->insert($data);
+        return redirect()->route('admin.lot-order.index');
     }
 
     /**
@@ -68,10 +65,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $DonViTinh = DB::table('DonViTinh')->get();
-        $LoaiSanPham = DB::table('LoaiSanPham')->get();
-        $SanPham = DB::table('SanPham')->where('id',$id)->first();
-        return view('api-admin.modules.product.edit', ['LoaiSanPham' => $LoaiSanPham, 'DonViTinh' => $DonViTinh], ['SanPham' => $SanPham]);
+        $LoHang = DB::table('LoHang')->where('id',$id)->first();
+        return view('api-admin.modules.Lot_Order.edit', ['LoHang' => $LoHang]);
     }
 
     /**
@@ -85,9 +80,8 @@ class ProductController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('SanPham')->where('id',$id)->update($data);
-        return redirect()->route('admin.product.index');
-
+        DB::table('LoHang')->where('id',$id)->update($data);
+        return redirect()->route('admin.lot-order.index');
     }
 
     /**
@@ -98,8 +92,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('SanPham')->where('id',$id)->delete();
-        return redirect()->route('admin.product.index');
-
+        DB::table('LoHang')->where('id',$id)->delete();
+        return redirect()->route('admin.lot-order.index');
     }
 }

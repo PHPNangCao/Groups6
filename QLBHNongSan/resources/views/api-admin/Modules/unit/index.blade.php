@@ -3,13 +3,9 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Danh sách Đơn Vị Tính <a href="{{route('admin.unit.create')}}">Thêm Mới</a></h3>
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
+        <h3 class="card-title">
+            <a href="{{route('admin.unit.create')}}">Thêm Đơn Vị Tính</a>
+        </h3>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
@@ -29,7 +25,7 @@
                     <td>{{ $DVT->ten }}</td>
                     <td>{{ $DVT->mota }}</td>
                     <td><a href="{{route('admin.unit.edit',['id' => $DVT->id])}}">Sửa</a></td>
-                    <td><a href="{{route('admin.unit.destroy',['id' => $DVT->id])}}" onclick="return checkDelete('Bạn có muốn xóa loại sản phẩm này không?')">Xóa</a></td>
+                    <td><a href="{{route('admin.unit.destroy',['id' => $DVT->id])}}" onclick="return checkDelete('Bạn có muốn xóa đơn vị tính này không?')">Xóa</a></td>
                 </tr>
                 @endforeach
             </tbody>

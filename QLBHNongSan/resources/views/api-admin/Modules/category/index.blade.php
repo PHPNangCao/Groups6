@@ -4,13 +4,9 @@
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Danh sách loại Sản Phẩm <a href="{{route('admin.category.create')}}">Thêm mới</a></h3>
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
+        <h3 class="card-title">
+            <a href="{{route('admin.category.create')}}">Thêm Loại Sản phẩm</a>
+        </h3>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
@@ -24,7 +20,7 @@
                     <th>Sửa</th>
                     <th>Xóa</th>
                 </tr>
-            </thead>
+            </thead> 
             <tbody>
                 @foreach ($LoaiSanPham as $LoaiSP)
                 <tr>
