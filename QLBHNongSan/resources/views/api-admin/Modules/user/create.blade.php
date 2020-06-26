@@ -26,9 +26,10 @@
             <div class="form-product">
                 <label>Loại người dùng</label>
                 <select name="loainguoidung_id" class="form-control">
-                    @foreach($loainguoidung as $lnd)
+                    {{-- <option > ----Chọn loại người dùng----</option> --}}
+                    {{-- @foreach($loainguoidung as $lnd)
                     <option value="{{ $lnd->id }}">{{ $lnd->ten }}</option>
-                    @endforeach
+                    @endforeach --}}
                 </select>
               </div>
             <br>

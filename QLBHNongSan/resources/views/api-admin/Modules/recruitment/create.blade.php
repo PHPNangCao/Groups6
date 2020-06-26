@@ -28,21 +28,23 @@
             </div>
             <div class="form-product">
                 <label >Ảnh</label>
-                <input type="file" name="anh" class="form-control-file  " >
+                <input type="file" name="anh" class="form-control-file" >
             </div>
             <div class="form-product">
                 <label >Trạng thái</label>
-                    <input type="checkbox" name="trangthai" value="1"  >Mở
-                    <input type="checkbox" name="trangthai" value="0"  >Ẩn
+                    <input type="checkbox" name="trangthai" value="Mở"  >Mở
+                    <input type="checkbox" name="trangthai" value="Ẩn"  >Ẩn
             </div>
             <div class="form-product">
                 <label >Sản phẩm: </label>
                 <select name="sanpham_id" class="form-control">
-                    @foreach($sanpham as $sp)
+                    {{-- @foreach($sanpham as $sp)
                     <option value="{{$sp->id}}">{{$sp->ten}}</option>
-                    @endforeach
+                    @endforeach --}}
                 </select>
             </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
     </div>
     <!-- /.card-body -->

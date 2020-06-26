@@ -25,11 +25,10 @@
             </div>
             <div class="form-product">
                 <label>Loại người dùng</label>
-                <select name="loainguoidung_id" class="form-control" value="{{$nguoidung->email}}">
-                    <option > ----Chọn loại người dùng----</option>
-                    @foreach($loainguoidung as $lnd)
-                    <option value="{{ $lnd->id }}">{{ $lnd->ten }}</option>
-                    @endforeach
+                <select name="loainguoidung_id" class="form-control">
+                    {{-- @foreach($loainguoidung as $lnd)
+                    <option value="{{ $lnd->id }}"> {{ $lnd->ten }}</option>
+                    @endforeach --}}
                 </select>
               </div>
             <br>

@@ -21,7 +21,8 @@ class CreateMonNgonTable extends Migration
             $table->integer('luotxem')->default(0);
             $table->string('anh')->nullable();
             $table->boolean('trangthai')->default(1);
-            $table->unsignedBigInteger('sanpham_id');
+
+            $table->unsignedBigInteger('sanpham_id')->nullable();
             $table->foreign('sanpham_id')->references('id')->on('SanPham');
             $table->timestamps();
         });

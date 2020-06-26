@@ -38,8 +38,8 @@ class RecruitmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->except('_token');
-        $data['created_up'] = new DateTime;
-        $data['updated_up'] = new DateTime;
+        $data['created_at'] = new DateTime;
+        $data['updated_at'] = new DateTime;
 
         DB::table('monngon')->insert($data);
         return redirect()->route('admin.recruitment.index');
@@ -79,7 +79,7 @@ class RecruitmentController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->except('_token');
-        $data['updated_up'] = new DateTime;
+        $data['updated_at'] = new DateTime;
 
         DB::table('monngon')->where('id',$id)->update($data);
         return redirect()->route('admin.recruitment.index');

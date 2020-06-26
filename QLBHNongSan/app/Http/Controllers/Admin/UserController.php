@@ -14,8 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {   
+        $loainguoidung = DB::table('user')->get();
         $nguoidung = DB::table('user')->get();
-        return view('api-admin.modules.user.index',['nguoidung' => $nguoidung]);
+        return view('api-admin.modules.user.index',['nguoidung' => $nguoidung],['loainguoidung'=>$loainguoidung]);
     }
 
     /**
@@ -67,7 +68,7 @@ class UserController extends Controller
     {   
         $loainguoidung = DB::table('user')->get();
         $nguoidung = DB::table('user')->where('id',$id)->first();
-        return redirect()->route('admin.user.index',['nguoidung'=>$nguoidung],['loainguoidung'=>$loainguoidung]);
+        return view('api-admin.modules.user.edit',['nguoidung'=>$nguoidung],['loainguoidung'=>$loainguoidung]);
     }
 
     /**

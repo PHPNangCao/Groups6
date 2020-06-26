@@ -23,6 +23,7 @@
                     <th>Lượt xem</th>
                     <th>Ảnh</th>
                     <th>Trạng thái</th>
+                    <td>Sản phẩm</td>
                     <th>Sửa</th>
                     <th>Xóa</th>
                 </tr>
@@ -37,7 +38,7 @@
                     <td>{{ $mn->luotxem }}</td>
                     <td>{{ $mn->anh }}</td>
                     <td>{{ $mn->trangthai }}</td>
-                    <td>{{ $mn->loainguoidung_id }}</td>
+                    <td>{{ $mn->sanpham_id }}</td>
                     <td><a href="{{route('admin.recruitment.edit',['id' => $mn->id])}}">Sửa</a></td>
                     <td><a href="{{route('admin.recruitment.destroy',['id' => $mn->id])}}" onclick="return checkDelete('Bạn có muốn xóa món ngon này không?')">Xóa</a></td>
                 </tr>

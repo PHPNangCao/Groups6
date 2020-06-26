@@ -12,37 +12,40 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.recruitment.update')}}" method="POST">
+        <form action="{{route('admin.recruitment.update',['id' => $monngon->id])}}" method="POST">
             @csrf
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Tiêu đề </th>
-                    <th>Tóm tắt</th>
-                    <th>Nội dung</th>
-                    <th>Lượt xem</th>
-                    <th>Ảnh</th>
-                    <th>Trạng thái</th>
-                    <th>Sửa</th>
-                    <th>Xóa</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($monngon as $mn)
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $mn->tieude }}</td>
-                    <td>{{ $mn->tomtat }}</td>
-                    <td>{{ $mn->noidung }}</td>
-                    <td>{{ $mn->luotxem }}</td>
-                    <td>{{ $mn->anh }}</td>
-                    <td>{{ $mn->trangthai }}</td>
-                    <td>{{ $mn->loainguoidung_id }}</td>
-                    <td><a href="{{route('admin.recruitment.edit',['id' => $mn->id])}}">Sửa</a></td>
-                    <td><a href="{{route('admin.recruitment.destroy',['id' => $mn->id])}}" onclick="return checkDelete('Bạn có muốn xóa món ngon này không?')">Xóa</a></td>
-                </tr>
-                @endforeach
-            </tbody>
+            <div class="form-product">
+                <label >Tiêu đề</label>
+                <input type="text" name="tieude" class="form-control" value="{{$monngon->tieude}}">
+            </div>
+            <div class="form-product">
+                <label >Tóm tắt</label>
+                <input type="text" name="tomtat" class="form-control" value="{{$monngon->tomtat}}">
+            </div>
+            <div class="form-product">
+                <label >Nội dung</label>
+                <textarea type="text" name="noidung" class="form-control" >{{$monngon->noidung}}</textarea>
+            </div>
+            <div class="form-product">
+                <label >Ảnh</label>
+                <input type="file" name="anh" class="form-control-file" value="{{$monngon->anh}}">
+            </div>
+            <div class="form-product">
+                <label >Trạng thái</label>
+                    <input type="checkbox" name="trangthai" value="1"  >Mở
+                    <input type="checkbox" name="trangthai" value="0"  >Ẩn
+            </div>
+            <div class="form-product">
+                <label >Sản phẩm: </label>
+                <select name="sanpham_id" class="form-control">
+                    {{-- <option value="{{$sanpham->id}}">{{$sanpham->ten}}</option>
+                    @foreach($sanpham as $sp)
+                    <option value="{{$sanpham->id}}">{{$sanpham->ten}}</option>
+                    @endforeach --}}
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>    
     </div>
     <!-- /.card-body -->
