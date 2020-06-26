@@ -15,8 +15,9 @@ class LotOrđerController extends Controller
      */
     public function index()
     {
+        $SanPham = DB::table('SanPham')->get();
         $data = DB::table('LoHang')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.Lot_Order.index', ['LoHang' => $data]);
+        return view('api-admin.modules.Lot_Order.index', ['LoHang' => $data],['SanPham' => $SanPham]);
     }
 
     /**
@@ -65,8 +66,10 @@ class LotOrđerController extends Controller
      */
     public function edit($id)
     {
+        $SanPham = DB::table('SanPham')->get();
+        $NhaCungCap = DB::table('NhaCungCap')->get();
         $LoHang = DB::table('LoHang')->where('id',$id)->first();
-        return view('api-admin.modules.Lot_Order.edit', ['LoHang' => $LoHang]);
+        return view('api-admin.modules.Lot_Order.edit', ['LoHang' => $LoHang],['SanPham' => $SanPham, 'NhaCungCap' => $NhaCungCap]);
     }
 
     /**
