@@ -32,6 +32,12 @@
                     <td>{{ $SP->anh }}</td>
                     <td>{{ $SP->loaisanpham_id }}</td>
                     <td>{{ $SP->donvitinh_id }}</td>
+                    {{-- <td>
+                        @if( $SP->donvitinh_id == {{$DVT->id}})
+                            {{($DVT->ten)}}
+                        @endif
+                    </td>                     ==> đang fix 
+                    --}} 
                     <td>
                         <select {{ $SP->trangthai }}>
                                   <option value="1"  selected> Còn Hàng</option>
