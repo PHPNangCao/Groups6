@@ -32,7 +32,12 @@
                     <td>{{ $SP->anh }}</td>
                     <td>{{ $SP->loaisanpham_id }}</td>
                     <td>{{ $SP->donvitinh_id }}</td>
-                    <td>{{ $SP->trangthai }}</td>
+                    <td>
+                        <select {{ $SP->trangthai }}>
+                                  <option value="1"  selected> Còn Hàng</option>
+                                  <option value="0"  > Hết Hàng</option>
+                        </select>
+                    </td>
                     <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
                     <td><a href="{{route('admin.product.destroy',['id' => $SP->id])}}" onclick="return checkDelete('Bạn có muốn xóa sản phẩm này không?')">Xoá</a></td>
                 </tr>
