@@ -37,7 +37,7 @@
                     <td>{{ $SP->loaisanpham_id }}</td>
                     <td>{{ $SP->donvitinh_id }}</td>
                     <td>{{ $SP->trangthai }}</td>
-                <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
+                    <td><a href="{{route('admin.product.edit',['id' => $SP->id])}}">Sửa</a></td>
                     <td><a href="{{route('admin.product.destroy',['id' => $SP->id])}}" onclick="return checkDelete('Bạn có muốn xóa nhóm này không?')">Xoá</a></td>
                 </tr>
                 @endforeach

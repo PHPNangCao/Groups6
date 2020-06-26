@@ -19,9 +19,9 @@ class CreateSanPhamTable extends Migration
             $table->string('anh');
             $table->string('mota');
             $table->boolean('trangthai')->default(1);
-            $table->unsignedBigInteger('loaisanpham_id');
+            $table->unsignedBigInteger('loaisanpham_id')->nullable();
             $table->foreign('loaisanpham_id')->references('id')->on('LoaiSanPham');
-            $table->unsignedBigInteger('donvitinh_id');
+            $table->unsignedBigInteger('donvitinh_id')->nullable();
             $table->foreign('donvitinh_id')->references('id')->on('DonViTinh');
             $table->timestamps();
         });
