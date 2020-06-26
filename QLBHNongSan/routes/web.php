@@ -153,6 +153,30 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'LotOrđerController@destroy')->name('destroy');
 
     });
+
+    Route::prefix('sale')->name('sale.')->group(function(){
+        Route::get('index', 'SaleController@index')->name('index');
+        Route::get('create', 'SaleController@create')->name('create');
+        Route::post('store', 'SaleController@store')->name('store');
+
+        Route::get('edit/{id}', 'SaleController@edit')->name('edit');
+        Route::post('update/{id}', 'SaleController@update')->name('update');
+
+        Route::get('destroy/{id}', 'SaleController@destroy')->name('destroy');
+
+    });
+
+    Route::prefix('promotional')->name('promotional.')->group(function(){
+        Route::get('index', 'PromotionalController@index')->name('index');
+        Route::get('create', 'PromotionalController@create')->name('create');
+        Route::post('store', 'PromotionalController@store')->name('store');
+
+        Route::get('edit/{id}', 'PromotionalController@edit')->name('edit');
+        Route::post('update/{id}', 'PromotionalController@update')->name('update');
+
+        Route::get('destroy/{id}', 'PromotionalController@destroy')->name('destroy');
+
+    });
 });
 
 
