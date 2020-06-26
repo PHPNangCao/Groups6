@@ -184,7 +184,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     });
 
 
-    Route::prefix('KindOfUser')->name('KindOfUser.')->group(function(){
+    Route::prefix('kindofuser')->name('kindofuser.')->group(function(){
         Route::get('index', 'KindOfUserController@index')->name('index');
         Route::get('create', 'KindOfUserController@create')->name('create');
         Route::post('store', 'KindOfUserController@store')->name('store');
@@ -196,7 +196,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
-    
+
 });
 
 

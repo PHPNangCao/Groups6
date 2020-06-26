@@ -39,9 +39,4 @@ class PageController extends Controller
         
     }
 
-    function loainguoidung(){
-        return view('page.TrangChu.Modules.loai-nguoi-dung');
-        
-    }
-
 }
