@@ -197,6 +197,19 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     });
 
 
+    Route::prefix('staff')->name('staff.')->group(function(){
+        Route::get('index', 'StaffController@index')->name('index');
+        Route::get('create', 'StaffController@create')->name('create');
+        Route::post('store', 'StaffController@store')->name('store');
+
+        Route::get('edit/{id}', 'StaffController@edit')->name('edit');
+        Route::post('update/{id}', 'StaffController@update')->name('update');
+
+        Route::get('destroy/{id}', 'StaffController@destroy')->name('destroy');
+
+    });
+
+
 });
 
 
