@@ -14,8 +14,8 @@ class RecruitmentController extends Controller
      */
     public function index()
     {
-        $monngon = DB::table('monngon')->get();
-        return view('api-admin.modules.recruitment.index',['monngon'=>$monngon]);
+        $tuyendung = DB::table('tuyendung')->get();
+        return view('api-admin.modules.recruitment.index',['tuyendung'=>$tuyendung]);
     }
 
     /**
@@ -25,8 +25,8 @@ class RecruitmentController extends Controller
      */
     public function create()
     {
-        $sanpham = DB::table('sanpham')->get();
-        return view('api-admin.modules.recruitment.create',['sanpham'=>$sanpham]);
+        $tuyendung = DB::table('tuyendung')->get();
+        return view('api-admin.modules.recruitment.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class RecruitmentController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
 
-        DB::table('monngon')->insert($data);
+        DB::table('tuyendung')->insert($data);
         return redirect()->route('admin.recruitment.index');
     }
 
@@ -64,9 +64,8 @@ class RecruitmentController extends Controller
      */
     public function edit($id)
     {
-        $monngon = DB::table('monngon')->where('id',$id)->first();
-        $sanpham = DB::table('monngon')->get();
-        return view('api-admin.modules.recruitment.edit',['monngon'=>$monngon],['sanpham'=>$sanpham]);
+        $tuyendung = DB::table('tuyendung')->where('id',$id)->first();
+        return view('api-admin.modules.recruitment.edit',['tuyendung'=>$tuyendung]);
     }
 
     /**
@@ -81,7 +80,7 @@ class RecruitmentController extends Controller
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
 
-        DB::table('monngon')->where('id',$id)->update($data);
+        DB::table('tuyendung')->where('id',$id)->update($data);
         return redirect()->route('admin.recruitment.index');
     }
 
@@ -93,7 +92,7 @@ class RecruitmentController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('monngon')->where('id',$id)->delete();
-        return redirect()->route('admin.recruiment.index');
+        DB::table('tuyendung')->where('id',$id)->delete();
+        return redirect()->route('admin.recruitment.index');
     }
 }
