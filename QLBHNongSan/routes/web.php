@@ -209,6 +209,18 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
+    Route::prefix('saleproduct')->name('saleproduct.')->group(function(){
+        Route::get('index', 'SaleProductController@index')->name('index');
+        Route::get('create', 'SaleProductController@create')->name('create');
+        Route::post('store', 'SaleProductController@store')->name('store');
+
+        Route::get('edit/{id}', 'SaleProductController@edit')->name('edit');
+        Route::post('update/{id}', 'SaleProductController@update')->name('update');
+
+        Route::get('destroy/{id}', 'SaleProductController@destroy')->name('destroy');
+
+    });
+
 
 });
 

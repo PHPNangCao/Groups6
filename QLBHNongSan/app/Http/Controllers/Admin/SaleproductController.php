@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB,DateTime;
-class RecruitmentController extends Controller
+use Illuminate\Support\Facades\DB;
+use DateTime;
+
+
+class SaleproductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class RecruitmentController extends Controller
      */
     public function index()
     {
-        $tuyendung = DB::table('tuyendung')->get();
-        return view('api-admin.modules.recruitment.index',['tuyendung'=>$tuyendung]);
+        $khuyenmaisanpham = DB::table('SanPhamKhuyenMai')->get();
+        return view('api-admin.modules.saleproduct.index', ['khuyenmaisanpham' => $khuyenmaisanpham]);
     }
 
     /**
@@ -25,8 +28,9 @@ class RecruitmentController extends Controller
      */
     public function create()
     {
-        $tuyendung = DB::table('tuyendung')->get();
-        return view('api-admin.modules.recruitment.create');
+        $khuyenmai  = DB::table('KhuyenMai')->get(); 
+        $sanpham = DB::table('SanPham')->get();
+        return view('api-admin.modules.saleproduct.create',['khuyenmai' => $khuyenmai], ['SanPham' => $sanpham]);
     }
 
     /**
@@ -40,9 +44,8 @@ class RecruitmentController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-
-        DB::table('tuyendung')->insert($data);
-        return redirect()->route('admin.recruitment.index');
+        DB::table('SanPhamKhuyenMai')->insert($data);
+        return redirect()->route('admin.saleproduct.index');
     }
 
     /**
@@ -64,8 +67,10 @@ class RecruitmentController extends Controller
      */
     public function edit($id)
     {
-        $tuyendung = DB::table('tuyendung')->where('id',$id)->first();
-        return view('api-admin.modules.recruitment.edit',['tuyendung'=>$tuyendung]);
+        $khuyenmai = DB::table('KhuyenMai')->get();
+        $sanpham = DB::table('SanPham')->get();
+        $khuyenmaisanpham = DB::table('SanPhamKhuyenMai')->where('id',$id)->first();
+        return view('api-admin.modules.saleproduct.edit', ['sanphamkhuyenmai' => $khuyenmaisanpham],['khuyenmai' => $khuyenmai, 'SanPham' => $sanpham]);
     }
 
     /**
@@ -79,9 +84,8 @@ class RecruitmentController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-
-        DB::table('tuyendung')->where('id',$id)->update($data);
-        return redirect()->route('admin.recruitment.index');
+        DB::table('SanPhamKhuyenMai')->where('id',$id)->update($data);
+        return redirect()->route('admin.saleproduct.index');
     }
 
     /**
@@ -92,7 +96,7 @@ class RecruitmentController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('tuyendung')->where('id',$id)->delete();
-        return redirect()->route('admin.recruitment.index');
+        DB::table('SanPhamKhuyenMai')->where('id',$id)->delete();
+        return redirect()->route('admin.saleproduct.index');
     }
 }
