@@ -29,7 +29,7 @@
                     <td>{{$loop->iteration }}</td>
                     <td>{{ $SP->ten }}</td>
                     <td>{{ $SP->mota }}</td>
-                    <td>{{ $SP->anh }}</td>
+                <td><img src="public/upload/product/{{$SP->anh}}" alt=""></td>
                     <td>{{ $SP->loaisanpham_id }}</td>
                     <td>{{ $SP->donvitinh_id }}</td>
                     {{-- <td>

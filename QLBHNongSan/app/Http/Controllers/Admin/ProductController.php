@@ -29,6 +29,7 @@ class ProductController extends Controller
     {
         $DonViTinh = DB::table('DonViTinh')->get();
         $LoaiSanPham = DB::table('LoaiSanPham')->get();
+        
         return view('api-admin.modules.product.create',['LoaiSanPham' => $LoaiSanPham],['DonViTinh' => $DonViTinh]);
     }
 
@@ -43,6 +44,13 @@ class ProductController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
+
+        $file = $request->anh;
+        
+        $file->move('public/upload/product', $file->getClientOriginalName());
+
+
+        $data["anh"] =  $file->getClientOriginalName();
 
         DB::table('SanPham')->insert($data);
 
