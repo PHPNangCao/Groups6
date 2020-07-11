@@ -41,6 +41,14 @@
                 @endforeach
                 </select>
             </div>
+
+            <div class="form-group">
+                <label>Trạng Thái <label>
+                    <select name="trangthai" class="form-control">
+                          <option value="1"  selected> Còn Hàng</option>
+                          <option value="0"  > Hết Hàng</option>
+                    </select>
+            </div>
             
               <hr>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
