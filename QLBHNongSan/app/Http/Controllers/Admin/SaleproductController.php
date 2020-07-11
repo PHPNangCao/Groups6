@@ -17,8 +17,10 @@ class SaleproductController extends Controller
      */
     public function index()
     {
-        $khuyenmaisanpham = DB::table('SanPhamKhuyenMai')->get();
-        return view('api-admin.modules.saleproduct.index', ['khuyenmaisanpham' => $khuyenmaisanpham]);
+        $SanPham = DB::table('SanPham')->get();
+        $khuyenmai = DB::table('KhuyenMai')->get();
+        $khuyenmaisanpham = DB::table('SanPhamKhuyenMai')->orderBy('id', 'DESC')->get();;
+        return view('api-admin.modules.saleproduct.index', ['khuyenmaisanpham' => $khuyenmaisanpham],['khuyenmai'->$khuyenmai,'SanPham' => $SanPham]);
     }
 
     /**

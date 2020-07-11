@@ -15,7 +15,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $data = DB::table('khuyenmai')->orderBy('id', 'DESC')->get();
+        $data = DB::table('KhuyenMai')->orderBy('id', 'DESC')->get();
         return view('api-admin.modules.sale.index', ['khuyenmai' => $data]);
     }
 
@@ -26,7 +26,7 @@ class SaleController extends Controller
      */
     public function create()
     {
-        $khuyenmai = DB::table('khuyenmai')->get();
+        $khuyenmai = DB::table('KhuyenMai')->get();
         return view('api-admin.modules.sale.create',['khuyenmai' => $khuyenmai]);
     }
 
@@ -43,7 +43,7 @@ class SaleController extends Controller
         $data['updated_at'] = new DateTime;
         //$request->anh->store('images', 'public');
 
-        DB::table('khuyenmai')->insert($data);
+        DB::table('KhuyenMai')->insert($data);
 
         return redirect()->route('admin.sale.index');
     }
@@ -67,7 +67,7 @@ class SaleController extends Controller
      */
     public function edit($id)
     {
-        $khuyenmai = DB::table('khuyenmai')->where('id',$id)->first();
+        $khuyenmai = DB::table('KhuyenMai')->where('id',$id)->first();
         return view('api-admin.modules.sale.edit', ['khuyenmai' => $khuyenmai]);
     }
 
@@ -82,7 +82,7 @@ class SaleController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('khuyenmai')->where('id',$id)->update($data);
+        DB::table('KhuyenMai')->where('id',$id)->update($data);
         return redirect()->route('admin.sale.index');
     }
 
@@ -94,7 +94,7 @@ class SaleController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('khuyenmai')->where('id',$id)->delete();
+        DB::table('KhuyenMai')->where('id',$id)->delete();
         return redirect()->route('admin.sale.index');
     }
 }
