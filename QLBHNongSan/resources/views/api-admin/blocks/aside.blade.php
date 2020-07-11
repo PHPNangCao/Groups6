@@ -81,23 +81,23 @@
                             <a href="{{ route('admin.user.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Người dùng
+                                    Người Dùng
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <a href="{{route('admin.staff.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Thông tin
+                                    Thông Tin Nhân Viên
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('admin.kindofuser.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Loại người dùng
+                                    Loại Người Dùng
                                 </p>
                             </a>
                         </li>
@@ -162,7 +162,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                    <a href="{{route('admin.recruitment.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Tuyển dụng

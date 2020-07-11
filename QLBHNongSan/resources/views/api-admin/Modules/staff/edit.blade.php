@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label>CMND</label>
-                <input type="text" name="cmnd" class="form-control" placeholder="cmnd" value="{{$nv->cmnd}}">
+                <input type="text" name="cmnd" class="form-control" placeholder="CMND" value="{{$nv->cmnd}}">
             </div>
             <div class="form-group">
                 <label>Số điện thoại </label>

@@ -1,10 +1,10 @@
 @extends('api-admin.master')
-@section('title','Danh sách món ngon')
+@section('title','Danh sách tin tuyển dụng')
 @section('content')
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Danh sách món ngon <a href="{{route('admin.recruitment.create')}}">Thêm mới</a></h3>
+        <h3 class="card-title">Danh sách tin tuyển dụng <a href="{{route('admin.recruitment.create')}}">Thêm mới</a></h3>
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
             <i class="fas fa-minus"></i></button>
@@ -18,29 +18,35 @@
                 <tr>
                     <th>ID</th>
                     <th>Tiêu đề </th>
-                    <th>Tóm tắt</th>
-                    <th>Nội dung</th>
-                    <th>Lượt xem</th>
+                    <th>URL</th>
                     <th>Ảnh</th>
-                    <th>Trạng thái</th>
-                    <td>Sản phẩm</td>
+                    <th>Mổ tả</th>
+                    <th>Liên hệ</th>
+                    <td>Thời gian</td>
+                    <td>Tình trạng</td>
                     <th>Sửa</th>
                     <th>Xóa</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($monngon as $mn)
+                @foreach ($tuyendung as $td)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $mn->tieude }}</td>
-                    <td>{{ $mn->tomtat }}</td>
-                    <td>{{ $mn->noidung }}</td>
-                    <td>{{ $mn->luotxem }}</td>
-                    <td>{{ $mn->anh }}</td>
-                    <td>{{ $mn->trangthai }}</td>
-                    <td>{{ $mn->sanpham_id }}</td>
-                    <td><a href="{{route('admin.recruitment.edit',['id' => $mn->id])}}">Sửa</a></td>
-                    <td><a href="{{route('admin.recruitment.destroy',['id' => $mn->id])}}" onclick="return checkDelete('Bạn có muốn xóa món ngon này không?')">Xóa</a></td>
+                    <td>{{ $td->tieude }}</td>
+                    <td>{{ $td->url }}</td>
+                    <td>{{ $td->anh }}</td>
+                    <td>{{ $td->mota }}</td>
+                    <td>{{ $td->lienhe }}</td>
+                    <td>{{ $td->created_at }}</td>
+                    <td>
+                        @if($td->tinhtrang == 1)
+                            Đang còn tuyển
+                        @else
+                            Đang ngưng tuyển
+                        @endif
+                    </td>
+                    <td><a href="{{route('admin.recruitment.edit',['id' => $td->id])}}">Sửa</a></td>
+                    <td><a href="{{route('admin.recruitment.destroy',['id' => $td->id])}}" onclick="return checkDelete('Bạn có muốn xóa bài tin này không?')">Xóa</a></td>
                 </tr>
                 @endforeach
             </tbody>

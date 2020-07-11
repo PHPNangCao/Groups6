@@ -7,7 +7,7 @@
         <h3 class="card-title">Thêm thông tin loại người dùng</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.KindOfUser.store')}}" method="POST">
+        <form action="{{route('admin.kindofuser.store')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Tên Loại Người Dùng</label>
