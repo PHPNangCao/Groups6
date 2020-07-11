@@ -146,7 +146,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.recruitment.index')}}" class="nav-link">
+                    <a href="{{route('admin.monngon.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Món Ngon
