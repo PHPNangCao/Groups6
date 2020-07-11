@@ -23,16 +23,20 @@ class PageController extends Controller
         return view('page.TrangChu.Modules.tin-tuc');
 
     }
+
     function khuyenmai(){
         return view('page.TrangChu.Modules.khuyen-mai');
         
     }
+
     function monngon(){
         return view('page.TrangChu.Modules.mon-ngon');
         
     }
+
     function lienhe(){
         return view('page.TrangChu.Modules.lien-he');
         
     }
+
 }

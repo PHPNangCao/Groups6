@@ -25,12 +25,15 @@
                     <th>Tình Trạng</th>
                     <th>Sản Phẩm</th>
                     <th>Nhà Cung Cấp</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($LoHang as $LH)
                 <tr>
                     <td>{{$loop->iteration }}</td>
+                    <td>{{ $LH->ten }}</td>
                     <td>{{ $LH->ngaysudung }}</td>
                     <td>{{ $LH->giamuavao }}</td>
                     <td>{{ $LH->giabanra }}</td>
@@ -54,6 +57,8 @@
                     <th>Tình Trạng</th>
                     <th>Sản Phẩm</th>
                     <th>Nhà Cung Cấp</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </tfoot>
         </table>

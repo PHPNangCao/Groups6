@@ -27,31 +27,15 @@
                 <label>Ảnh</label>
             <input type="file" class="form-control-file" name="anh" value="{{$LoaiSanPham->anh}}" >
               </div>
-              {{-- <div class="form-product">
+              <div class="form-product">
                 <label>Trạng thái</label>
                 <td>
                     <br>
-                    <input type="radio" name="trangthai" value="Bán" {{ ($LoaiSanPham->trangthai == 1 ) ? 'checked' : ''}} /> Bán
+                    <input type="radio" name="trangthai" value="Còn Hàng" {{ ($LoaiSanPham->trangthai == 1 ) ? 'checked' : ''}} /> Còn Hàng
                     <br>
-                    <input type="radio" name="trangthai" value="Ngừng Bán" {{ ($LoaiSanPham->trangthai == 0 ) ? 'checked' : ''}}/> Ngừng Bán
+                    <input type="radio" name="trangthai" value="Hết Hàng" {{ ($LoaiSanPham->trangthai == 0 ) ? 'checked' : ''}}/> Hết Hàng
                 </td>              
-            </div> --}}
-
-            <tr>
-                <td>Trạng thái</td>
-                <td>
-                    <select name ="Trang_Thai">
-                          @if($sanpham->Trang_Thai == 0)
-                              <option value="0"  selected> Hết Hàng</option>
-                              <option value="1"  > Còn Hàng</option>
-                          @else
-                              <option value="1"  selected> Còn Hàng</option>
-                              <option value="0"  > Hết Hàng</option>
-                          @endif
-                    </select>
-                </td>
-            </tr>
-
+            </div>
             <hr>
             
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>

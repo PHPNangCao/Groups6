@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+
     Route::prefix('category')->name('category.')->group(function(){
         Route::get('index', 'CategoryController@index')->name('index');
         Route::get('create', 'CategoryController@create')->name('create');
@@ -27,6 +28,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'CategoryController@destroy')->name('destroy');
 
     }); 
+
+
     Route::prefix('user')->name('user.')->group(function(){
         Route::get('index', 'UserController@index')->name('index');
         Route::get('create', 'UserController@create')->name('create');
@@ -128,7 +131,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
-
     
     Route::prefix('supplier')->name('supplier.')->group(function(){
         Route::get('index', 'SupplierController@index')->name('index');
@@ -142,6 +144,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
+
     Route::prefix('lot-order')->name('lot-order.')->group(function(){
         Route::get('index', 'LotOrđerController@index')->name('index');
         Route::get('create', 'LotOrđerController@create')->name('create');
@@ -153,6 +156,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'LotOrđerController@destroy')->name('destroy');
 
     });
+
 
     Route::prefix('sale')->name('sale.')->group(function(){
         Route::get('index', 'SaleController@index')->name('index');
@@ -166,6 +170,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     });
 
+
     Route::prefix('promotional')->name('promotional.')->group(function(){
         Route::get('index', 'PromotionalController@index')->name('index');
         Route::get('create', 'PromotionalController@create')->name('create');
@@ -177,6 +182,34 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('destroy/{id}', 'PromotionalController@destroy')->name('destroy');
 
     });
+
+
+    Route::prefix('kindofuser')->name('kindofuser.')->group(function(){
+        Route::get('index', 'KindOfUserController@index')->name('index');
+        Route::get('create', 'KindOfUserController@create')->name('create');
+        Route::post('store', 'KindOfUserController@store')->name('store');
+
+        Route::get('edit/{id}', 'KindOfUserController@edit')->name('edit');
+        Route::post('update/{id}', 'KindOfUserController@update')->name('update');
+
+        Route::get('destroy/{id}', 'KindOfUserController@destroy')->name('destroy');
+
+    });
+
+
+    Route::prefix('staff')->name('staff.')->group(function(){
+        Route::get('index', 'StaffController@index')->name('index');
+        Route::get('create', 'StaffController@create')->name('create');
+        Route::post('store', 'StaffController@store')->name('store');
+
+        Route::get('edit/{id}', 'StaffController@edit')->name('edit');
+        Route::post('update/{id}', 'StaffController@update')->name('update');
+
+        Route::get('destroy/{id}', 'StaffController@destroy')->name('destroy');
+
+    });
+
+
 });
 
 

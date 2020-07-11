@@ -28,7 +28,12 @@
                     <td>{{ $LoaiSP->ten }}</td>
                     <td>{{ $LoaiSP->mota }}</td>
                     <td>{{ $LoaiSP->anh }}</td>
-                    <td>{{ $LoaiSP->trangthai }}</td>
+                    <td>
+                        <select {{ $LoaiSP->trangthai }}>
+                                  <option value="1"  selected> Còn Hàng</option>
+                                  <option value="0"  > Hết Hàng</option>
+                        </select>
+                    </td>
                     <td><a href="{{route('admin.category.edit',['id' => $LoaiSP->id])}}">Sửa</a></td>
                     <td><a href="{{route('admin.category.destroy',['id' => $LoaiSP->id])}}" onclick="return checkDelete('Bạn có muốn xóa loại sản phẩm này không?')">Xóa</a></td>
                 </tr>

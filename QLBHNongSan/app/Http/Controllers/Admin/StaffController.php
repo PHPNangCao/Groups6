@@ -6,18 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use DateTime;
-class LotOrđerController extends Controller
+
+class StaffController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $SanPham = DB::table('SanPham')->get();
-        $data = DB::table('LoHang')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.Lot_Order.index', ['LoHang' => $data],['SanPham' => $SanPham]);
+        $data = DB::table('nhanvien')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.staff.index', ['nhanvien' => $data]);
     }
 
     /**
@@ -27,9 +27,7 @@ class LotOrđerController extends Controller
      */
     public function create()
     {
-        $SanPham = DB::table('SanPham')->get();
-        $NhaCungCap = DB::table('NhaCungCap')->get();
-        return view('api-admin.modules.Lot_Order.create',['SanPham' => $SanPham], ['NhaCungCap' => $NhaCungCap]);
+        return view('api-admin.modules.staff.create');
     }
 
     /**
@@ -40,11 +38,15 @@ class LotOrđerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except('_token');
+        $data = $request -> except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-        DB::table('LoHang')->insert($data);
-        return redirect()->route('admin.lot-order.index');
+        
+        DB::table('nhanvien')->insert($data);
+
+        return redirect()->route('admin.staff.index');
+
+
     }
 
     /**
@@ -66,10 +68,8 @@ class LotOrđerController extends Controller
      */
     public function edit($id)
     {
-        $SanPham = DB::table('SanPham')->get();
-        $NhaCungCap = DB::table('NhaCungCap')->get();
-        $LoHang = DB::table('LoHang')->where('id',$id)->first();
-        return view('api-admin.modules.Lot_Order.edit', ['LoHang' => $LoHang],['SanPham' => $SanPham, 'NhaCungCap' => $NhaCungCap]);
+        $DVT = DB::table('nhanvien')->where('id',$id)->first();
+        return view('api-admin.modules.staff.edit', ['nhanvien' => $DVT]);
     }
 
     /**
@@ -83,8 +83,8 @@ class LotOrđerController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('LoHang')->where('id',$id)->update($data);
-        return redirect()->route('admin.lot-order.index');
+        DB::table('nhanvien')->where('id',$id)->update($data);
+        return redirect()->route('admin.staff.index');
     }
 
     /**
@@ -95,7 +95,7 @@ class LotOrđerController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('LoHang')->where('id',$id)->delete();
-        return redirect()->route('admin.lot-order.index');
+        DB::table('nhanvien')->where('id',$id)->delete();
+        return redirect()->route('admin.staff.index');
     }
 }

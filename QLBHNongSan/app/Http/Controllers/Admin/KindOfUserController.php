@@ -4,20 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use DateTime;
-class LotOrđerController extends Controller
+use Illuminate\Support\Facades\DB;
+
+
+class KindOfUserController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $SanPham = DB::table('SanPham')->get();
-        $data = DB::table('LoHang')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.Lot_Order.index', ['LoHang' => $data],['SanPham' => $SanPham]);
+        $data = DB::table('loainguoidung')->orderBy('id', 'DESC')->get();
+        return view('api-admin.modules.KindOfUser.index', ['loainguoidung' => $data]);
     }
 
     /**
@@ -27,9 +28,8 @@ class LotOrđerController extends Controller
      */
     public function create()
     {
-        $SanPham = DB::table('SanPham')->get();
-        $NhaCungCap = DB::table('NhaCungCap')->get();
-        return view('api-admin.modules.Lot_Order.create',['SanPham' => $SanPham], ['NhaCungCap' => $NhaCungCap]);
+        $loainguoidung = DB::table('loainguoidung')->get();
+        return view('api-admin.modules.KindOfUser.create',['loainguoidung' => $loainguoidung]);
     }
 
     /**
@@ -43,8 +43,10 @@ class LotOrđerController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
-        DB::table('LoHang')->insert($data);
-        return redirect()->route('admin.lot-order.index');
+
+        DB::table('loainguoidung')->insert($data);
+        
+        return redirect()->route('admin.KindOfUser.index');
     }
 
     /**
@@ -66,10 +68,8 @@ class LotOrđerController extends Controller
      */
     public function edit($id)
     {
-        $SanPham = DB::table('SanPham')->get();
-        $NhaCungCap = DB::table('NhaCungCap')->get();
-        $LoHang = DB::table('LoHang')->where('id',$id)->first();
-        return view('api-admin.modules.Lot_Order.edit', ['LoHang' => $LoHang],['SanPham' => $SanPham, 'NhaCungCap' => $NhaCungCap]);
+        $loainguoidung = DB::table('loainguoidung')->where('id',$id)->first();
+        return view('api-admin.modules.KindOfUser.edit', ['loainguoidung' => $loainguoidung]);
     }
 
     /**
@@ -83,8 +83,8 @@ class LotOrđerController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('LoHang')->where('id',$id)->update($data);
-        return redirect()->route('admin.lot-order.index');
+        DB::table('loainguoidung')->where('id',$id)->update($data);
+        return redirect()->route('admin.KindOfUser.index');
     }
 
     /**
@@ -95,7 +95,7 @@ class LotOrđerController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('LoHang')->where('id',$id)->delete();
-        return redirect()->route('admin.lot-order.index');
+        DB::table('loainguoidung')->where('id',$id)->delete();
+        return redirect()->route('admin.KindOfUser.index');
     }
 }
