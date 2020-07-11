@@ -4,7 +4,7 @@
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thông tin Loại Người Dùng <a href="{{route('admin.kindofuser.create')}}">Thêm mới</a></h3>
+        <h3><a href="{{route('admin.kindofuser.create')}}">Thêm mới</a></h3>
     </div>
     <div class="card-body">
         <form action="{{route('admin.kindofuser.index')}}" method="POST">
