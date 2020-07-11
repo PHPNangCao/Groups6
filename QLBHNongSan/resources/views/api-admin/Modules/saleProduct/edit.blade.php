@@ -13,24 +13,29 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.sale.update')}}" method="POST">
+    <form action="{{route('admin.saleproduct.store')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label>Tiêu Đề</label>
-                <input type="text" class="form-control-file" name="tieude" value="{{$quangcao->tieude}}">
+                <label>Thông tin khuyến mãi</label>
+                <input type="text" class="form-control-file" name="tieude">
             </div>
             <div class="form-group">
-                <label>Nội Dung</label>
-                <textarea class="form-control" name="noidung" rows="3" placeholder="noidung" value="{{$quangcao->noidung}}"></textarea>
+                <label>Khuyến mãi ID</label>
+                <select name="khuyenmai_id" class="form-control">
+                <option >----Chọn nhà khuyến mãi----</option>
+                @foreach ($khuyenmai as $km)
+                    <option value="{{$km->id}}">{{$km->ten}}</option>
+                @endforeach
+                </select>
             </div>
             <div class="form-group">
-                <label>Ảnh</label>
-                <input type="file" class="form-control-file" name="anh" value="{{$quangcao->anh}}">
-            </div>
-            <div class="form-group">
-                <label>Trạng Thái</label>
-                <input type="checkbox" name="tinhtrang" value="1"  {{ ($quangcao->tinhtrang== 1) ? 'checked' : ''}} />ON
-                <input type="checkbox" name="tinhtrang" value="1"  {{ ($quangcao->tinhtrang== 0) ? 'checked' : ''}} />OFF
+                <label>Sản phẩm</label>
+                <select name="sanpham_id" class="form-control">
+                <option >----Chọn sản phẩm----</option>
+                @foreach ($SanPham as $SP)
+                    <option value="{{$SP->id}}">{{$SP->ten}}</option>
+                @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
         </form>
