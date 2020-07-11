@@ -7,7 +7,7 @@
         <h3 class="card-title">Sửa thông tin loại người dùng</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.KindOfUser.update',['id' => $loainguoidung->id])}}" method="POST">
+        <form action="{{route('admin.kindofuser.update',['id' => $loainguoidung->id])}}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Tên khách hàng</label>
