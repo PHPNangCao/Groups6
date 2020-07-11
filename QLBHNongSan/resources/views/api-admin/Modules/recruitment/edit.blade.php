@@ -32,8 +32,8 @@
             </div>
             <div class="form-product">
                 <label >Trạng thái</label>
-                    <input type="checkbox" name="trangthai" value="1"  >Mở
-                    <input type="checkbox" name="trangthai" value="0"  >Ẩn
+                    <input type="checkbox" name="trangthai" value="1" {{  ($monngon->trangthai == 1 ? ' checked' : '') }}>Mở
+                    <input type="checkbox" name="trangthai" value="0" {{  ($monngon->trangthai == 0 ? ' checked' : '') }}>Ẩn
             </div>
             <div class="form-product">
                 <label >Sản phẩm: </label>
