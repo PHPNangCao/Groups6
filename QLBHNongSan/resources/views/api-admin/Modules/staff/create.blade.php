@@ -11,7 +11,7 @@
             @csrf
             <div class="form-group">
                 <label>Tên nhân viên</label>
-                <input type="text" name="ten" class="form-control" placeholder="Tên khách hàng">
+                <input type="text" name="ten" class="form-control" placeholder="Tên nhân viên">
             </div>
             <div class="form-group">
                 <label>CMND</label>
