@@ -233,3 +233,6 @@ Route::post('dang-ki', 'TrangChu\PageController@xulydangki')->name('xulydangki')
 
 Route::get('khuyen-mai', 'TrangChu\PageController@khuyenmai')->name('khuyen-mai');
 Route::get('lien-he', 'TrangChu\PageController@lienhe')->name('lien-he');
+
+Route::get('tin-tuc', 'TrangChu\PageController@tintuc')->name('tin-tuc');
+Route::get('mon-ngon', 'TrangChu\PageController@monngon')->name('mon-ngon');

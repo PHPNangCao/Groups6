@@ -91,7 +91,7 @@
                         <li><a href="product_type.html">Danh Mục SP 3</a></li>
                     </ul>
                 </li>
-            <li><a href="{{route('tin-tuc')}}">Tin Tức</a></li>
+                <li><a href="{{route('tin-tuc')}}">Tin Tức</a></li>
                 <li><a href="{{route('khuyen-mai')}}">Khuyến Mãi</a></li>
                 <li><a href="{{route('mon-ngon')}}">Món Ngon</a></li>
                 <li><a href="{{route('lien-he')}}">Liên hệ</a></li>
