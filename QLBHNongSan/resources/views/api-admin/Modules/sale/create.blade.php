@@ -13,19 +13,19 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.sale.store')}}" method="POST">
+        <form action="{{route('admin.sale.store')}}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">
                 <label>Tiêu Đề</label>
-                <input type="text" class="form-control-file" name="tieude">
+                <input type="text" class="form-control-file" required name="tieude">
             </div>
             <div class="form-group">
                 <label>Nội Dung</label>
-                <textarea class="form-control" name="noidung" rows="3" placeholder="noidung"></textarea>
+                <textarea class="form-control" name="noidung" rows="3" required placeholder="noidung"></textarea>
             </div>
             <div class="form-group">
                 <label>Ảnh</label>
-                <input type="file" class="form-control-file" name="anh">
+                <input type="file" class="form-control-file" required name="anh">
             </div>
             <div class="form-group">
                 <label>Trạng Thái</label>
@@ -37,7 +37,6 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        Footer
     </div>
     <!-- /.card-footer-->
 </div>

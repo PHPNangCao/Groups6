@@ -45,13 +45,14 @@ class ProductController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
 
+    //thêm ảnh
         $file = $request->anh;
         
         $file->move('public/upload/product', $file->getClientOriginalName());
 
 
         $data["anh"] =  $file->getClientOriginalName();
-
+    //
         DB::table('SanPham')->insert($data);
 
         return redirect()->route('admin.product.index');

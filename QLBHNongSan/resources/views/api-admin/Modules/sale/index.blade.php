@@ -34,7 +34,7 @@
                         <td>{{$loop->iteration }}</td>
                         <td>{{ $km->tieude }}</td>
                         <td>{{ $km->noidung }}</td>
-                        <td>{{ $km->anh }}</td>
+                        <td><img src="public/upload/sale/{{$km->anh}}" alt="" height="100px"></td>
                         <td>{{ $km->tinhtrang }}</td>
                         <td><a href="{{route('admin.sale.edit',['id' => $km->id])}}">Edit</a></td>
                         <td><a href="{{route('admin.sale.destroy',['id' => $km->id])}}" onclick="return checkDelete('Bạn có muốn xóa thông tin khách hàng này không?')">Delete</a></td>

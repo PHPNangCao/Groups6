@@ -43,6 +43,14 @@ class CategoryController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
         //$request->anh->store('images', 'public');
+//thêm ảnh
+        $file = $request->anh;
+        
+        $file->move('public/upload/product', $file->getClientOriginalName());
+
+
+        $data["anh"] =  $file->getClientOriginalName();
+
 
         DB::table('LoaiSanPham')->insert($data);
 

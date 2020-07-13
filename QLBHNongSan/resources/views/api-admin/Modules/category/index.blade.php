@@ -27,7 +27,7 @@
                     <td>{{$loop->iteration }}</td>
                     <td>{{ $LoaiSP->ten }}</td>
                     <td>{{ $LoaiSP->mota }}</td>
-                    <td>{{ $LoaiSP->anh }}</td>
+                    <td><img src="public/upload/category/{{$LoaiSP->anh}}" alt="" height="100px"></td>
                     <td>
                         <select {{ $LoaiSP->trangthai }}>
                                   <option value="1"  selected> Còn Hàng</option>
