@@ -40,6 +40,16 @@ class GroupsController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
+
+            //thêm ảnh
+            $file = $request->anh;
+        
+            $file->move('public/upload/groups', $file->getClientOriginalName());
+    
+    
+            $data["anh"] =  $file->getClientOriginalName();
+        //
+
         DB::table('NhomSanPham')->insert($data);
         return redirect()->route('admin.group.index');
     }

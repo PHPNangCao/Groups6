@@ -30,7 +30,7 @@
                     <td>{{$loop->iteration }}</td>
                     <td>{{ $NhomSP->ten }}</td>
                     <td>{{ $NhomSP->mota }}</td>
-                    <td>{{ $NhomSP->anh }}</td>
+                    <td><img src="public/upload/group/{{$NhomSP->anh}}" alt="" height="100px"></td>
                 <td><a href="{{route('admin.group.edit',['id' => $NhomSP->id])}}">Edit</a></td>
                     <td><a href="{{route('admin.group.destroy',['id' => $NhomSP->id])}}" onclick="return checkDelete('Bạn có muốn xóa nhóm này không?')">Delete</a></td>
                 </tr>

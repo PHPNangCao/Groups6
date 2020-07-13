@@ -42,6 +42,14 @@ class SaleController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
         //$request->anh->store('images', 'public');
+    //thêm ảnh
+    $file = $request->anh;
+        
+    $file->move('public/upload/sale', $file->getClientOriginalName());
+
+
+    $data["anh"] =  $file->getClientOriginalName();
+//
 
         DB::table('KhuyenMai')->insert($data);
 
