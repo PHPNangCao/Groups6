@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label>Nhóm sản phẩm</label>
                 <select name="nhom_id" class="form-control">
-                <option >----Chọn nhóm sản phẩm----</option>
+                    <option >----Chọn nhóm sản phẩm----</option>
                 @foreach ($NhomSanPham as $NhomSP)
                     <option value="{{$NhomSP->id}}">{{$NhomSP->ten}}</option>
                 @endforeach

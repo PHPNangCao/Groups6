@@ -16,10 +16,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $NhomSanPham = DB::table('NhomSanPham')->get();
         $data = DB::table('LoaiSanPham')->orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.category.index', ['LoaiSanPham' => $data]);
+        return view('api-admin.modules.category.index', ['LoaiSanPham' => $data], );
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -27,6 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        
         $NhomSanPham = DB::table('NhomSanPham')->get();
         return view('api-admin.modules.category.create',['NhomSanPham' => $NhomSanPham]);
     }
@@ -43,10 +44,11 @@ class CategoryController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
         //$request->anh->store('images', 'public');
-//thêm ảnh
+        
+        //thêm ảnh
         $file = $request->anh;
         
-        $file->move('public/upload/product', $file->getClientOriginalName());
+        $file->move('public/upload/category', $file->getClientOriginalName());
 
 
         $data["anh"] =  $file->getClientOriginalName();
@@ -76,8 +78,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        $NhomSanPham = DB::table('NhomSanPham')->get();
         $LoaiSanPham = DB::table('LoaiSanPham')->where('id',$id)->first();
-        return view('api-admin.modules.unit.edit', ['LoaiSanPham' => $LoaiSanPham]);
+        return view('api-admin.modules.category.edit', ['LoaiSanPham' => $LoaiSanPham], ['NhomSanPham' => $NhomSanPham]);
     }
 
     /**
@@ -91,7 +94,13 @@ class CategoryController extends Controller
     {
         $data = $request->except('_token');
         $data['updated_at'] = new DateTime;
-        DB::table('LoaiSanPham')->where('id',$id)->update($data);
+
+        //thêm ảnh
+        $file = $request->anh;  
+        $file->move('public/upload/category', $file->getClientOriginalName());
+        $data["anh"] =  $file->getClientOriginalName();
+        
+         DB::table('LoaiSanPham')->where('id',$id)->update($data);
         return redirect()->route('admin.category.index');
     }
 

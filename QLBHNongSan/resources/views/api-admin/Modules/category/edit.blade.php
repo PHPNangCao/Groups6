@@ -4,46 +4,44 @@
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Sửa thể loại</h3>
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
+        <h3 class="card-title">Sửa loại sản phẩm</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.category.update',['id' => $LoaiSanPham->id])}}" method="POST">
+        <form action="{{route('admin.category.update',['id' => $LoaiSanPham->id])}}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">
                 <label>Tên loại sản phẩm</label>
-            <input type="text" name="ten" class="form-control" placeholder="Tên loại sản phẩm" value="{{$LoaiSanPham->ten}}">
+            <input type="text" name="ten" class="form-control" required placeholder="Tên loại sản phẩm" value="{{$LoaiSanPham->ten}}">
             </div>
             <div class="form-group">
                 <label>Mô tả</label>
-            <textarea class="form-control" name="mota" rows="3" placeholder="Mô tả">{{$LoaiSanPham->mota}}</textarea>
+                <textarea class="form-control" name="mota" rows="3" required placeholder="Mô tả" >{{$LoaiSanPham->mota}}</textarea>
             </div>
             <div class="form-group">
                 <label>Ảnh</label>
-            <input type="file" class="form-control-file" name="anh" value="{{$LoaiSanPham->anh}}" >
-              </div>
-              <div class="form-product">
-                <label>Trạng thái</label>
-                <td>
-                    <br>
-                    <input type="radio" name="trangthai" value="Còn Hàng" {{ ($LoaiSanPham->trangthai == 1 ) ? 'checked' : ''}} /> Còn Hàng
-                    <br>
-                    <input type="radio" name="trangthai" value="Hết Hàng" {{ ($LoaiSanPham->trangthai == 0 ) ? 'checked' : ''}}/> Hết Hàng
-                </td>              
+                <input type="file" class="form-control-file" required name="anh" value="{{$LoaiSanPham->anh}}">
+            </div>
+
+            <select name="trangthai" class="form-control" required>
+                <option value="0">Hết Hàng</option>
+                <option value="1">Còn Hàng</option>
+            </select>
+
+            <div class="form-group">
+                <label>Nhóm sản phẩm</label>
+                <select name="nhom_id" class="form-control" required>
+                    <option >----Chọn nhóm sản phẩm----</option>
+                @foreach ($NhomSanPham as $NhomSP)
+                    <option value="{{$NhomSP->id}}" selected = "{{$LoaiSanPham->ten}}" >{{$NhomSP->ten}}</option>
+                @endforeach
+                </select>
             </div>
             <hr>
-            
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
-        </form>    
+        </form>
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        
     </div>
     <!-- /.card-footer-->
 </div>
