@@ -13,8 +13,8 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
                 <a href=""  style="font-size:20px" class="d-block"></a>
-                {{-- <h1 class="text-success" style="font-size:13px">{{auth()->user()->name}}</h1> --}}
-                <a href="" style="font-size:13px" class="text-danger">Log Out</a>
+                {{-- <a href="{{route('admin.user.index')}}"  style="font-size:20px" class="d-block">{{auth()->user()->name}}</a>
+                <a href="{{route('logout')}}" style="font-size:13px" class="text-danger">Log Out</a> --}}
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -103,7 +103,7 @@
                         </p>
                     </a>
                 </li>
-                
+
                 {{-- <li class="nav-item">
                     <a href="../gallery.html" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
