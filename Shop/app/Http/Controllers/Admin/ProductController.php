@@ -42,7 +42,7 @@ class ProductController extends Controller
         //$request->anh->store('images', 'public');
 
         //thêm ảnh
-        $file = $request->image;      
+        $file = $request->image;
         $file->move('upload/product', $file->getClientOriginalName());
         $data["image"] =  $file->getClientOriginalName();
 

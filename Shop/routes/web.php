@@ -98,6 +98,19 @@ Route::get('logout', 'LoginController@logout')->name('logout');
             Route::get('destroy/{id}', 'ShipmentController@destroy')->name('destroy');
         });
 
+        Route::prefix('shipmentdetail')->name('shipmentdetail.')->group(function(){
+            Route::get('index','ShipmentDetailController@index')->name('index');
+
+            Route::get('create','ShipmentDetailController@create')->name('create');
+            Route::post('store','ShipmentDetailController@store')->name('store');
+
+            Route::get('edit/{id}', 'ShipmentDetailController@edit')->name('edit');
+            Route::post('update/{id}', 'ShipmentDetailController@update')->name('update');
+
+            Route::get('status/{id}', 'ShipmentDetailController@status')->name('status');
+            Route::get('destroy/{id}', 'ShipmentDetailController@destroy')->name('destroy');
+        });
+
         Route::prefix('news')->name('news.')->group(function(){
             Route::get('index','NewsController@index')->name('index');
 
