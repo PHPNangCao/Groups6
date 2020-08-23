@@ -34,10 +34,10 @@ class LoginController extends Controller
         }
     }
 
-    // public function logout(){
-    //     Auth::logout();
-    //     return redirect()->route('showViewLogin');
-    // }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('showViewLogin');
+    }
 
     // public function admin(){
     //     $data = ProductModel::get();
