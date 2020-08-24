@@ -19,6 +19,8 @@ Route::post('login', 'LoginController@progressLogin')->name('progressLogin');
 Route::get('logout', 'LoginController@logout')->name('logout');
 
 // Route::middleware('check_login')->group(function () {
+    Route::get('admin','Admin\AdminController@index')->name('admin');
+    
     Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
         Route::prefix('category')->name('category.')->group(function(){
@@ -149,16 +151,23 @@ Route::get('logout', 'LoginController@logout')->name('logout');
 
 
 //Page
-Route::get('/', 'PageController@getIndex');
 
-Route::get('trang-chu', 'PageController@getIndex')->name('trang-chu');
+Route::namespace('Page')->group(function(){
 
-Route::get('loai-san-pham/{url}', 'PageController@getCategory')->name('loai-san-pham');
+    Route::get('/', 'PageController@getIndex');
 
-Route::get('chi-tiet-san-pham/{url}', 'PageController@getProductDetail')->name('chi-tiet-san-pham');
+    Route::get('trang-chu', 'PageController@getIndex')->name('trang-chu');
 
-Route::get('lien-he', 'PageController@getContact')->name('lien-he');
+    Route::get('loai-san-pham/{url}', 'CategoryPageController@getCategory')->name('loai-san-pham');
 
-Route::get('gioi-thieu', 'PageController@getAbout')->name('gioi-thieu');
+    Route::get('chi-tiet-san-pham/{url}', 'ProductPageCotroller@getProductDetail')->name('chi-tiet-san-pham');
 
-Route::get('search','PageController@getSearch')->name('tim-kiem');
+    Route::get('lien-he', 'PageController@getContact')->name('lien-he');
+
+    Route::get('gioi-thieu', 'PageController@getAbout')->name('gioi-thieu');
+
+    Route::get('search','PageController@getSearch')->name('tim-kiem');
+
+    Route::get('thanh-toan','CartController@payment')->name('thanh-toan');
+    Route::get('AddCart/{id}','CartController@AddCart')->name('AddCart');
+});

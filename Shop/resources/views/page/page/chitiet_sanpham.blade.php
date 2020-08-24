@@ -120,73 +120,25 @@
             </div>
             <div class="col-sm-3 aside">
                 <div class="widget">
-                    <h3 class="widget-title">Best Sellers</h3>
+                    <h3 class="widget-title">Sản phẩm khác</h3>
                     <div class="widget-body">
+                        @foreach ($product as $pro)
                         <div class="beta-sales beta-lists">
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+                            <div class="media beta-sales-item">  
+                                <a class="pull-left" href="{{route('chi-tiet-san-pham',$pro->id)}}"><img src="upload/product/{{$pro->image}}" alt=""></a>
                                 <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
+                                    {{$pro->name}}
+                                    <br>
+                                    @if ($pro->promotion_price == 0)
+                                        <span class="flash-sale">{{number_format($pro->unit_price)}} VNĐ</span>
+                                    @else
+                                        <span class="flash-del">{{number_format($pro->unit_price)}} VNĐ</span><br>
+                                        <span class="flash-sale">{{number_format($pro->promotion_price)}} VNĐ</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div> <!-- best sellers widget -->
-                <div class="widget">
-                    <h3 class="widget-title">New Products</h3>
-                    <div class="widget-body">
-                        <div class="beta-sales beta-lists">
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach  
                     </div>
                 </div> <!-- best sellers widget -->
             </div>
