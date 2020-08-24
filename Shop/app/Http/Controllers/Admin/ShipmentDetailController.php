@@ -29,7 +29,7 @@ class ShipmentDetailController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
 
-        DB::table('shipmentdetail')->insert($data);
+        DB::table('shipment_detail')->insert($data);
         return redirect()->route('admin.shipmentdetail.index');
     }
 
@@ -41,7 +41,12 @@ class ShipmentDetailController extends Controller
     }
 
     public function update(Request $request, $id){
+        $data = $request->except('_token');
+        $data['created_at'] = new DateTime;
+        $data['updated_at'] = new DateTime;
 
+        ShipmentDetail::where('id',$id)->update($data);
+        return redirect()->route('admin.shipmentdetail.index');
     }
 
     public function status($id){

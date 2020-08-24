@@ -7,7 +7,7 @@
         <h3 class="card-title">Thêm chi tiết Lô Hàng</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.shipmentdetail.update',['id' => $shipment->id])}}" enctype="multipart/form-data" method="POST">
+        <form action="{{route('admin.shipmentdetail.update',['id' => $shipmentdetail->id])}}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="col-md-6">
                 <div class="form-group">
@@ -15,7 +15,7 @@
                     <select name="supplier_id" class="form-control">
                         <option >----Chọn Lô hàng----</option>
                             @foreach ($shipment as $ship)
-                                <option value="{{$ship->id}}" selected ={{$shipdetail->shipment_id}}>{{$ship->shipment_id}}</option>
+                                <option value="{{$ship->id}}" selected ={{$shipmentdetail->shipment_id}}>{{$ship->shipment_id}}</option>
                             @endforeach
                     </select>
                     @if ($errors->has('total'))
@@ -29,7 +29,7 @@
                         <select name="supplier_id" class="form-control">
                             <option >----Chọn sản phẩm----</option>
                                 @foreach ($product as $pro)
-                                    <option value="{{$pro->id}} selected ={{$shipdetail->product_id}}">{{$pro->name}}</option>
+                                    <option value="{{$pro->id}} selected ={{$shipmentdetail->product_id}}">{{$pro->name}}</option>
                                 @endforeach
                         </select>
                     @if ($errors->has('total'))
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label>Số Lượng<span class="text-danger">(*)</label>
-                    <input type="text" name="quantity" class="form-control"  value="{{$shipmentDetail->quantity}}" placeholder="Nhập số lượng">
+                    <input type="text" name="quantity" class="form-control"  value="{{$shipmentdetail->quantity}}" placeholder="Nhập số lượng">
                     @if ($errors->has('quantity'))
                         <div class="text-danger">
                             {{$errors->first('quantity')}}
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-group">
                     <label>Giá thu vào</label>
-                    <input type="text" name="purchase_price" class="form-control"  value="{{$shipmentDetail->purchase_price}}" placeholder="purchase_price...">
+                    <input type="text" name="purchase_price" class="form-control"  value="{{$shipmentdetail->purchase_price}}" placeholder="purchase_price...">
                     @if ($errors->has('quantity'))
                         <div class="text-danger">
                             {{$errors->first('quantity')}}

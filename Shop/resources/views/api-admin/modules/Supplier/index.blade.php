@@ -20,7 +20,7 @@
                     <th>Ghi Chú</th>
                     <th>Thao Tác</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody style="text-align: center">
                 @foreach ($supplier as $sup)
                 <tr>
