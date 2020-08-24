@@ -11,7 +11,7 @@ class CategoryPageController extends Controller
 {
     //cách 1 về truyền và nhận tham số
     public function getCategory($id){
-        $sp_theoloai = Product::where('category_id',$id)->get();
+        $sp_theoloai = Product::where('category_id',$id)->paginate(9);
         $sp_khac = Product::where('category_id','<>',$id)->paginate(3);
         $loai = Category::all();    
         $loai_sp = Category::where('id',$id)->first();

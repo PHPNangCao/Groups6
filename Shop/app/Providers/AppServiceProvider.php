@@ -29,5 +29,11 @@ class AppServiceProvider extends ServiceProvider
             
             $view->with('loai_sp',$loai_sp);
         });
+
+        view()->composer('page.footer',function($view){
+            $category = Category::paginate(5);
+            
+            $view->with('category',$category);
+        });
     }
 }

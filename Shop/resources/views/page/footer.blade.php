@@ -3,21 +3,17 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="widget">
-                    <h4 class="widget-title">Instagram Feed</h4>
-                    <div id="beta-instagram-feed"><div></div></div>
+                    
                 </div>
             </div>
             <div class="col-sm-2">
                 <div class="widget">
-                    <h4 class="widget-title">Information</h4>
+                    <h4 class="widget-title">Danh Mục</h4>
                     <div>
                         <ul>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+                            @foreach ($category as $cat)
+                        <li><a href="{{route('loai-san-pham',$cat->id)}}"><i class="fa fa-chevron-right"></i>{{$cat->name}}</a></li>                         
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -25,12 +21,12 @@
             <div class="col-sm-4">
              <div class="col-sm-10">
                 <div class="widget">
-                    <h4 class="widget-title">Contact Us</h4>
+                    <h4 class="widget-title">LIÊN HỆ</h4>
                     <div>
                         <div class="contact-info">
                             <i class="fa fa-map-marker"></i>
-                            <p>30 South Park Avenue San Francisco, CA 94108 Phone: +78 123 456 78</p>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+                            <p>Công viên phần mềm Quang Trung, Điện thoại: 0349.394.368</p>
+                            <p>Trường Cao Đẳng Viễn Đông - Đồ án tốt nghiệp Laravel năm 2020.</p>
                         </div>
                     </div>
                 </div>
@@ -38,11 +34,8 @@
             </div>
             <div class="col-sm-3">
                 <div class="widget">
-                    <h4 class="widget-title">Newsletter Subscribe</h4>
-                    <form action="#" method="post">
-                        <input type="email" name="your_email">
-                        <button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
-                    </form>
+                    <h4 class="widget-title">Facebooks</h4>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fviendong.edu&tabs&width=340&height=214&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
         </div> <!-- .row -->

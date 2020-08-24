@@ -3,8 +3,8 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
-                    <li><a href=""><i class="fa fa-home"></i> 17 Trần Thanh Luân, Hưng Lợi, Quận 3</a></li>
-                    <li><a href=""><i class="fa fa-phone"></i> 034 939 4368 </a></li>
+                    <li><a target="_blank" href="https://goo.gl/maps/zmjoNziTVwZwMCpP9" class="viewstreet"><i class="fa fa-home"></i> Công viên phần mềm Quang Trung</a></li>
+                    <li><a href="tel:0349394368"><i class="fa fa-phone"></i> 034 939 4368 </a></li>
                 </ul>
             </div>
             <div class="pull-right auto-width-right">
@@ -20,7 +20,7 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index.html" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
+                <a href="/trang-chu/" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
@@ -33,7 +33,7 @@
                     
                 <div class="beta-comp">
                     
-                    <div class="cart">
+                    {{-- <div class="cart">
                         <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng  <i class="fa fa-chevron-down"></i></div>
                         <div class="beta-dropdown cart-body">
 
@@ -50,8 +50,8 @@
                                 
                             
 
-                        </div>
-                        <div class="cart-caption">
+                        </div> --}}
+                        {{-- <div class="cart-caption">
                         <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value"></span></div>
                             <div class="clearfix"></div>
 
@@ -59,7 +59,7 @@
                                 <div class="space10">&nbsp;</div>
                                 <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div> <!-- .cart -->
                     
@@ -68,7 +68,7 @@
             <div class="clearfix"></div>
         </div> <!-- .container -->
     </div> <!-- .header-body -->
-    <div class="header-bottom" style="background-color: #0277b8;">
+    <div class="header-bottom" style="background-color: seagreen;">
         <div class="container">
             <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
             <div class="visible-xs clearfix"></div>

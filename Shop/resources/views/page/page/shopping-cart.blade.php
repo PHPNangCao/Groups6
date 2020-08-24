@@ -23,25 +23,22 @@
             <table class="shop_table beta-shopping-cart-table" cellspacing="0">
                 <thead>
                     <tr>
-                        <th class="product-name">Product</th>
-                        <th class="product-price">Price</th>
-                        <th class="product-status">Status</th>
-                        <th class="product-quantity">Qty.</th>
-                        <th class="product-subtotal">Total</th>
+                        <th class="product-name">Sản phẩm</th>
+                        <th class="product-price">Giá</th>
+                        <th class="product-quantity">Số lượng</th>
+                        <th class="product-subtotal">Giá</th>
                         <th class="product-remove">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
-                
                     <tr class="cart_item">
                         <td class="product-name">
                             <div class="media">
-                                <img class="pull-left" src="assets/dest/images/shoping1.jpg" alt="">
+                                <img class="pull-left" src="upload/product/cai-ngot.jpg" alt="" width="60">
                                 <div class="media-body">
                                     <p class="font-large table-title">Men’s Belt</p>
                                     <p class="table-option">Color: Red</p>
                                     <p class="table-option">Size: M</p>
-                                    <a class="table-edit" href="#">Edit</a>
                                 </div>
                             </div>
                         </td>
@@ -50,90 +47,8 @@
                             <span class="amount">$235.00</span>
                         </td>
 
-                        <td class="product-status">
-                            In Stock
-                        </td>
-
                         <td class="product-quantity">
-                            <select name="product-qty" id="product-qty">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </td>
-
-                        <td class="product-subtotal">
-                            <span class="amount">$235.00</span>
-                        </td>
-
-                        <td class="product-remove">
-                            <a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
-                        </td>
-                    </tr>
-                    <tr class="cart_item">
-                        <td class="product-name">
-                            <div class="media">
-                                <img class="pull-left" src="assets/dest/images/shoping2.jpg" alt="">
-                                <div class="media-body">
-                                    <p class="font-large table-title">Men’s Belt</p>
-                                    <p class="table-option">Color: Red</p>
-                                    <p class="table-option">Size: M</p>
-                                    <a class="table-edit" href="#">Edit</a>
-                                </div>
-                            </div>
-                        </td>
-
-                        <td class="product-price">
-                            <span class="amount">$235.00</span>
-                        </td>
-
-                        <td class="product-status">
-                            In Stock
-                        </td>
-
-                        <td class="product-quantity">
-                            <select name="product-qty" id="product-qty">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </td>
-
-                        <td class="product-subtotal">
-                            <span class="amount">$235.00</span>
-                        </td>
-
-                        <td class="product-remove">
-                            <a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o"></i></a>
-                        </td>
-                    </tr>
-                    <tr class="cart_item">
-                        <td class="product-name">
-                            <div class="media">
-                                <img class="pull-left" src="assets/dest/images/shoping3.jpg" alt="">
-                                <div class="media-body">
-                                    <p class="font-large table-title">Men’s Belt</p>
-                                    <p class="table-option">Color: Red</p>
-                                    <p class="table-option">Size: M</p>
-                                    <a class="table-edit" href="#">Edit</a>
-                                </div>
-                            </div>
-                        </td>
-
-                        <td class="product-price">
-                            <span class="amount">$235.00</span>
-                        </td>
-
-                        <td class="product-status">
-                            In Stock
-                        </td>
-
-                        <td class="product-quantity">
-                            <input type="text" name="quanty" size="10px">
+                            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
                         </td>
 
                         <td class="product-subtotal">

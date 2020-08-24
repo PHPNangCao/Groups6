@@ -29,7 +29,7 @@
         
 	<div class="copyright">
 		<div class="container">
-			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
+			<p class="pull-left">Nhóm 6 - Laravel. (&copy;) 2020</p>
 			<p class="pull-right pay-options">
 				<a href="#"><img src="source/assets/dest/images/pay/master.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
@@ -56,7 +56,7 @@
 	<script src="source/assets/dest/js/wow.min.js"></script>
 	<!--customjs-->
 	<script src="source/assets/dest/js/custom2.js"></script>
-	<script>
+	{{-- <script>
 	$(document).ready(function($) {    
 		$(window).scroll(function(){
 			if($(this).scrollTop()>150){
@@ -66,6 +66,6 @@
 			}}
 		)
 	})
-	</script>
+	</script> --}}
 </body>
 </html>

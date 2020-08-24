@@ -37,17 +37,18 @@
                             @foreach ($sp_theoloai as $sptl)
                             <div class="col-sm-4">
                                 <div class="single-item">
-                                    @if ($sptl->promotion_price != 0)
+                                    {{-- @if ($sptl->promotion_price != 0)
                                         <div class="ribbon-wrapper">
                                             <div class="ribbon sale">Sale</div>
                                         </div>
-                                    @endif
+                                    @endif --}}
                                     <div class="single-item-header">
                                     <a href="{{route('chi-tiet-san-pham',$sptl->id)}}"><img src="upload/product/{{$sptl->image}}" alt="" height="250px"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$sptl->name}}</p>
-                                        <p class="single-item-price">
+                                        <p class="single-item-title">Giá: <span style="color: red">LIÊN HỆ</span></p>
+                                        {{-- <p class="single-item-price">
                                             @if ($sptl->promotion_price != 0)
                                             <span class="flash-del">{{number_format($sptl->unit_price)}} VNĐ</span>
                                             <span class="flash-sale">{{number_format($sptl->promotion_price)}} VNĐ</span>
@@ -55,18 +56,19 @@
                                             <span class="flash-sale">{{number_format($sptl->unit_price)}} VNĐ</span>
                                             @endif
                                             
-                                        </p>
+                                        </p> --}}
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        {{-- <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a> --}}
                                         <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$sptl->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
+                                <br>
                             </div>
                             @endforeach
-                            
                         </div>
+                        <div class="row">{{$sp_theoloai->links()}}</div>
                     </div> <!-- .beta-products-list -->
 
                     <div class="space50">&nbsp;</div>
@@ -81,17 +83,18 @@
                             @foreach ($sp_khac as $spk)
                             <div class="col-sm-4">
                                 <div class="single-item">
-                                    @if ($spk->promotion_price != 0)
+                                    {{-- @if ($spk->promotion_price != 0)
                                         <div class="ribbon-wrapper">
                                             <div class="ribbon sale">Sale</div>
                                         </div>
-                                    @endif
+                                    @endif --}}
                                     <div class="single-item-header">
                                     <a href="product.html"><img src="upload/product/{{$spk->image}}" alt="" height="250px"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$spk->name}}</p>
-                                        <p class="single-item-price">
+                                        <p class="single-item-title">Giá: <span style="color: red">LIÊN HỆ</span></p>
+                                        {{-- <p class="single-item-price">
                                             @if ($spk->promotion_price != 0)
                                             <span class="flash-del">{{number_format($spk->unit_price)}} VNĐ</span>
                                             <span class="flash-sale">{{number_format($spk->promotion_price)}} VNĐ</span>
@@ -99,11 +102,11 @@
                                             <span class="flash-sale">{{number_format($spk->unit_price)}} VNĐ</span>
                                             @endif
                                             
-                                        </p>
+                                        </p> --}}
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        {{-- <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a> --}}
+                                        <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
