@@ -168,6 +168,10 @@ Route::namespace('Page')->group(function(){
 
     Route::get('search','PageController@getSearch')->name('tim-kiem');
 
+    Route::get('404','OopsController@Oops')->name('Oops');
+
+    Route::get('tin-tuc','NewsController@News')->name('tin-tuc');
+
     Route::get('thanh-toan','CartController@payment')->name('thanh-toan');
     Route::get('AddCart/{id}','CartController@AddCart')->name('AddCart');
 });
