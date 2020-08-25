@@ -54,6 +54,7 @@ class ShipmentDetailController extends Controller
     }
 
     public function destroy($id){
-
+        ShipmentDetail::where('id',$id)->delete();
+        return redirect()->route('admin.shipmentdetail.index');
     }
 }

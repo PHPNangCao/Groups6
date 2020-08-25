@@ -79,22 +79,44 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                <a href="{{route('admin.news.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list"></i>
                         <p>
-                            Tin tức
+                            Thông tin nhà cung cấp
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                </li>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                        <a href="{{route('admin.supplier.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Nhà Cung Cấp</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.shipment.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lô hàng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="{{route('admin.shipmentdetail.index')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Thông tin Lo hàng</p>
+                        </a>
+                    </li>
+                </ul>
+
                 <li class="nav-item">
-                    <a href="{{route('admin.supplier.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Nhà cung cấp
-                        </p>
-                    </a>
-                </li>
+                    <a href="{{route('admin.news.index')}}" class="nav-link">
+                            <i class="nav-icon far fa-image"></i>
+                            <p>
+                                Tin tức
+                            </p>
+                        </a>
+                    </li>
+
                 <li class="nav-item">
                     <a href="{{route('admin.slide.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>

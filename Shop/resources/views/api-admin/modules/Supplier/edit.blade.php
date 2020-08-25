@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email<span class="text-danger">(*)</label>
-                    <input type="text" name="email" class="form-control" value="{{$supplier->email}}"  placeholder="Email..." >
+                    <input type="email" name="email" class="form-control" value="{{$supplier->email}}"  placeholder="Email..." >
                     @if ($errors->has('email'))
                         <div class="text-danger">
                             {{$errors->first('email')}}

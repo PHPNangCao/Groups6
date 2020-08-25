@@ -11,7 +11,7 @@
             @csrf
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Chọn nhà cung cấp<span class="text-danger">(*)</label>
+                    <label>Chọn Lo Hàng<span class="text-danger">(*)</label>
                     <select name="supplier_id" class="form-control">
                         <option >----Chọn Lô hàng----</option>
                             @foreach ($shipment as $ship)

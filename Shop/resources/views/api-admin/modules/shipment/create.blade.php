@@ -43,8 +43,11 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label>Ghi chú</label>
-                    <input type="text" name="note" class="form-control"   placeholder="Ghi chú...">
+                    <label>Ghi Chú</label>
+                    <textarea class="form-control" name="note" rows="3" placeholder="Mô tả"></textarea>
+                    <script>
+                        CKEDITOR.replace( 'note' );
+                    </script>
                 </div>
                 <hr>
                 <a href="{{route('admin.shipment.index')}}" class="btn btn-warning">Quay Lại</a>

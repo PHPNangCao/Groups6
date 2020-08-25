@@ -11,11 +11,11 @@
             @csrf
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Chọn nhà cung cấp<span class="text-danger">(*)</label>
+                    <label>Chọn Lô Hàng<span class="text-danger">(*)</label>
                     <select name="supplier_id" class="form-control">
                         <option >----Chọn Lô hàng----</option>
                             @foreach ($shipment as $ship)
-                                <option value="{{$ship->id}}">{{$ship->shipment_id}}</option>
+                                <option value="{{$ship->id}}">{{$ship->total}}</option>
                             @endforeach
                     </select>
                 </div>
@@ -38,7 +38,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label>Giá thu vào</label>
+                    <label>Giá thu vào<span class="text-danger">(*)</label>
                     <input type="text" name="purchase_price" class="form-control"   placeholder="purchase_price...">
                     @if ($errors->has('purchase_price'))
                         <div class="text-danger">
