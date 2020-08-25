@@ -20,8 +20,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Total<span class="text-danger">(*)</label>
-                    <input type="text" name="total" class="form-control"  value="{{$shipment->total}}" placeholder="định lượng...">
+                    <label>Tổng Cộng<span class="text-danger">(*)</label>
+                    <input type="text" name="total" class="form-control"  value="{{$shipment->total}}" placeholder="Tổng Lô Hàng">
                     @if ($errors->has('total'))
                         <div class="text-danger">
                             {{$errors->first('total')}}
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label>Số Lượng<span class="text-danger">(*)</label>
-                    <input type="text" name="quantity" class="form-control"  value="{{$shipment->quantity}}" placeholder="Số Lượng...">
+                    <input type="text" name="quantity" class="form-control"  value="{{$shipment->quantity}}" placeholder="Số Lượng">
                     @if ($errors->has('quantity'))
                         <div class="text-danger">
                             {{$errors->first('quantity')}}

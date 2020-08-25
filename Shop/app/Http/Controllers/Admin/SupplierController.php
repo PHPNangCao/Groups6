@@ -20,16 +20,23 @@ class SupplierController extends Controller
 
     public function store(Request $request){
 
-        // $valdidateData = $request->validate([
-        //     'name' => 'required|unique:Supplier',
-        //     'image' => 'required'
+        $valdidateData = $request->validate([
+            'name' => 'required|unique:Supplier',
+            'image' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+        ],[
+            'name.required' => 'Vui lòng nhập tên nhà cung cấp',
+            'name.unique' => 'Tên nhà cung cấp này đã tồn tại',
+            'image.required' => 'Vui lòng chọn ảnh',
+            'email.required' => 'Vui lòng nhập email',
+            'email.unique' => 'Tên email này đã tồn tại',
+            'address.required' => 'Vui lòng nhập địa chỉ',
+            'address.unique' => 'Tên địa chỉ này đã tồn tại',
+            'phone.required' => 'Vui lòng số điện thoại',
 
-        // ],[
-        //     'name.required' => 'Vui lòng nhập tên sản phẩm',
-        //     'name.unique' => 'Tên sản phẩm này đã tồn tại',
-        //     'image.required' => 'Vui lòng chọn ảnh',
-
-        // ]);
+        ]);
 
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;

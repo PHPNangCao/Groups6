@@ -26,17 +26,23 @@ class ShipmentController extends Controller
 
     public function store(request $request){
 
-        // $valdidateData = $request->validate(
-        //     [
-        //     'name' => 'required|unique:Category',
-        //     'image' => 'required'
+        $valdidateData = $request->validate(
+            [
+            'name' => 'required|unique:Shipment',
+            'supplier_id' => 'required',
+            'total' => 'required',
+            'quantity' => 'required',
+            'status' => 'required',
 
-        //     ],[
-        //     'name.required' => 'Vui lòng nhập tên sản phẩm',
-        //     'name.unique' => 'Tên sản phẩm này đã tồn tại',
-        //     'image.required' => 'Vui lòng chọn ảnh',
 
-        //     ]);
+            ],[
+            'name.required' => 'Vui lòng nhập tên sản phẩm',
+            'name.unique' => 'Tên sản phẩm này đã tồn tại',
+            'supplier_id.required' => 'Vui lòng chọn nhà cung cấp',
+            'total.required' => 'Vui lòng nhập tổng lô hàng',
+            'quantity.required' => 'Vui lòng số lượng',
+
+            ]);
 
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;

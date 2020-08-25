@@ -5,7 +5,7 @@
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">
-        <a href="{{route('admin.shipment.create')}}" class="btn btn-info">Thêm nhà cung cấp</a>
+        <a href="{{route('admin.shipment.create')}}" class="btn btn-info">Thêm lô hàng</a>
         </h3>
     </div>
     <div class="card-body">
@@ -13,8 +13,8 @@
             <thead style="text-align: center">
                 <tr>
                     <th>STT</th>
-                    <th>Nhà cung cấp id</th>
-                    <th>Total</th>
+                    <th>Mã Nhà Cung Cấp</th>
+                    <th>Tổng Cộng</th>
                     <th>Số lượng</th>
                     <th>Trạng thái</th>
                     <th>Ghi Chú</th>

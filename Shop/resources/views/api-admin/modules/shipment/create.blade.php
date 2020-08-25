@@ -25,8 +25,8 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label>Total<span class="text-danger">(*)</label>
-                    <input type="text" name="total" class="form-control"   placeholder="định lượng...">
+                    <label>Tổng Cộng<span class="text-danger">(*)</label>
+                    <input type="text" name="total" class="form-control"   placeholder="Nhập tổng lô hàng">
                     @if ($errors->has('total'))
                         <div class="text-danger">
                             {{$errors->first('total')}}
