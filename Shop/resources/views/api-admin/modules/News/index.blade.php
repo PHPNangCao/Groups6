@@ -30,7 +30,7 @@
                     <td><img src="upload/news/{{$news->image}}" alt="" height="100px"></td>
                     <td>
                         <a href="{{route('admin.news.edit',['id' => $news->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>
-                        <a href="{{route('admin.news.destroy',['id' => $news->id])}}" onclick="return checkDelete('Bạn có muốn xóa loại sản phẩm này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
+                        <a href="{{route('admin.news.destroy',['id' => $news->id])}}" onclick="return checkDelete('Bạn có muốn xóa tin tức này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
                     </td>
                 </tr>
                 @endforeach
