@@ -15,6 +15,27 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+	<style>
+		.all-browsers {
+		  margin: 0;
+		  padding: 5px;
+		  background-color: lightgray;
+		}
+		
+		.all-browsers > h1, .browser {
+		  margin: 10px;
+		  padding: 5px;
+		}
+		
+		.browser {
+		  background: white;
+		}
+		
+		.browser > h2, p {
+		  margin: 4px;
+		  font-size: 90%;
+		}
+		</style>
 </head>
 <body>
 

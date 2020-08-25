@@ -22,13 +22,11 @@ class NewsController extends Controller
     public function store(Request $request){
 
         $valdidateData = $request->validate([
-            'name' => 'required|unique:news',
-            'title' => 'required',
+            'title' => 'required|unique:news',
             'content' => 'required',
             'image' => 'required',
 
         ],[
-            'name.required' => 'Vui lòng nhập tên bài tin',
             'image.required' => 'Vui lòng chọn ảnh',
             'content.required' => 'Vui lòng điền nội dung',
             'title.required' => 'Vui lòng điền tiêu đề',
