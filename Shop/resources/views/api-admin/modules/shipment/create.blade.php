@@ -1,5 +1,5 @@
 @extends('api-admin.master')
-@section('title','Thêm Lo Hàng Mới')
+@section('title','Thêm Lô Hàng Mới')
 @section('content')
 <!-- Default box -->
 <div class="card">
