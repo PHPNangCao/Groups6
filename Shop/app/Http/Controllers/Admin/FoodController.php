@@ -19,6 +19,14 @@ class FoodController extends Controller
         return view('api-admin.modules.food.create');
     }
 
+    public function status($id)
+    {
+        $food = Food::find($id);
+        $food->status = ! $food->status;
+        $food->save();
+        return redirect()->back();
+    }
+
     public function store(Request $request){
 
         $valdidateData = $request->validate([
@@ -46,13 +54,13 @@ class FoodController extends Controller
         $data["image"] =  $file->getClientOriginalName();
 
 
-        food::insert($data);
+        Food::insert($data);
         return redirect()->route('admin.food.index');
     }
 
     public function edit($id)
     {
-        $food = food::where('id',$id)->first();
+        $food = Food::where('id',$id)->first();
         return view('api-admin.modules.food.edit', compact('food'));
     }
 
@@ -64,20 +72,21 @@ class FoodController extends Controller
         }else{
             $image_name = $request->image_hidden;
         }
-        $addimage = food::where('id',$id)->update([
+        $addimage = Food::where('id',$id)->update([
             'title' => $request->title,
             'note' => $request->content,
             'content' => $request->content,
+            'status' => $request->status,
             'image' => $image_name,
         ]);
         if($addimage){
-            return redirect()->route('admin.food.index')->with('thanhcong','Sửa thành công món ngon');
+            return redirect()->route('admin.food.index')->with('thanhcong','Sửa thành công bài viết món ngon');
         }
-            return redirect()->route('admin.food.index')->with('thanhcong','Sửa không thành công món ngon');
+            return redirect()->route('admin.food.index')->with('thanhcong','Sửa không thành công bài viết món ngon');
     }
 
     public function destroy($id)
     {
-        food::where('id',$id)->delete();
+        Food::where('id',$id)->delete();
         return redirect()->route('admin.food.index');
     }}

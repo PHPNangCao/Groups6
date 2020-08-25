@@ -19,6 +19,7 @@ class CreateFoodTable extends Migration
             $table->text('note'); 
             $table->text('content');
             $table->string('image')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Đường dẫn Slide</label>
-                    <input type="text" name="slug" class="form-control"  placeholder="URL">
+                    <input type="text" name="url" class="form-control"  placeholder="URL">
                 </div>
                 <div class="form-group">
                     <label>Ảnh <span class="text-danger">(*)</label>
@@ -22,8 +22,7 @@
                             {{$errors->first('image')}}
                         </div>
                     @endif
-                </div>
-                
+                </div>               
                 <hr>
                 <a href="{{route('admin.slide.index')}}" class="btn btn-warning">Quay Lại</a>
                 <button type="submit" class="btn btn-primary">Lưu thông tin</button>

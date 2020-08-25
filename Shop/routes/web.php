@@ -186,6 +186,8 @@ Route::namespace('Page')->group(function(){
 
     Route::get('tin-tuc','NewsController@News')->name('tin-tuc');
 
+    Route::get('mon-ngon','FoodController@Food')->name('mon-ngon');
+
     Route::get('thanh-toan','CartController@payment')->name('thanh-toan');
     Route::get('AddCart/{id}','CartController@AddCart')->name('AddCart');
 });
