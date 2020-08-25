@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Food;
 use DateTime;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 
@@ -46,6 +47,7 @@ class FoodController extends Controller
         $data = $request->except('_token');
         $data['created_at'] = new DateTime();
         $data['updated_at'] = new DateTime;
+        $data['url'] = Str::slug($data['title'], '-');
         //$request->anh->store('images', 'public');
 
         //thêm ảnh
@@ -72,6 +74,7 @@ class FoodController extends Controller
         }else{
             $image_name = $request->image_hidden;
         }
+        $url = Str::slug($request->title, '-');
         $addimage = Food::where('id',$id)->update([
             'title' => $request->title,
             'note' => $request->content,

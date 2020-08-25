@@ -17,19 +17,18 @@
 <div class="container">
   <div id="content" class="space-top-none">
       <div class="main-content">
-        <article>
-          <h2>Google Chrome</h2>
-          <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
-        </article>
-        
-        <article>
-          <h2>Mozilla Firefox</h2>
-          <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018.</p>
-        </article>
-        
-        <article>
-          <h2>Microsoft Edge</h2>
-          <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet Explorer.</p>
+        <article class="all-browsers">
+          @foreach ($food as $food)
+          <article class="browser row">
+          <div class="col-md-2"><img src="upload/product/{{$food->image}}" alt="" width="100px"></div>
+            <div class="col-md-10">
+            <h5>{{$food->title}}</h5>
+            <h5>{{$food->note}}</h5>
+            <p>\{!!$food->content!!}</p>
+              <span style="float: right"><a href="" style="color: blue">Chi tiết</a></span>
+            </div>
+          </article>
+          @endforeach
         </article>
       </div>
   </div>

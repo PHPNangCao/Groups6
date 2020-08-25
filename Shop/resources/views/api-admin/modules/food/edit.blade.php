@@ -56,7 +56,8 @@
                             </div>
                     </div>
                 </div>   
-            </div>                
+            </div>           
+            <input type="hidden" name="status" value="{{$food->status}}">     
         </div>
                 <hr>
                 <a href="{{route('admin.food.index')}}" class="btn btn-warning">Quay Lại</a>
