@@ -7,15 +7,15 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('trang-chu')}}">Home</a> / <span>Thông tin chi tiết sản phẩm</span>
+            <a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Thông tin chi tiết sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
 
-<div class="container">
     <div id="content">
+<div class="container">
         <div class="row">
             <div class="col-sm-9">
 
