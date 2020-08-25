@@ -21,16 +21,15 @@ class SlideController extends Controller
 
     public function store(Request $request){
 
-        // $valdidateData = $request->validate([
-        //     'name' => 'required|unique:slide',
-        //     'image' => 'required'
+        $valdidateData = $request->validate([
+            'url' => 'required|unique:slide',
+            'image' => 'required',
 
-        // ],[
-        //     'name.required' => 'Vui lòng nhập tên sản phẩm',
-        //     'name.unique' => 'Tên sản phẩm này đã tồn tại',
-        //     'image.required' => 'Vui lòng chọn ảnh',
+        ],[
+            'url.required' => 'Vui lòng nhập đường dẫn',
+            'image.required' => 'Vui lòng chọn ảnh',
 
-        // ]);
+        ]);
 
         
             $image_name = $request->image->getClientOriginalName();

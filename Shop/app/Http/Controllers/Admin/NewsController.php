@@ -21,16 +21,20 @@ class NewsController extends Controller
 
     public function store(Request $request){
 
-        // $valdidateData = $request->validate([
-        //     'name' => 'required|unique:news',
-        //     'image' => 'required'
+        $valdidateData = $request->validate([
+            'name' => 'required|unique:news',
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'required',
 
-        // ],[
-        //     'name.required' => 'Vui lòng nhập tên sản phẩm',
-        //     'name.unique' => 'Tên sản phẩm này đã tồn tại',
-        //     'image.required' => 'Vui lòng chọn ảnh',
+        ],[
+            'name.required' => 'Vui lòng nhập tên sản phẩm',
+            'name.unique' => 'Tên sản phẩm này đã tồn tại',
+            'image.required' => 'Vui lòng chọn ảnh',
+            'content.required' => 'Vui lòng điền nội dung',
+            'title.required' => 'Vui lòng điền tiêu đề',
 
-        // ]);
+        ]);
 
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;

@@ -1,18 +1,18 @@
 @extends('api-admin.master')
-@section('title','Thêm tin tức')
+@section('title','Thêm Slide')
 @section('content')
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thêm tin tức</h3>
+        <h3 class="card-title">Thêm Slide</h3>
     </div>
     <div class="card-body">
         <form action="{{route('admin.slide.store')}}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Slug</label>
-                    <input type="text" name="slug" class="form-control"  placeholder="URL.....">
+                    <label>Đường dẫn Slide</label>
+                    <input type="text" name="slug" class="form-control"  placeholder="URL">
                 </div>
                 <div class="form-group">
                     <label>Ảnh <span class="text-danger">(*)</label>

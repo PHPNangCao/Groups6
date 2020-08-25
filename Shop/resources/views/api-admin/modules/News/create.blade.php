@@ -4,7 +4,7 @@
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thêm tin tức</h3>
+        <h3 class="card-title">Thêm bài tin</h3>
     </div>
     <div class="card-body">
         <form action="{{route('admin.news.store')}}" enctype="multipart/form-data" method="POST">

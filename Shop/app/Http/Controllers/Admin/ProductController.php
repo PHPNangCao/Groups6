@@ -26,11 +26,21 @@ class ProductController extends Controller
 
         $valdidateData = $request->validate([
             'name' => 'required|unique:Product',
-            'image' => 'required'
+            'category_id' => 'required',
+            'description' => 'required',
+            'unit_price' => 'required',
+            'promotion_price' => 'required',
+            'unit' => 'required',
+            'image' => 'required',
 
         ],[
             'name.required' => 'Vui lòng nhập tên sản phẩm',
             'name.unique' => 'Tên sản phẩm này đã tồn tại',
+            'category_id.required' => 'Vui lòng chọn loại sản phẩm',
+            'description.required' => 'Vui lòng nhập mô tả',
+            'unit_price.required' => 'Vui lòng điền giá bán cho sản phẩm',
+            'promotion_price.required' => 'Vui lòng điền giá khuyến mãi',
+            'unit.required' => 'Vui lòng chọn đơn vị tính',
             'image.required' => 'Vui lòng chọn ảnh',
 
         ]);

@@ -1,10 +1,10 @@
 @extends('api-admin.master')
-@section('title','Thêm tin tức')
+@section('title','Sửa bài tin tức')
 @section('content')
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thêm tin tức</h3>
+        <h3 class="card-title">Sửa bài tin</h3>
     </div>
     <div class="card-body">
         <form action="{{route('admin.news.update',['id' => $news->id])}}" enctype="multipart/form-data" method="POST">
