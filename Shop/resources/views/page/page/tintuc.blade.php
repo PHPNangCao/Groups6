@@ -20,10 +20,10 @@
         <article class="all-browsers">
           @foreach ($news as $new)
           <article class="browser row">
-          <div class="col-md-2"><img src="upload/product/{{$new->image}}" alt="" width="100px"></div>
+          <div class="col-md-2"><img src="upload/news/{{$new->image}}" alt="" width="100px"></div>
             <div class="col-md-10">
             <h5>{{$new->title}}</h5>
-            <p>\{!!$new->content!!}</p>
+            <p style="text-overflow: ellipsis">{!!$new->content!!}</p>
               <span style="float: right"><a href="" style="color: blue">Chi tiết</a></span>
             </div>
           </article>
