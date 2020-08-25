@@ -40,7 +40,7 @@
                 
                 <div class="form-group">
                     <label>Số điện thoại<span class="text-danger">(*)</label>
-                    <input type="text" name="phone" class="form-control"   placeholder="Địa chỉ...">
+                    <input type="text" name="phone" class="form-control"   placeholder="Số điện thoại ...">
                     @if ($errors->has('phone'))
                         <div class="text-danger">
                             {{$errors->first('phone')}}

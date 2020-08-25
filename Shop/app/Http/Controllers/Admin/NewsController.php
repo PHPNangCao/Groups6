@@ -28,8 +28,7 @@ class NewsController extends Controller
             'image' => 'required',
 
         ],[
-            'name.required' => 'Vui lòng nhập tên sản phẩm',
-            'name.unique' => 'Tên sản phẩm này đã tồn tại',
+            'name.required' => 'Vui lòng nhập tên bài tin',
             'image.required' => 'Vui lòng chọn ảnh',
             'content.required' => 'Vui lòng điền nội dung',
             'title.required' => 'Vui lòng điền tiêu đề',

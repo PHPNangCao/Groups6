@@ -126,6 +126,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('admin.food.index')}}" class="nav-link">
+                            <i class="nav-icon far fa-image"></i>
+                            <p>
+                                Món Ngon
+                            </p>
+                        </a>
+                    </li>
+
                 {{-- <li class="nav-item">
                     <a href="../gallery.html" class="nav-link">
                         <i class="nav-icon far fa-image"></i>

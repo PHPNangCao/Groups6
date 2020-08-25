@@ -145,6 +145,20 @@ Route::get('logout', 'LoginController@logout')->name('logout');
 
             Route::get('destroy/{id}', 'SlideController@destroy')->name('destroy');
         });
+
+        Route::prefix('food')->name('food.')->group(function(){
+            Route::get('index','FoodController@index')->name('index');
+
+            Route::get('create','FoodController@create')->name('create');
+            Route::post('store','FoodController@store')->name('store');
+
+            Route::get('edit/{id}', 'FoodController@edit')->name('edit');
+            Route::post('update/{id}', 'FoodController@update')->name('update');
+            Route::get('status/{id}', 'FoodController@status')->name('status');
+
+            Route::get('destroy/{id}', 'FoodController@destroy')->name('destroy');
+
+        });
     });
 // });
 
