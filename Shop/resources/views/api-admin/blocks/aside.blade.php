@@ -172,7 +172,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    @if(Auth::user('admin')->can('view', $))
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                         <li class="nav-item">
