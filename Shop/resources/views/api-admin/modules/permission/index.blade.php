@@ -25,10 +25,10 @@
                     <td>{{$loop->iteration }}</td>
                     <td>{{ $per->name }}</td>
                     <td>{{ $per->display_name }}</td>
-                    <td>{{ $per->group_permission_id}}</td>
+                    <td>{{ $per->grouppermission->name }}</td>
                     {{-- <td>
-                        <a href="{{route('admin.permission.edit',['id' => $per->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>
-                        <a href="{{route('admin.permission.destroy',['id' => $per->id])}}" onclick="return checkDelete('Bạn có muốn xóa phân quyền này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
+                        <a href="{{route('admin.permisson.edit',['id' => $per->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>
+                        <a href="{{route('admin.permisson.destroy',['id' => $per->id])}}" onclick="return checkDelete('Bạn có muốn xóa phân quyền này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
                     </td> --}}
                 </tr>
                 @endforeach
