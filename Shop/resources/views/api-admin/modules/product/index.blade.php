@@ -29,11 +29,12 @@
                     <td>
                         <p>{{ $pro->name}}</p>
                         <p>Giá bán: {{ number_format($pro->unit_price)}}</p>
-                        <p>Sale: {{ number_format($pro->promotion_price)}}</p>
-                    
+                        <p>Sale: {{ number_format($pro->promotion_price)}}</p>                   
                     </td>
                     <td>{{ $pro->category->name }}</td>
-                    <td>{!! $pro->description !!}</td>
+                    {{-- <td>{!! $pro->description !!}</td> --}}
+                    <td>{!! Str::limit($pro->description,50,'...') !!}</td>
+
                     <td><img src="upload/product/{{$pro->image}}" alt="" height="100px"></td>
                     <td>
                         @if ($pro->status == 1)

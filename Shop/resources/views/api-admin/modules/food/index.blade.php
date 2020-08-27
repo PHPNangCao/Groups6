@@ -25,9 +25,9 @@
                 @foreach ($food as $food)
                 <tr>
                     <td>{{$loop->iteration }}</td>
-                    <td>{{ $food->title }}</td>
-                    <td>{!! $food->note !!}</td>
-                    <td>{!! $food->content !!}</td>
+                    <td>{!! Str::limit($food->title,30,'...') !!}</td>
+                    <td>{!! Str::limit($food->note,30,'...') !!}</td>
+                    <td>{!! Str::limit($food->content,40,'...') !!}</td>
                     <td><img src="upload/food/{{$food->image}}" alt="" height="100px"></td>
                     <td>
                         @if ($food->status == 1)
