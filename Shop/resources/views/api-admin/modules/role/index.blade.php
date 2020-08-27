@@ -16,6 +16,7 @@
                     <th>Vai Trò</th>
                     <th>Hiển Thị</th>
                     <th>Mô tả</th>
+                    <th>Thao Tác</th>
                 </tr>
             </thead>
             <tbody style="text-align: center">

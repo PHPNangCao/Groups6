@@ -160,7 +160,7 @@ Route::get('logout', 'LoginController@logout')->name('logout');
 
         });
 
-        Route::prefix('grouppermission')->name('food.')->group(function(){
+        Route::prefix('grouppermission')->name('grouppermission.')->group(function(){
             Route::get('index','GrouppermissionController@index')->name('index');
 
             Route::get('create','GrouppermissionController@create')->name('create');

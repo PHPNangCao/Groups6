@@ -14,7 +14,7 @@ class ShipmentDetailController extends Controller
 {
     public function index(){
         $shipmentdetail = ShipmentDetail::orderBy('id', 'DESC')->get();
-        return view('api-admin.modules.shipmentdetail.index',compact('shipmentdetail'));
+        return view('api-admin.modules.shipmentdetail.index', compact('shipmentdetail'));
     }
 
     public function create(){
