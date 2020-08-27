@@ -20,7 +20,7 @@ Route::get('logout', 'LoginController@logout')->name('logout');
 
 // Route::middleware('check_login')->group(function () {
     Route::get('admin','Admin\AdminController@index')->name('admin');
-    
+
     Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
         Route::prefix('category')->name('category.')->group(function(){
@@ -157,6 +157,45 @@ Route::get('logout', 'LoginController@logout')->name('logout');
             Route::get('status/{id}', 'FoodController@status')->name('status');
 
             Route::get('destroy/{id}', 'FoodController@destroy')->name('destroy');
+
+        });
+
+        Route::prefix('grouppermission')->name('food.')->group(function(){
+            Route::get('index','GrouppermissionController@index')->name('index');
+
+            Route::get('create','GrouppermissionController@create')->name('create');
+            Route::post('store','GrouppermissionController@store')->name('store');
+
+            Route::get('edit/{id}', 'GrouppermissionController@edit')->name('edit');
+            Route::post('update/{id}', 'GrouppermissionController@update')->name('update');
+
+            Route::get('destroy/{id}', 'GrouppermissionController@destroy')->name('destroy');
+
+        });
+
+        Route::prefix('role')->name('role.')->group(function(){
+            Route::get('index','RoleController@index')->name('index');
+
+            Route::get('create','RoleController@create')->name('create');
+            Route::post('store','RoleController@store')->name('store');
+
+            Route::get('edit/{id}', 'RoleController@edit')->name('edit');
+            Route::post('update/{id}', 'RoleController@update')->name('update');
+
+            Route::get('destroy/{id}', 'RoleController@destroy')->name('destroy');
+
+        });
+
+        Route::prefix('permission')->name('permission.')->group(function(){
+            Route::get('index','PermissionController@index')->name('index');
+
+            Route::get('create','PermissionController@create')->name('create');
+            Route::post('store','PermissionController@store')->name('store');
+
+            Route::get('edit/{id}', 'PermissionController@edit')->name('edit');
+            Route::post('update/{id}', 'PermissionController@update')->name('update');
+
+            Route::get('destroy/{id}', 'PermissionController@destroy')->name('destroy');
 
         });
     });
