@@ -198,6 +198,21 @@ Route::get('logout', 'LoginController@logout')->name('logout');
             Route::get('destroy/{id}', 'PermissionController@destroy')->name('destroy');
 
         });
+
+        Route::prefix('userrole')->name('userrole.')->group(function(){
+            Route::get('index','UserroleController@index')->name('index');
+
+            Route::get('create','UserroleController@create')->name('create');
+            Route::post('store','UserroleController@store')->name('store');
+
+            Route::get('edit/{id}', 'UserroleController@edit')->name('edit');
+            Route::post('update/{id}', 'UserroleController@update')->name('update');
+
+            Route::get('destroy/{id}', 'UserroleController@destroy')->name('destroy');
+
+        });
+
+        
     });
 // });
 

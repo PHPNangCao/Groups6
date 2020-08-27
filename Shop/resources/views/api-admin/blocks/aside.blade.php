@@ -172,6 +172,7 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    @if(Auth::user('admin')->can('view', $))
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                         <li class="nav-item">
@@ -189,7 +190,7 @@
                         <li class="nav-item">
                             <a href="{{route('admin.role.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Quyền</p>
+                                <p>Vai Trò</p>
                             </a>
                         </li>
                     </ul>
