@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Bài Viết</span>
+            <a href="{{route('trang-chu')}}">Trang Chủ</a> / <span>Bài Viết</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -20,12 +20,21 @@
         <article class="all-browsers">
           @foreach ($food as $food)
           <article class="browser row">
-          <div class="col-md-2"><img src="upload/product/{{$food->image}}" alt="" width="100px"></div>
-            <div class="col-md-10">
-            <h5>{{$food->title}}</h5>
-            <h5>{{$food->note}}</h5>
-            <p>\{!!$food->content!!}</p>
-              <span style="float: right"><a href="" style="color: blue">Chi tiết</a></span>
+            <div class="col-md-3">
+              <img src="upload/food/{{$food->image}}" width="100%" height="210">
+            </div>
+            <div class="col-md-9">
+              <span style="font-size: 12px">
+                  <a><h3><b>{{$food->title}}<b></h3></a>
+              </span>
+              <span style="font-size: 7px">
+                  <p>{!!$food->note!!}</p>
+              </span>
+              {{-- <span style="float: right">
+                <a href="" style="color: blue">
+                  Chi tiết
+                </a>
+              </span> --}} 
             </div>
           </article>
           @endforeach

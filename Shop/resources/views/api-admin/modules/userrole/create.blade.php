@@ -1,16 +1,16 @@
 @extends('api-admin.master')
-@section('title','Thêm Phân Quyền')
+@section('title','Thêm Role')
 @section('content')
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thêm Nhóm Phân Quyền</h3>
+        <h3 class="card-title">Thêm Role</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('admin.permission.store')}}" method="POST">
+        <form action="{{route('admin.role.store')}}" method="POST">
             @csrf
             <div class="form-product">
-                <label>Quyền<span class="text-danger">(*)</label>
+                <label>Vai Trò<span class="text-danger">(*)</label>
                 <input type="text" name="name" class="form-control" placeholder="Vai Trò...">
                 @if ($errors->has('name'))
                     <div class="text-danger">
@@ -19,8 +19,8 @@
                 @endif
             </div>
             <div class="form-product">
-                <label>Quyền hiển thị<span class="text-danger">(*)</label>
-                <input type="text" name="display_name" class="form-control" placeholder="Vai Trò...">
+                <label>Hiển Thị<span class="text-danger">(*)</label>
+                <input type="text" name="display_name" class="form-control" placeholder="display_name">
                 @if ($errors->has('display_name'))
                     <div class="text-danger">
                         {{$errors->first('display_name')}}
@@ -28,17 +28,12 @@
                 @endif
             </div>
             <div class="form-product">
-                <label>Nhóm Phân Quyền<span class="text-danger">(*)</label>
-                <select name="group_permission_id" class="form-control">
-                    <option value="">----Chọn nhóm Phân Quyền----</option>
-                        @foreach ($group_permission as $gr)
-                            <option value="{{$gr->id}}">{{$gr->name}}</option>
-                        @endforeach
-                </select>
+                <label>Mô Tả</label>
+                <input type="text" class="form-control" name="description">
             </div>
             <hr>
             <div>
-                <a href="{{route('admin.permission.index')}}" class="btn btn-warning">Quay Lại</a>
+                <a href="{{route('admin.role.index')}}" class="btn btn-warning">Quay Lại</a>
                 <button type="submit" class="btn btn-primary">Lưu thông tin</button>
             </div>
         </form>
