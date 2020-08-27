@@ -9,7 +9,7 @@
         protected $table = "group_permission";
 
         public function permission(){
-            return $this->hasMany   ('App\Permission','group_permission_id','id');
+            return $this->belongsTo('App\Permission','group_permission_id','id');
         }
     }
 

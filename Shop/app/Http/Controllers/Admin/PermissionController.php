@@ -18,7 +18,8 @@ class PermissionController extends Controller
 
     public function create(){
         $group_permission = GroupPermission::get();
-        return view('api-admin.modules.permission.create', compact('group_permission'));
+        $permission = Permission::get();
+        return view('api-admin.modules.permission.create', compact('group_permission', 'permission'));
     }
 
     public function store(Request $request){
