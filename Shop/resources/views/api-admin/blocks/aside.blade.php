@@ -163,6 +163,37 @@
                         <p>Informational</p>
                     </a>
                 </li> --}}
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Danh mục Phân Quyền
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                        <li class="nav-item">
+                            <a href="{{route('admin.grouppermission.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Nhóm Quyền</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.permission.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Phân Quyền</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.role.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Quyền</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
