@@ -6,6 +6,7 @@ use App\GroupPermission;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DateTime;
+use Illuminate\Support\Facades\DB;
 
 class GrouppermissionController extends Controller
 {
@@ -16,7 +17,7 @@ class GrouppermissionController extends Controller
 
     public function create(){
        return view('api-admin.modules.grouppermission.create');
-    }   
+    }
 
     public function store(Request $request){
 
