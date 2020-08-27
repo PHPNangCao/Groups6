@@ -34,11 +34,18 @@ class PermissionController extends Controller
     }
 
     public function edit($id){
-        
+        $permission = Permission::where('id', $id)->first();
+        return view('api-admin.modules.permission.edit', compact('permission'));
     }
 
     public function update(Request $request, $id){
-        
+        $data = $request->except('_token');
+        $data['created_at'] = new DateTime;
+        $data['updated_at'] = new DateTime;
+
+        Permission::where('id',$id)->update($data);
+
+        return redirect()->route('admin.permission.index');
     }
 
     public function destroy($id){
