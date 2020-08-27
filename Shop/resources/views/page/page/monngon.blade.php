@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Danh sách Món Ngon</h6>
+            <h6 class="inner-title" style="color: green" ><b>DANH SÁCH MÓN NGON<b></h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('trang-chu')}}">Trang Chủ</a> / <span>Bài Viết</span>
+            <a href="{{route('trang-chu')}}" style="color: blue">Trang Chủ </a> / <span> Bài Viết</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -21,20 +21,17 @@
           @foreach ($food as $food)
           <article class="browser row">
             <div class="col-md-3">
-              <img src="upload/food/{{$food->image}}" width="100%" height="210">
+              <img src="upload/food/{{$food->image}}" width="100%" height="150">
             </div>
             <div class="col-md-9">
-              <span style="font-size: 12px">
-                  <a><h3><b>{{$food->title}}<b></h3></a>
+              <span style="font-size: 11px">
+                  <a href="{{route('trang-chu')}}">
+                    <h3><b>{{$food->title}}<b></h3>
+                    </a>
               </span>
-              <span style="font-size: 7px">
-                  <p>{!!$food->note!!}</p>
+              <span style="font-size: 6px">
+                  <p>{!! Str::limit($food->note,250,'...') !!}</p>
               </span>
-              {{-- <span style="float: right">
-                <a href="" style="color: blue">
-                  Chi tiết
-                </a>
-              </span> --}} 
             </div>
           </article>
           @endforeach
