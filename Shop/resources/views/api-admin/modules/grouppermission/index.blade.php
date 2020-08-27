@@ -21,9 +21,9 @@
             <tbody style="text-align: center">
                 @foreach ($group_permission as $gr)
                 <tr>
-                    <td>{{$loop->iteration }}</td>
-                    <td>{{ $gr->name }}</td>
-                    <td>{{$gr->description}}</td>
+                    <td>{{  $loop->iteration }}</td>
+                    <td>{{  $gr->name }}</td>
+                    <td>{{  $gr->description}}</td>
                     <td>
                         <a href="{{route('admin.grouppermission.edit',['id' => $gr->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>
                         <a href="{{route('admin.grouppermission.destroy',['id' => $gr->id])}}" onclick="return checkDelete('Bạn có muốn xóa Gr Phân Quyền này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>

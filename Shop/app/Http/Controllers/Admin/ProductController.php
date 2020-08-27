@@ -93,7 +93,7 @@ class ProductController extends Controller
             $image_name = $request->image_hidden;
         }
             $url = Str::slug($request->name, '-');
-        $addimage = Product::where('id',$id)->update([
+            $addimage = Product::where('id',$id)->update([
             'name' => $request->name,
             'category_id' => $request->category_id,
             'url' => $url,

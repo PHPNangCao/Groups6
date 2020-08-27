@@ -15,7 +15,6 @@ class GrouppermissionController extends Controller
     }
 
     public function create(){
-       GroupPermission::get();
        return view('api-admin.modules.grouppermission.create');
     }   
 
@@ -25,7 +24,7 @@ class GrouppermissionController extends Controller
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
 
-        GroupPermission::insert($data);
+        DB::table('group_permission')->insert($data);
 
         return redirect()->route('admin.grouppermission.index');
     }
