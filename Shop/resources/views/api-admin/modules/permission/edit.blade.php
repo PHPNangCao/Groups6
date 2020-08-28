@@ -9,7 +9,7 @@
     <div class="card-body">
         <form action="{{route('admin.permission.update', ['id' => $permission->id])}}" enctype="multipart/form-data" method="POST">
             @csrf
-            <div class="form-product">
+            <div class="form-group">
                 <label>Quyền<span class="text-danger">(*)</label>
                 <input type="text" name="name" class="form-control" placeholder="Vai Trò..." value="{{$permission->name}}">
                 @if ($errors->has('name'))
@@ -18,7 +18,7 @@
                     </div>
                 @endif
             </div>
-            <div class="form-product">
+            <div class="form-group">
                 <label>Quyền hiển thị<span class="text-danger">(*)</label>
                 <input type="text" name="display_name" class="form-control" placeholder="Vai Trò..." value="{{$permission->display_name}}">
                 @if ($errors->has('display_name'))

@@ -9,7 +9,7 @@
     <div class="card-body">
         <form action="{{route('admin.role.store')}}" method="POST">
             @csrf
-            <div class="form-product">
+            <div class="form-group">
                 <label>Vai Trò<span class="text-danger">(*)</label>
                 <input type="text" name="name" class="form-control" placeholder="Vai Trò...">
                 @if ($errors->has('name'))
@@ -18,7 +18,7 @@
                     </div>
                 @endif
             </div>
-            <div class="form-product">
+            <div class="form-group">
                 <label>Hiển Thị<span class="text-danger">(*)</label>
                 <input type="text" name="display_name" class="form-control" placeholder="display_name">
                 @if ($errors->has('display_name'))
@@ -27,7 +27,7 @@
                     </div>
                 @endif
             </div>
-            <div class="form-product">
+            <div class="form-group">
                 <label>Mô Tả</label>
                 <input type="text" class="form-control" name="description">
             </div>

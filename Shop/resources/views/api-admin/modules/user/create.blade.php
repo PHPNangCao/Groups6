@@ -9,7 +9,7 @@
     <div class="card-body">
         <form action="{{route('admin.user.store')}}" method="POST">
             @csrf
-            <div class="form-product">
+            <div class="form-group">
                 <label>Tên<span class="text-danger">(*)</label>
                 <input type="text" name="name" class="form-control" placeholder="Tên...">
                 @if ($errors->has('name'))
@@ -18,7 +18,7 @@
                     </div>
                 @endif
             </div>
-            <div class="form-product">
+            <div class="form-group">
                 <label>Email <span class="text-danger">(*)</label>
                 <input type="email" name="email" class="form-control" placeholder="Email">
                 @if ($errors->has('email'))
@@ -27,7 +27,7 @@
                 </div>
                 @endif
             </div>
-            <div class="form-product">
+            <div class="form-group">
                 <label>Mật khẩu <span class="text-danger">(*)</label>
                 <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu">
                 @if ($errors->has('password'))
@@ -37,7 +37,7 @@
                 @endif
             </div>
 
-            <div class="form-product">
+            <div class="form-group">
                 <label>Số điện thoại<span class="text-danger">(*)</label>
                 <input type="text" class="form-control" name="phone" placeholder="Nhập số điện thoại">
                 @if ($errors->has('phone'))
@@ -47,7 +47,7 @@
                 @endif
             </div>
 
-            <div class="form-product">
+            <div class="form-group">
                 <label>Địa chỉ<span class="text-danger">(*)</label>
                 <input type="text" class="form-control" name="address" placeholder="Nhập địa chỉ">
                 @if ($errors->has('address'))
@@ -57,16 +57,14 @@
                 @endif
             </div>
 
-            <div class="form-product">
-                <label>Role<span class="text-danger">(*)</label>
-                    <select name="role_id" class="form-control">
-                        <option value="">----Role----</option>
-                            @foreach ($role as $role)
-                                <option value="{{$role->id}}">{{$role->name}}</option>
-                            @endforeach
-                    </select>
+            <div class="form-group">
+                <label>Role<span class="text-danger">(*)</span></label>
+                <select class="form-control" multiple="multiple" name="roles[]">
+                    @foreach($roles as $role)
+                        <option value="{{ $role->id }}">{{ $role->display_name }}</option>
+                    @endforeach
+                </select>
             </div>
-
             <hr>
             <a href="{{route('admin.user.index')}}" class="btn btn-warning">Quay Lại</a>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>

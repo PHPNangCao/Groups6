@@ -76,6 +76,18 @@
                                 <p>Loại User</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.permission.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Phân Quyền</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.role.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Role</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

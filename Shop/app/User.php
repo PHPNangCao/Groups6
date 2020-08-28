@@ -38,12 +38,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role(){
-        return $this->belongsTo(Role::class);
+    public function roles(){
+        return $this->belongsToMany('App\Role');
     }
 
-    public function hasPermission(Permission $permission)
-    {
-        return !! optional(optional($this->role)->permissions)->contains($permission);
+    public function typeuser(){
+        return $this->belongsTo('APP\TypeUser','user_id', 'id');
     }
 }
