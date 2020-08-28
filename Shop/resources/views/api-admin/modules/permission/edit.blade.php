@@ -27,15 +27,6 @@
                     </div>
                 @endif
             </div>
-            <div class="form-product">
-                <label>Nhóm Phân Quyền<span class="text-danger">(*)</label>
-                <select name="group_permission_id" class="form-control">
-                    <option value="">----Chọn nhóm Phân Quyền----</option>
-                        @foreach ($group_permission as $gr)
-                            <option value="{{$gr->id}}" selected = "{{$permission->group_permission_id}}">{{$gr->name}}</option>
-                        @endforeach
-                </select>
-            </div>
             <hr>
             <div>
                 <a href="{{route('admin.permission.index')}}" class="btn btn-warning">Quay Lại</a>

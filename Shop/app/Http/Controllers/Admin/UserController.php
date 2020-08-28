@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Role;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,8 +18,9 @@ class UserController extends Controller
 
     public function create()
     {
+        $role = Role::get();
         $user = User::get();
-        return view('api-admin.modules.user.create',compact('user'));
+        return view('api-admin.modules.user.create',compact('user', 'role'));
     }
 
     public function store(Request $request)
@@ -27,13 +29,13 @@ class UserController extends Controller
             'name'              => 'required',
             'email'             => 'required|unique:Users',
             'password'          => 'required',
-            
+
         ],[
             'name.required'                => 'Vui lòng nhập tên',
             'email.required'               => 'Vui lòng nhập Email',
             'email.unique'                 => 'Tên Email đã tồn tại',
             'password.required'            => 'Vui lòng nhập mật khẩu',
-            
+
         ]);
 
         $data = $request->except('_token');
@@ -56,10 +58,11 @@ class UserController extends Controller
 
     public function edit($id)
     {
+        $role = Role::get();
         $user = User::where('id',$id)->first();
-        return view('api-admin.modules.user.edit',compact('user'));
+        return view('api-admin.modules.user.edit',compact('user', 'role'));
     }
- 
+
     public function update(Request $request, $id)
     {
         $valdidateData = $request->validate([

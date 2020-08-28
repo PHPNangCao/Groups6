@@ -56,7 +56,17 @@
                         </div>
                 @endif
             </div>
-            
+
+            <div class="form-product">
+                <label>Role<span class="text-danger">(*)</label>
+                    <select name="role_id" class="form-control">
+                        <option value="">----Role----</option>
+                            @foreach ($role as $role)
+                        <option value="{{$role->id}}" selected = "{{$user->role_id}}">{{$role->name}}</option>
+                            @endforeach
+                    </select>
+            </div>
+
             <hr>
             <a href="{{route('admin.user.index')}}" class="btn btn-warning">Quay Lại</a>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>

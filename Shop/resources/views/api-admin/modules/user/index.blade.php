@@ -17,10 +17,11 @@
                     <th>Email</th>
                     <th>SĐT</th>
                     <th>Địa chỉ</th>
+                    <th>Vai Trò</th>
                     <th>Trạng thái</th>
                     <th>Thao Tác</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody style="text-align: center">
                 @foreach ($user as $user)
                 <tr>
@@ -29,6 +30,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{$user->phone}}</td>
                     <td>{{$user->address}}</td>
+                    <td>{{$user->role_id}}</td>
                     <td>
                         @if ($user->status == 1)
                             <a href="{{route('admin.user.status',['id' => $user->id])}}" class="btn btn-app">Show</i></a>

@@ -11,4 +11,8 @@ class Users extends Model
     public function typeuser(){
         return $this->belongsTo('APP\TypeUser','user_id', 'id');
     }
+
+    public function userrole(){
+        return $this->hasMany('APP\Userrole','user_id', 'id');
+    }
 }

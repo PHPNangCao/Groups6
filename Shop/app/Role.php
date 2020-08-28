@@ -7,5 +7,9 @@
     {
         protected $table = "role";
 
+        public function permission(){
+            return $this->belongsToMany(Permission::class, 'role_pemission', 'id');
+        }
+
     }
 ?>

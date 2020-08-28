@@ -17,12 +17,12 @@ class PermissionController extends Controller
     }
 
     public function create(){
-        $group_permission = GroupPermission::get();
-        return view('api-admin.modules.permission.create', compact('group_permission'));
+        Permission::get();
+        return view('api-admin.modules.permission.create');
     }
 
     public function store(Request $request){
-        
+
         $data = $request->except('_token');
         $data['created_at'] = new DateTime;
         $data['updated_at'] = new DateTime;
@@ -33,9 +33,8 @@ class PermissionController extends Controller
     }
 
     public function edit($id){
-        $group_permission = GroupPermission::get();
         $permission = Permission::where('id', $id)->first();
-        return view('api-admin.modules.permission.edit', compact('permission', 'group_permission'));
+        return view('api-admin.modules.permission.edit', compact('permission'));
     }
 
     public function update(Request $request, $id){
