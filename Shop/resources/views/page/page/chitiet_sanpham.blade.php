@@ -57,7 +57,12 @@
                         <p>{!! $sanpham->description !!}</p>
                     </div>
                     <div class="panel" id="tab-reviews">
-                        <p>No Reviews</p>
+                        <div class="container">
+                            <div class="feedback">
+                                <p>Mời bạn chọn sao để đánh giá </p>
+                                @include('page.rate');
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="space50">&nbsp;</div>
