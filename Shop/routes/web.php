@@ -198,9 +198,9 @@ Route::namespace('Page')->group(function(){
 
     Route::get('trang-chu', 'PageController@getIndex')->name('trang-chu');
 
-    Route::get('loai-san-pham/{url}', 'CategoryPageController@getCategory')->name('loai-san-pham');
+    Route::get('loai-san-pham/{id}', 'CategoryPageController@getCategory')->name('loai-san-pham');
 
-    Route::get('chi-tiet-san-pham/{url}', 'ProductPageCotroller@getProductDetail')->name('chi-tiet-san-pham');
+    Route::get('chi-tiet-san-pham/{id}', 'ProductPageCotroller@getProductDetail')->name('chi-tiet-san-pham');
 
     Route::get('lien-he', 'PageController@getContact')->name('lien-he');
 
@@ -212,7 +212,10 @@ Route::namespace('Page')->group(function(){
 
     Route::get('tin-tuc','NewsController@News')->name('tin-tuc');
 
-    Route::get('mon-ngon','FoodController@Food')->name('mon-ngon');
+    Route::get('mon-ngon','FoodController@getFood')->name('mon-ngon');
+
+    Route::get('chi-tiet-mon-ngon/{id}','FoodController@Food')->name('chi-tiet-mon-ngon');
+
 
     Route::get('thanh-toan','CartController@payment')->name('thanh-toan');
     Route::get('AddCart/{id}','CartController@AddCart')->name('AddCart');

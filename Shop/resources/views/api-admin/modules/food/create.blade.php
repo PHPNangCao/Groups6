@@ -29,7 +29,7 @@
                         </div>
                     @endif
                 </div> --}}
-                <div class="form-group">
+                <div class="form-group"> 
                     <label>Ghi chú</label>
                     <textarea class="form-control" name="note" placeholder="Ghi Chú..."></textarea>
                     <script>
