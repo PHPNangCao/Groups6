@@ -8,9 +8,16 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function News(){
-        $news = News::all();
-        
-        return view('page.page.tintuc', compact('news'));
+    public function getNews(){
+
+        return view('page.page.chi-tiet-tin-tuc');
+    }  
+    
+    public function News($id){
+        $getnews = News::where('id', $id)->first();
+
+        return view('page.page.chi-tiet-tin-tuc', compact('getnews'));
     }
+
+
 }

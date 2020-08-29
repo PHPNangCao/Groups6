@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div class="container">
+{{-- <div class="container">
   <div id="content" class="space-top-none">
       <div class="main-content">
         <article class="all-browsers">
@@ -31,6 +31,33 @@
         </article>
       </div>
   </div>
+</div> --}}
+
+<div class="container">
+  <div id="content" class="space-top-none">
+      <div class="main-content">
+        <article class="all-browsers">
+          @foreach ($news as $new)
+          <article class="browser row">
+            <div class="col-md-3">
+              <img src="upload/news/{{$new->image}}" width="100%" height="200" alt="">
+            </div>
+            <div class="col-md-9">
+              <span style="font-size: 15px">
+                  <a href="{{route('chi-tiet-mon-ngon', $news->id)}}">
+                    <h3><b>{{$news->title}}<b></h3>
+                    </a>
+              </span>
+              <span>
+                  <p>{!! Str::limit($news->content,250,'...') !!}</p>
+              </span>
+            </div>
+          </article>
+          @endforeach
+        </article>
+      </div>
+  </div>
 </div>
+
 
 @endsection

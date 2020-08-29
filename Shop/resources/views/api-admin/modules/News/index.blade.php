@@ -24,9 +24,9 @@
                 @foreach ($news as $news)
                 <tr>
                     <td>{{$loop->iteration }}</td>
-                    <td>{{ $news->title }}</td>
-                    <td>{{ $news->url }}</td>
-                    <td>{!! $news->content !!}</td>
+                    <td>{!! Str::limit($news->title,30,'...') !!}</td>
+                    <td>{!! Str::limit($news->url,30,'...') !!}</td>
+                    <td>{!! Str::limit($news->content,50,'...') !!}</td>
                     <td><img src="upload/news/{{$news->image}}" alt="" height="100px"></td>
                     <td>
                         <a href="{{route('admin.news.edit',['id' => $news->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>

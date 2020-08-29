@@ -21,15 +21,15 @@
           @foreach ($food as $food)
           <article class="browser row">
             <div class="col-md-3">
-              <img src="upload/food/{{$food->image}}" width="100%" height="180" alt="">
+              <img src="upload/food/{{$food->image}}" width="100%" height="200" alt="">
             </div>
             <div class="col-md-9">
-              <span style="font-size: 11px">
+              <span style="font-size: 15px">
                   <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
                     <h3><b>{{$food->title}}<b></h3>
                     </a>
               </span>
-              <span style="font-size: 6px">
+              <span>
                   <p>{!! Str::limit($food->note,250,'...') !!}</p>
               </span>
             </div>

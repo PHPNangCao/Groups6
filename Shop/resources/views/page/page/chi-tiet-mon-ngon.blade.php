@@ -16,36 +16,36 @@
 
 <div class="container">
     <div class="row">
+
+        {{-- Bài viết chính --}}
         <div class="col-md-10">
             <img src="upload/food/{{$getfood->image}}" width="30%" height="30%" alt="">
             <h1>{{$getfood->title}}</h1>
             <h6><p>{!!$getfood->content!!}</p></h6>
             <hr>
         </div>
+        
+        {{-- Bài viết khác --}}
         <div class="col-md-2">
             <div id="content" class="space-top-none">
                 <div class="main-content">
+                  @foreach ($food as $food)
                   <article class="all-browsers">
-                    @foreach ($food as $food)
                     <article class="browser row">
-                      <div class="col-md-3">
-                        <img src="upload/food/{{$food->image}}" width="100%" height="180" alt="">
-                      </div>
-                      <div class="col-md-9">
-                        <span style="font-size: 11px">
+                      <img src="upload/food/{{$food->image}}" width="100%"  alt="">
+                        <span style="font-size: 5px">
                             <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
                               <h3><b>{{$food->title}}<b></h3>
                               </a>
                         </span>
-                        <span style="font-size: 6px">
-                            <p>{!! Str::limit($food->note,250,'...') !!}</p>
-                        </span>
                       </div>
                     </article>
-                    @endforeach
                   </article>
+                  @endforeach
+
                 </div>
-            </div>        </div>
+            </div>        
+          </div>
     </div>
 
 </div>
