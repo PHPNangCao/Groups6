@@ -10,7 +10,7 @@
         protected $fillable = ['name', 'display_name'];
 
         public function permissions(){
-            return $this->belongsToMany('APP\Permission');
+            return $this->belongsToMany(Permission::class);
         }
 
         public function users(){

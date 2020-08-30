@@ -62,11 +62,11 @@ Route::middleware('check_login')->group(function(){
                 Route::get('edit/{id}',['as'=>'edit','uses'=>'UserController@edit','middleware'=>'checkacl:user-edit']);
                 Route::post('update/{id}',['as'=>'update','uses'=>'UserController@update','middleware'=>'checkacl:user-edit']);
 
-                Route::get('status/{id}', 'UserController@status')->name('status');
+                // Route::get('status/{id}', 'UserController@status')->name('status');
                 Route::post('status/{id}',['as'=>'status','uses'=>'UserController@status','middleware'=>'checkacl:user-list']);
 
                 // Route::get('destroy/{id}', 'UserController@destroy')->name('destroy');
-                Route::get('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delete']);
+                Route::get('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delele']);
             });
 
             Route::prefix('typeuser')->name('typeuser.')->group(function(){

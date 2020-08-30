@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
+
     public function index(){
         $role = Role::orderBy('id', 'DESC')->get();
         return view('api-admin.modules.role.index', compact('role'));
@@ -23,7 +24,6 @@ class RoleController extends Controller
     }
 
     public function store(Request $request){
-
         try {
             DB::beginTransaction();
 
@@ -62,7 +62,7 @@ class RoleController extends Controller
 
             DB::table('permission_role')->where('id', $id)->delete();
             $role = Role::find($id);
-            $role->permission()->attach($request->permission);
+            $role->permissions()->attach($request->permission);
 
             DB::commit();
             return redirect()->route('admin.role.index');
