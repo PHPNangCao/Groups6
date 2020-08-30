@@ -16,7 +16,7 @@ class ProductPageCotroller extends Controller
         $sanpham = Product::where('id',$id)->first();
         $sp_tuongtu = Product::where('category_id',$sanpham->category_id)->paginate(3);
         $product = Product::where('category_id','<>',$sanpham->category_id)->paginate(3);
-        $comment = Comment::where('product_id',$id)->get();
+        $comment = Comment::where('product_id',$id)->paginate(3);
         return view('page.page.chitiet_sanpham',compact('sanpham','sp_tuongtu','product','comment'));
     }
 }
