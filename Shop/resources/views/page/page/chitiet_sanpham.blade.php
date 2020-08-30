@@ -1,6 +1,6 @@
 @extends('page.master')
 @section('content')
-<div class="inner-header">
+<div class="inner-header" >
     <div class="container">
         <div class="pull-left">
             <h6 class="inner-title">Sản phẩm</h6>
@@ -15,7 +15,7 @@
 </div>
 
     <div id="content">
-<div class="container">
+<div class="container" action>
         <div class="row">
             <div class="col-sm-9">
 
@@ -57,15 +57,71 @@
                         <p>{!! $sanpham->description !!}</p>
                     </div>
                     <div class="panel" id="tab-reviews">
+                        <form action="{{route('admin.comment.store')}}" method="POST">
+                            @csrf
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="feedback" name="rating" >
+                                            <p>Mời bạn chọn sao để đánh giá </p>
+                                            @include('page.rate');
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Tên:<span class="text-danger">(*)</label>
+                                            <input type="text" name="name" class="form-control" placeholder="Nhập vào họ tên...">
+                                            @if ($errors->has('name'))
+                                                <div class="text-danger">
+                                                    {{$errors->first('name')}}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Số điện thoại:</label>
+                                            <input type="text" name="phone" class="form-control" placeholder="Nhập vào số điện thoại...">
+                                            @if ($errors->has('phone'))
+                                                <div class="text-danger">
+                                                    {{$errors->first('phone')}}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Gửi đánh giá:<span class="text-danger">(*)</label>
+                                            <textarea type="text" name="description" class="form-control" placeholder="Nhập đánh giá..."></textarea>
+                                            @if ($errors->has('description'))
+                                                <div class="text-danger">
+                                                    {{$errors->first('description')}}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="product_id" class="form-control" value="{{$sanpham->id}}">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         <div class="container">
-                            <div class="feedback">
-                                <p>Mời bạn chọn sao để đánh giá </p>
-                                @include('page.rate');
+                            <div class="col-8">
+                                <div class="panel-default">
+                                    <div class="panel-body">
+                                        <h6><strong> Đánh giá của khách:</strong></h6>
+                                        <div >
+                                            {{-- <div><span><strong>{{$comment->phone}}</strong></span></div> --}}
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="space50">&nbsp;</div>
+                <div class="space50">
+                </div>
                 <div class="beta-products-list">
                     <h4>Sản phẩm tương tự</h4>
 
@@ -102,10 +158,11 @@
                         </div> 
                         @endforeach                     
                     </div>
-                <div class="row">{{$sp_tuongtu->links()}}</div>
+                <div class="row">{{$sp_tuongtu->links()}}
+                </div>
                 </div> <!-- .beta-products-list -->
             </div>
-            <div class="col-sm-3 aside">
+            <div class="col-sm-3 aside" >
                 <div class="widget">
                     <h3 class="widget-title">Sản phẩm khác</h3>
                     <div class="widget-body">

@@ -18,6 +18,7 @@ class CreateCommentTable extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->text('description')->nullable();
+            $table->text('rating');
             $table->boolean('status')->default(1);
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('product');

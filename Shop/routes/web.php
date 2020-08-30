@@ -212,7 +212,20 @@ Route::get('logout', 'LoginController@logout')->name('logout');
 
         });
 
-        
+        Route::prefix('comment')->name('comment.')->group(function(){
+            Route::get('index','CommentController@index')->name('index');
+
+            Route::get('show','CommentController@show')->name('show');
+
+            Route::get('create','CommentController@create')->name('create');
+            Route::post('store','CommentController@store')->name('store');
+
+            Route::get('edit/{id}', 'CommentController@edit')->name('edit');
+            Route::post('update/{id}', 'CommentController@update')->name('update');
+
+            Route::get('destroy/{id}', 'CommentControllers@destroy')->name('destroy');
+
+        });
     });
 // });
 
