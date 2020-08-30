@@ -7,8 +7,8 @@
     {
         protected $table = "permission";
 
-        public function grouppermission(){
-            return $this->hasMany('App\GroupPermission','group_permission_id','id');
+        public function roles(){
+            return $this->hasMany('App\Role');
         }
     }
 

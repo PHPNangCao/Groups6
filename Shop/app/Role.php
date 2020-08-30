@@ -7,8 +7,10 @@
     {
         protected $table = "role";
 
-        public function permission(){
-            return $this->belongsToMany('APP\Permission', 'role_pemission', 'id');
+        protected $fillable = ['name', 'display_name'];
+
+        public function permissions(){
+            return $this->belongsToMany('APP\Permission');
         }
 
         public function users(){

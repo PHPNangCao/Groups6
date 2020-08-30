@@ -18,6 +18,7 @@
                     </div>
                 @endif
             </div>
+            
             <div class="form-group">
                 <label>Hiển Thị<span class="text-danger">(*)</label>
                 <input type="text" name="display_name" class="form-control" placeholder="display_name">
@@ -27,10 +28,14 @@
                     </div>
                 @endif
             </div>
-            <div class="form-group">
-                <label>Mô Tả</label>
-                <input type="text" class="form-control" name="description">
-            </div>
+
+            @foreach($permissions as $permission)
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="permission[]" value="{{$permission->id}}">
+                    <label class="form-check-label" for="gridCheck1">{{$permission->display_name}}</label>
+                </div>
+            @endforeach
+
             <hr>
             <div>
                 <a href="{{route('admin.role.index')}}" class="btn btn-warning">Quay Lại</a>

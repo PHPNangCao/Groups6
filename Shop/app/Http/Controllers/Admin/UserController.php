@@ -12,14 +12,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    private $user;
-    private $role;
-
-    public function __construct(User $user, Role $role){
-        $this->user = $user;
-        $this->role = $role;
-    }
-
     public function index(){
         $user = User::orderBy('id', 'DESC')->get();
         return view('api-admin.modules.user.index',compact('user'));
@@ -50,12 +42,12 @@ class UserController extends Controller
             DB::beginTransaction();
 
             //Insert data voa user table
-            $user = $this->user->create([
+            $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'address' => $request->address,
-                'password' => Hash::make($request->password),
+                'password' => bcrypt($request->password),
             ]);
 
             //insert data vao role_user
@@ -89,17 +81,18 @@ class UserController extends Controller
 
     public function status($id)
     {
-        $product = User::find($id);
-        $product->status = ! $product->status;
-        $product->save();
+        $user = User::find($id);
+        $user->status = ! $user->status;
+        $user->save();
         return redirect()->back();
     }
 
     public function edit($id)
     {
-        $role = Role::all();
+        $roles = Role::all();
         $user = User::where('id',$id)->first();
-        return view('api-admin.modules.user.edit',compact('user', 'role'));
+        $listRoleOfUser = DB::table('role_user')->where('user_id', $id)->pluck('role_id');
+        return view('api-admin.modules.user.edit',compact('user', 'roles', 'listRoleOfUser'));
     }
 
     public function update(Request $request, $id)
@@ -112,17 +105,62 @@ class UserController extends Controller
             'password.required'            => 'Vui lòng nhập mật khẩu',
         ]);
 
-        $data = $request->except('_token');
-        $data['updated_at'] = new DateTime;
-        $data['password'] = bcrypt($request->password);
-        User::where('id',$id)->update($data);
+        // $data = $request->except('_token');
+        // $data['updated_at'] = new DateTime;
+        // $data['password'] = bcrypt($request->password);
+        // User::where('id',$id)->update($data);
 
-        return redirect()->route('admin.user.index');
+        try
+        {
+            DB::beginTransaction();
+
+            //update du lieu vao user
+            User::where('id',$id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'password' => bcrypt($request->password),
+            ]);
+
+
+
+            //update du lieu vao role_user
+            DB::table('role_user')->where('user_id',$id)->delete();
+            $user = User::find($id);
+            $user->roles()->attach($request->roles);
+
+            DB::commit();
+            return redirect()->route('admin.user.index');
+        }
+        catch(\Exception $exception)
+        {
+            DB::rollBack();
+            return redirect()->route('admin.user.index');
+        }
     }
 
     public function destroy($id)
     {
-        User::where('id',$id)->delete();
-        return redirect()->route('admin.user.index');
+        try
+        {
+            DB::beginTransaction();
+            //tim kiem id cua user
+            $user = User::find($id);
+
+            //xoa khoa ngoai cua user do
+            $user->roles()->detach();
+
+            //xoa user
+            $user->delete($id);
+
+            DB::commit();
+            return redirect()->route('admin.user.index');
+        }
+        catch(\Exception $exception)
+        {
+            DB::rollBack();
+            return redirect()->route('admin.user.index');
+        }
     }
 }

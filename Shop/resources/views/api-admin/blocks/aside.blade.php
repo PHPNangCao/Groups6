@@ -13,8 +13,8 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
                 <a href=""  style="font-size:20px" class="d-block"></a>
-                {{-- <a href="{{route('admin.user.index')}}"  style="font-size:20px" class="d-block">{{auth()->user()->name}}</a>
-                <a href="{{route('logout')}}" style="font-size:13px" class="text-danger">Log Out</a> --}}
+                <a href="{{route('admin.user.index')}}"  style="font-size:20px" class="d-block">{{auth()->user()->name}}</a>
+                <a href="{{route('logout')}}" style="font-size:13px" class="text-danger">Log Out</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -54,6 +54,30 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Danh mục đơn hàng
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                        <a href="{{route('admin.bill.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tạo đơn hàng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.bill.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Chi tiết đơn hàng</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">

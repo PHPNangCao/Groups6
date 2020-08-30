@@ -31,20 +31,20 @@
                                 </div>
                             @endif
                             <p class="single-item-title"><h2>{{$sanpham->name}}</h2></p>
-                            {{-- <p class="single-item-price">
+                            <p class="single-item-price">
                                 @if ($sanpham->promotion_price == 0)
                                 <span class="flash-sale">{{number_format($sanpham->unit_price)}} VNĐ</span>
                                 @else
                                     <span class="flash-del">{{number_format($sanpham->unit_price)}} VNĐ</span>
                                     <span class="flash-sale">{{number_format($sanpham->promotion_price)}} VNĐ</span>
                                 @endif
-                            </p> --}}
+                            </p>
                         </div>
                         <br>
-                        <p style="color: red">Liên Hệ:</p>
-                        <h5><a href="tel:0349394368">0349.394.368</a></h5>
+                        <a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
+
 
                 <div class="space40">&nbsp;</div>
                 <div class="woocommerce-tabs">
@@ -149,27 +149,27 @@
                         @foreach ($sp_tuongtu as $sptt)
                         <div class="col-sm-4">
                             <div class="single-item">
-                                {{-- @if ($sptt->promotion_price != 0)
+                                @if ($sptt->promotion_price != 0)
                                     <div class="ribbon-wrapper">
                                         <div class="ribbon sale">Sale</div>
                                     </div>
-                                @endif --}}
+                                @endif
                                 <div class="single-item-header">
                                 <a href="{{route('chi-tiet-san-pham',$sptt->id)}}"><img src="upload/product/{{$sptt->image}}" alt="" height="250px"></a>
                                 </div>
                                 <div class="single-item-body">
                                     <p class="single-item-title">{{$sptt->name}}</p>
-                                    {{-- <p class="single-item-price">
+                                    <p class="single-item-price">
                                         @if ($sptt->promotion_price == 0)
                                             <span class="flash-sale">{{number_format($sptt->unit_price)}} VNĐ</span>
                                         @else
                                             <span class="flash-del">{{number_format($sptt->unit_price)}} VNĐ</span>
                                             <span class="flash-sale">{{number_format($sptt->promotion_price)}} VNĐ</span>
                                         @endif
-                                    </p> --}}
+                                    </p>
                                 </div>
                                 <div class="single-item-caption">
-                                    {{-- <a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a> --}}
+                                    <a class="add-to-cart pull-left" href="{{route('themgiohang',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                     <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$sptt->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                     <div class="clearfix"></div>
                                 </div>
@@ -194,12 +194,12 @@
                                     {{$pro->name}}
                                     <br>
                                     <a href="{{route('chi-tiet-san-pham',$pro->id)}}" style="color: blue">Chi tiết</a>
-                                    {{-- @if ($pro->promotion_price == 0)
+                                    @if ($pro->promotion_price == 0)
                                         <span class="flash-sale">{{number_format($pro->unit_price)}} VNĐ</span>
                                     @else
                                         <span class="flash-del">{{number_format($pro->unit_price)}} VNĐ</span><br>
                                         <span class="flash-sale">{{number_format($pro->promotion_price)}} VNĐ</span>
-                                    @endif --}}
+                                    @endif
                                 </div>
                             </div>
                         </div>

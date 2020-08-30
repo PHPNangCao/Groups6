@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Role;
+use App\Permission;
 use DateTime;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -15,37 +18,78 @@ class RoleController extends Controller
     }
 
     public function create(){
-        $role = Role::get();
-        return view('api-admin.modules.role.create', compact('role'));
+        $permissions = Permission::all();
+        return view('api-admin.modules.role.create', compact('permissions'));
     }
 
     public function store(Request $request){
-        $data = $request->except('_token');
-        $data['created_at'] = new DateTime;
-        $data['updated_at'] = new DateTime;
 
-        Role::insert($data);
+        try {
+            DB::beginTransaction();
 
-        return redirect()->route('admin.role.index');
+            $role = Role::create([
+                'name' => $request->name,
+                'display_name' => $request->display_name,
+            ]);
+
+            $role->permissions()->attach($request->permission);
+
+            DB::commit();
+            return redirect()->route('admin.role.index');
+        }
+        catch(\Exception $exception)
+        {
+            DB::rollBack();
+            return redirect()->route('admin.role.index');
+        }
     }
 
     public function edit($id){
+        $permissions = Permission::all();
         $role = Role::where('id', $id)->first();
-        return view('api-admin.modules.role.edit', compact('role'));
+        $getAllPermissionOfRole = DB::table('permission_role')->where('role_id', $id)->pluck('permission_id');
+        return view('api-admin.modules.role.edit', compact('role', 'permissions', 'getAllPermissionOfRole'));
     }
 
     public function update(Request $request, $id){
-        $data = $request->except('_token');
-        $data['created_at'] = new DateTime;
-        $data['updated_at'] = new DateTime;
+        try {
+            DB::beginTransaction();
 
-        Role::where('id',$id)->update($data);
+            Role::where('id', $id)->update([
+                'name' => $request->name,
+                'display_name' => $request->display_name,
+            ]);
 
-        return redirect()->route('admin.role.index');
+            DB::table('permission_role')->where('id', $id)->delete();
+            $role = Role::find($id);
+            $role->permissions()->attach($request->permission);
+
+            DB::commit();
+            return redirect()->route('admin.role.index');
+        }
+        catch(\Exception $exception)
+        {
+            DB::rollBack();
+            return redirect()->route('admin.role.index');
+        }
     }
 
     public function destroy($id){
-        Role::where('id',$id)->delete();
-        return redirect()->route('admin.role.index');
+        try
+        {
+            DB::beginTransaction();
+
+            $role = Role::find($id);
+            $role->permissions()->detach();
+            $role->delete($id);
+
+            DB::commit();
+            return redirect()->route('admin.role.index');
+        }
+        catch(\Exception $exception)
+        {
+            DB::rollBack();
+            return redirect()->route('admin.role.index');
+        }
     }
 }

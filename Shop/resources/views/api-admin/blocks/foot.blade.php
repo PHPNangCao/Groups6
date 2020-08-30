@@ -26,3 +26,10 @@
       return false;
     }
 </script>
+
+{{-- <script type="text/javascript">
+    $("#addd").click(function(){
+      
+      $("#addproduct").append("<label>Chọn sản phẩm<span class="text-danger">(*)</label>")
+    });
+</script> --}}
