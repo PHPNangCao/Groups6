@@ -52,7 +52,7 @@
                                             @endif
                                         </div>
                                         <div class="single-item-header">
-                                        <a href="{{route('chi-tiet-san-pham',$new->id)}}"><img src="upload/product/{{$new->image}}" alt="" height="250px"></a>
+                                        <a href="{{route('chi-tiet-san-pham',$new->url)}}"><img src="upload/product/{{$new->image}}" alt="" height="250px"></a>
                                         </div>
                                         <div class="single-item-body">
                                         <p class="single-item-title">{{$new->name}}</p>
@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="single-item-caption">
                                             <a class="add-to-cart pull-left" href="{{route('themgiohang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$new->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                                            <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$new->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                                             </div>
                                         </div>
                                         <div class="single-item-header">
-                                        <a href="{{route('chi-tiet-san-pham',$spkm->id)}}"><img src="upload/product/{{$spkm->image}}" alt="" height="250px"></a>
+                                        <a href="{{route('chi-tiet-san-pham',$spkm->url)}}"><img src="upload/product/{{$spkm->image}}" alt="" height="250px"></a>
                                         </div>
                                         <div class="single-item-body">
                                         <p class="single-item-title">{{$spkm->name}}</p>
@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="single-item-caption">
                                             <a class="add-to-cart pull-left" href="{{route('themgiohang',$spkm->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$spkm->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                                            <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$spkm->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>

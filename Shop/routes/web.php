@@ -243,7 +243,7 @@ Route::namespace('Page')->group(function(){
 
     Route::get('loai-san-pham/{id}', 'CategoryPageController@getCategory')->name('loai-san-pham');
 
-    Route::get('chi-tiet-san-pham/{id}', 'ProductPageCotroller@getProductDetail')->name('chi-tiet-san-pham');
+    Route::get('chi-tiet-san-pham/{url}', 'ProductPageCotroller@getProductDetail')->name('chi-tiet-san-pham');
 
     Route::get('lien-he', 'PageController@getContact')->name('lien-he');
 
