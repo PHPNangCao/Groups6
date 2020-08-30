@@ -188,7 +188,7 @@ Route::get('logout', 'LoginController@logout')->name('logout');
                 Route::get('destroy/{id}', 'PermissionController@destroy')->name('destroy');
 
             });
-        });
+        
 
         Route::prefix('comment')->name('comment.')->group(function(){
             Route::get('index','CommentController@index')->name('index');

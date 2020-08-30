@@ -109,6 +109,9 @@
                                     <div class="panel-body">
                                         <h6><strong> Đánh giá của khách:</strong></h6>
                                         <div >
+                                            @foreach ($comment as $cmt)
+                                                <div><span><strong>{{$cmt->name}}</strong></span></div>
+                                            @endforeach
                                             {{-- <div><span><strong>{{$comment->phone}}</strong></span></div> --}}
                                             <div>
 
