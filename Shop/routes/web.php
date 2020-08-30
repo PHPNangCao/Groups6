@@ -197,6 +197,21 @@ Route::middleware('check_login')->group(function(){
 
             });
 
+            Route::prefix('bill')->name('bill.')->group(function(){
+                Route::get('index','BillController@index')->name('index');
+    
+                Route::get('show','BillController@show')->name('show');
+    
+                Route::get('create','BillController@create')->name('create');
+                Route::post('store','BillController@store')->name('store');
+    
+    
+                Route::get('edit/{id}', 'BillController@edit')->name('edit');
+                Route::post('update/{id}', 'BillController@update')->name('update');
+    
+                Route::get('destroy/{id}', 'BillController@destroy')->name('destroy');
+    
+            });
 
         Route::prefix('comment')->name('comment.')->group(function(){
             Route::get('index','CommentController@index')->name('index');
