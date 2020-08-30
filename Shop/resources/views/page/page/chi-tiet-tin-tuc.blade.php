@@ -18,7 +18,7 @@
     <div class="row">
 
         {{-- Bài viết chính --}}
-        <div class="col-md-10">
+        <div class="col-md-8">
             <img src="upload/news/{{$getnews->image}}" width="30%" height="30%" alt="">
             <h1>{{$getnews->title}}</h1>
             <h6><p>{!!$getnews->content!!}</p></h6>
@@ -26,20 +26,16 @@
         </div>
         
         {{-- Bài viết khác --}}
-        <div class="col-sm-3 aside" >
+        <div class="col-md-4 aside" >
           <div class="widget">
               <h3 class="widget-title">Bài viết khác</h3>
               <div class="widget-body">
                   @foreach ($news as $news)
                   <div class="beta-sales beta-lists">
                       <div class="media beta-sales-item">  
-                          <a class="pull-left" href="{{route('chi-tiet-tin-tuc',$news->url)}}"><img src="upload/news/{{$news->image}}" alt=""></a>
+                          <a class="pull-left" href="{{route('chi-tiet-tin-tuc',$news->url)}}"><img src="upload/news/{{$news->image}}"  alt=""></a>
                           <div class="media-body">
-                              {{$news->title}}
-                              <br>
-                              {{-- <a href="{{route('chi-tiet-san-pham',$pro->url)}}" style="color: blue">Chi tiết</a> --}}
-      
-                                <span class="flash-del">{{$news->content}}</span><br>
+                              {!! $news->title !!}
 
                           </div>
                       </div>
