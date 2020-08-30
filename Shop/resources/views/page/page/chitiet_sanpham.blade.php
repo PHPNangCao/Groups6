@@ -146,7 +146,7 @@
                 </div>
                 <div class="beta-products-list">
                     <h4>Sản phẩm tương tự</h4>
-
+                    <br>
                     <div class="row">
                         @foreach ($sp_tuongtu as $sptt)
                         <div class="col-sm-4">
