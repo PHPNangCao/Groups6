@@ -1,5 +1,5 @@
 @extends('api-admin.master')
-@section('title','Danh sách loại sản phẩm')
+@section('title','Danh sách User')
 @section('content')
 <!-- Default box -->
 <div class="card">
@@ -20,7 +20,7 @@
                     <th>Trạng thái</th>
                     <th>Thao Tác</th>
                 </tr>
-            </thead> 
+            </thead>
             <tbody style="text-align: center">
                 @foreach ($user as $user)
                 <tr>
@@ -37,7 +37,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('admin.user.edit',['id' => $user->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>
+                        <a href="{{route('admin.user.edit',['id' => $user->id])}}" class="btn btn-primary">Sửa <i class="fa fa-pencil"></a>
                         <a href="{{route('admin.user.destroy',['id' => $user->id])}}" onclick="return checkDelete('Bạn có muốn xóa user này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
                     </td>
                 </tr>

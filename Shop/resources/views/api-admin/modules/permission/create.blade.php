@@ -9,7 +9,7 @@
     <div class="card-body">
         <form action="{{route('admin.permission.store')}}" method="POST">
             @csrf
-            <div class="form-product">
+            <div class="form-group">
                 <label>Quyền<span class="text-danger">(*)</label>
                 <input type="text" name="name" class="form-control" placeholder="Vai Trò...">
                 @if ($errors->has('name'))
@@ -18,7 +18,7 @@
                     </div>
                 @endif
             </div>
-            <div class="form-product">
+            <div class="form-group">
                 <label>Quyền hiển thị<span class="text-danger">(*)</label>
                 <input type="text" name="display_name" class="form-control" placeholder="Vai Trò...">
                 @if ($errors->has('display_name'))
@@ -26,15 +26,6 @@
                         {{$errors->first('display_name')}}
                     </div>
                 @endif
-            </div>
-            <div class="form-product">
-                <label>Nhóm Phân Quyền<span class="text-danger">(*)</label>
-                <select name="group_permission_id" class="form-control">
-                    <option value="">----Chọn nhóm Phân Quyền----</option>
-                        @foreach ($group_permission as $gr)
-                            <option value="{{$gr->id}}">{{$gr->name}}</option>
-                        @endforeach
-                </select>
             </div>
             <hr>
             <div>

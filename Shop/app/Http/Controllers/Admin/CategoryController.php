@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     public function index(){
         $category = Category::orderBy('id', 'DESC')->get();
         return view('api-admin.modules.category.index',compact('category'));

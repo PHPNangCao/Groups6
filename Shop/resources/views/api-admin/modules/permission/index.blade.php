@@ -15,7 +15,6 @@
                     <th>STT</th>
                     <th>Quyền</th>
                     <th>Hiển Thị</th>
-                    <th>Thuộc Nhóm Phân Quyền</th>
                     <th>Thao Tác</th>
                 </tr>
             </thead>

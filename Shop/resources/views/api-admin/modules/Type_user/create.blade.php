@@ -25,9 +25,9 @@
                     <option value="Admin">Admin</option>
                     <option value="Staff">Staff</option>
                 </select>
-                
+
             </div>
-            
+
             <hr>
             <a href="{{route('admin.typeuser.index')}}" class="btn btn-warning">Quay Lại</a>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>
