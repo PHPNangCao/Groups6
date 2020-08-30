@@ -17,8 +17,8 @@ class NewsController extends Controller
     public function News($url){
 
         $getnews = News::where('url', $url)->first();
-
-        return view('page.page.chi-tiet-tin-tuc', compact('getnews'));
+        $news = News::get();
+        return view('page.page.chi-tiet-tin-tuc', compact('getnews','news'));
     }
 
 
