@@ -9,8 +9,10 @@ use App\Comment;
 class ProductPageCotroller extends Controller
 {
     //cách 2 về truyền và nhận tham số
-    public function getProductDetail(Request $request,$id){
+    public function getProductDetail(Request $request,$url){
 
+        $idLSP = Product::select('id')->where('url',$url)->first();
+        $id = $idLSP->id;
         $sanpham = Product::where('id',$id)->first();
         $sp_tuongtu = Product::where('category_id',$sanpham->category_id)->paginate(3);
         $product = Product::where('category_id','<>',$sanpham->category_id)->paginate(3);

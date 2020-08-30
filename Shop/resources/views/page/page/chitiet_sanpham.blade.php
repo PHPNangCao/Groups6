@@ -155,7 +155,7 @@
                                     </div>
                                 @endif
                                 <div class="single-item-header">
-                                <a href="{{route('chi-tiet-san-pham',$sptt->id)}}"><img src="upload/product/{{$sptt->image}}" alt="" height="250px"></a>
+                                <a href="{{route('chi-tiet-san-pham',$sptt->url)}}"><img src="upload/product/{{$sptt->image}}" alt="" height="250px"></a>
                                 </div>
                                 <div class="single-item-body">
                                     <p class="single-item-title">{{$sptt->name}}</p>
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="single-item-caption">
                                     <a class="add-to-cart pull-left" href="{{route('themgiohang',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$sptt->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                                    <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$sptt->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -189,11 +189,11 @@
                         @foreach ($product as $pro)
                         <div class="beta-sales beta-lists">
                             <div class="media beta-sales-item">  
-                                <a class="pull-left" href="{{route('chi-tiet-san-pham',$pro->id)}}"><img src="upload/product/{{$pro->image}}" alt=""></a>
+                                <a class="pull-left" href="{{route('chi-tiet-san-pham',$pro->url)}}"><img src="upload/product/{{$pro->image}}" alt=""></a>
                                 <div class="media-body">
                                     {{$pro->name}}
                                     <br>
-                                    <a href="{{route('chi-tiet-san-pham',$pro->id)}}" style="color: blue">Chi tiết</a>
+                                    <a href="{{route('chi-tiet-san-pham',$pro->url)}}" style="color: blue">Chi tiết</a>
                                     @if ($pro->promotion_price == 0)
                                         <span class="flash-sale">{{number_format($pro->unit_price)}} VNĐ</span>
                                     @else
