@@ -50,7 +50,7 @@
                 <div class="woocommerce-tabs">
                     <ul class="tabs">
                         <li><a href="#tab-description">Mô tả</a></li>
-                        <li><a href="#tab-reviews">Reviews (0)</a></li>
+                    <li><a href="#tab-reviews">Đánh giá {{count($comment)}}</a></li>
                     </ul>
 
                     <div class="panel" id="tab-description">
