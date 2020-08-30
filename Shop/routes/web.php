@@ -262,6 +262,10 @@ Route::namespace('Page')->group(function(){
     Route::get('chi-tiet-mon-ngon/{id}','FoodController@Food')->name('chi-tiet-mon-ngon');
 
 
-    Route::get('thanh-toan','CartController@payment')->name('thanh-toan');
-    Route::get('AddCart/{id}','CartController@AddCart')->name('AddCart');
+    Route::get('add-to-cart/{id}','CartController@getAddtoCart')->name('themgiohang');
+    Route::get('del-cart/{id}','CartController@getDelItemCart')->name('xoagiohang');
+    
+    Route::get('dat-hang','CartController@getCheckout')->name('dathang');
+    Route::post('dat-hang','CartController@postCheckout')->name('dathang');
+
 });

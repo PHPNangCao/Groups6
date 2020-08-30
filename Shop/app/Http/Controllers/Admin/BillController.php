@@ -30,7 +30,7 @@ class BillController extends Controller
         $customer->note = $request->note;
         $customer->save();
 
-        $bill_detail = new BillDetail();
+        $bill_detail = new BillDetail(); 
         $bill_detail = array();
         
         return redirect()->back();
