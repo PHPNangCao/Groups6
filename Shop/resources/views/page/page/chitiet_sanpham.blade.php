@@ -63,11 +63,16 @@
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div class="feedback" name="rating" >
-                                            <p>Mời bạn chọn sao để đánh giá </p>
+                                            <p>Mời bạn chọn sao để đánh giá<span class="text-danger">(*)</p>
                                             @include('page.rate');
+                                            @if ($errors->has('rating'))
+                                                <div class="text-danger">
+                                                    {{$errors->first('rating')}}
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-sm-5">
                                         <div class="form-group">
                                             <label>Tên:<span class="text-danger">(*)</label>
                                             <input type="text" name="name" class="form-control" placeholder="Nhập vào họ tên...">
@@ -104,18 +109,30 @@
                             </div>
                         </form>
                         <div class="container">
+                            <h6><strong> Đánh giá của khách:</strong></h6>
+                        </div>
+                        <div class="container">
                             <div class="col-8">
                                 <div class="panel-default">
                                     <div class="panel-body">
-                                        <h6><strong> Đánh giá của khách:</strong></h6>
-                                        <div >
+                                        <div class="border border-dark">
                                             @foreach ($comment as $cmt)
-                                                <div><span><strong>{{$cmt->name}}</strong></span></div>
-                                            @endforeach
-                                            {{-- <div><span><strong>{{$comment->phone}}</strong></span></div> --}}
                                             <div>
-
+                                                <span><strong> </strong>{{$cmt->phone}}</span>
                                             </div>
+                                            <div>
+                                                @if ($user->rating == {{$cmt->rating}
+                                                ]]]
+                                                ]]]]]
+                                                ]]]
+                                                    @break
+                                                @endif
+                                            </div>
+                                            <div>
+                                                <span>{{$cmt->description}}</span>
+                                            </div>
+                                            @endforeach
+                                        <div>
                                         </div>
                                     </div>
                                 </div>
