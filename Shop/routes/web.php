@@ -18,10 +18,9 @@ Route::post('login', 'LoginController@progressLogin')->name('progressLogin');
 
 Route::get('logout', 'LoginController@logout')->name('logout');
 
-// Route::middleware(['auth'])->group(function (){
 
-//     Route::middleware('check_login')->group(function(){
-
+Route::middleware('check_login')->group(function(){
+    Route::middleware(['auth'])->group(function(){
         Route::get('admin','Admin\AdminController@index')->name('admin');
 
         Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
@@ -54,7 +53,16 @@ Route::get('logout', 'LoginController@logout')->name('logout');
             });
 
             Route::prefix('user')->name('user.')->group(function(){
-                Route::get('index','UserController@index')->name('index');
+
+                Route::get('index',['as'=>'index','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
+
+                Route::get('create',['as'=>'create','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
+                Route::get('store',['as'=>'store','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
+
+                // Route::get('edit/{id}',['as'=>'edit/{id}','uses'=>'UserController@index','middleware'=>'checkacl:user-list'])->name('edit');
+                // Route::get('update/{id}',['as'=>'update/{id}','uses'=>'UserController@index','middleware'=>'checkacl:user-list'])->name('update');
+
+                // Route::get('destroy/{id}',['as'=>'destroy/{id}','uses'=>'UserController@index','middleware'=>'checkacl:user-list'])->name('destroy');
 
                 Route::get('create','UserController@create')->name('create');
                 Route::post('store','UserController@store')->name('store');
@@ -188,7 +196,7 @@ Route::get('logout', 'LoginController@logout')->name('logout');
                 Route::get('destroy/{id}', 'PermissionController@destroy')->name('destroy');
 
             });
-        
+
 
         Route::prefix('comment')->name('comment.')->group(function(){
             Route::get('index','CommentController@index')->name('index');
@@ -198,6 +206,7 @@ Route::get('logout', 'LoginController@logout')->name('logout');
             Route::get('create','CommentController@create')->name('create');
             Route::post('store','CommentController@store')->name('store');
 
+
             Route::get('edit/{id}', 'CommentController@edit')->name('edit');
             Route::post('update/{id}', 'CommentController@update')->name('update');
 
@@ -205,8 +214,8 @@ Route::get('logout', 'LoginController@logout')->name('logout');
 
         });
     });
-// });
-
+    });
+});
 
 
 //Page

@@ -56,6 +56,23 @@
                         </div>
                 @endif
             </div>
+
+            {{-- <div class="form-group">
+                <label>Role<span class="text-danger">(*)</span></label>
+                <select class="form-control" multiple="multiple" name="roles[]">
+                    @foreach($roles as $role)
+                        <option {{ $listRoleOfUser->contains($role->id) ? 'selected' : '' }} value="{{ $role->id }}">{{ $role->display_name }}</option>
+                    @endforeach
+                </select>
+            </div> --}}
+
+            @foreach($roles as $role)
+            <div class="form-check">
+                <input {{$listRoleOfUser->contains($role->id) ? 'checked' : ''}} class="form-check-input" type="checkbox" id="gridCheck1" name="roles[]" value="{{ $role->id }}">
+                <label class="form-check-label" for="gridCheck1">{{ $role->display_name }}</label>
+            </div>
+            @endforeach
+
             <hr>
             <a href="{{route('admin.user.index')}}" class="btn btn-warning">Quay Lại</a>
             <button type="submit" class="btn btn-primary">Lưu thông tin</button>

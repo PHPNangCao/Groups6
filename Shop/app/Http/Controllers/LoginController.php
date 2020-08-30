@@ -28,7 +28,7 @@ class LoginController extends Controller
         $remember = $request->input('remember-me');
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)){
-            return redirect()->route('admin.category.index');
+            return redirect()->route('admin');
         } else {
             return redirect()->route('showViewLogin');
         }

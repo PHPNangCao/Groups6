@@ -58,12 +58,12 @@
             </div>
 
             <div class="form-group">
-                <label>Role<span class="text-danger">(*)</span></label>
-                <select class="form-control" multiple="multiple" name="roles[]">
-                    @foreach($roles as $role)
-                        <option value="{{ $role->id }}">{{ $role->display_name }}</option>
-                    @endforeach
-                </select>
+                @foreach($roles as $role)
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="roles[]" value="{{$role->id}}">
+                    <label class="form-check-label" for="gridCheck1">{{ $role->display_name }}</label>
+                </div>
+                @endforeach
             </div>
             <hr>
             <a href="{{route('admin.user.index')}}" class="btn btn-warning">Quay Lại</a>
