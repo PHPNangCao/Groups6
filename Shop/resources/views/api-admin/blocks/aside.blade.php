@@ -13,7 +13,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
                 <a href=""  style="font-size:20px" class="d-block"></a>
-                <a href="{{route('admin.user.index')}}"  style="font-size:20px" class="d-block">{{auth()->user()->name}}</a>
+                <h1 href="{{route('admin.user.index')}}"  style="font-size:20px; color:white" class="d-block">{{auth()->user()->name}}</h1>
                 <a href="{{route('logout')}}" style="font-size:13px" class="text-danger">Log Out</a>
             </div>
         </div>
@@ -54,6 +54,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
@@ -78,6 +79,9 @@
                     </ul>
                 </li>
 
+
+
+                @can('admin')
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -114,7 +118,7 @@
                         </li>
                     </ul>
                 </li>
-
+                @endcan
                 <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
