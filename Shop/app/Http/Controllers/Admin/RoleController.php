@@ -62,7 +62,7 @@ class RoleController extends Controller
 
             DB::table('permission_role')->where('id', $id)->delete();
             $role = Role::find($id);
-            $role->permissions()->attach($request->permission);
+            $role->permission()->attach($request->permission);
 
             DB::commit();
             return redirect()->route('admin.role.index');

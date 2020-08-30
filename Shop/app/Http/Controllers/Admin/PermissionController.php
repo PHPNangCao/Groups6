@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Permission;
-use App\GroupPermission;
 use DateTime;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +16,6 @@ class PermissionController extends Controller
     }
 
     public function create(){
-        $group_permission = GroupPermission::get();
         $permission = Permission::get();
         return view('api-admin.modules.permission.create', compact('group_permission', 'permission'));
     }
