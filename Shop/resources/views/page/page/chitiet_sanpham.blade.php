@@ -118,27 +118,28 @@
                                         <div class="border border-dark">
                                             @foreach ($comment as $cmt)
                                             <div>
-                                                <span><strong> </strong>{{$cmt->phone}}</span>
+                                            <span><strong> </strong>{{$cmt->phone}}</span>
                                             </div>
-                                            {{-- <div>
-                                                @if ($user->rating == {{$cmt->rating}
-                                                ]]]
-                                                ]]]]]
-                                                ]]]
-                                                    @break
-                                                @endif
+                                            <div>
+                                                @for ($i = 0; $i < $cmt->rating; $i++)
+                                                    <span class="fa fa-star checked"></span>
+                                                @endfor
+                                                
+                                                @for ($i = 0; $i < 5- $cmt->rating; $i++)
+                                                    <span class="fa fa-star"></span>
+                                                @endfor
                                             </div>
                                             <div>
                                                 <span>{{$cmt->description}}</span>
                                             </div>
-                                            
-                                            <div> --}}
-                                                @endforeach
+                                            @endforeach
+                                        <div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <div class="space50">
