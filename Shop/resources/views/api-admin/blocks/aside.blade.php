@@ -24,7 +24,7 @@
                     with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('admin')}}" class="nav-link">
                         <i class="nav-icon far fa-tachometer-alt"></i>
                         <p>
                             Trang tổng quan

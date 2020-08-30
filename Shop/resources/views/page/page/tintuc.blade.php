@@ -14,7 +14,7 @@
     </div>
 </div>
 
-{{-- <div class="container">
+<div class="container">
   <div id="content" class="space-top-none">
       <div class="main-content">
         <article class="all-browsers">
@@ -23,17 +23,17 @@
           <div class="col-md-2"><img src="upload/news/{{$new->image}}" alt="" width="100px"></div>
             <div class="col-md-10">
             <h5>{{$new->title}}</h5>
-            <p style="text-overflow: ellipsis">{!!$new->content!!}</p>
-              <span style="float: right"><a href="" style="color: blue">Chi tiết</a></span>
+            <p style="text-overflow: ellipsis">{!! Str::limit($new->content,250,'...') !!}</p>
+            <span style="float: right"><a href="{{route('chi-tiet-tin-tuc', $new->url)}}" style="color: blue">Chi tiết</a></span>
             </div>
           </article>
           @endforeach
         </article>
       </div>
   </div>
-</div> --}}
+</div>
 
-<div class="container">
+{{-- <div class="container">
   <div id="content" class="space-top-none">
       <div class="main-content">
         <article class="all-browsers">
@@ -57,7 +57,7 @@
         </article>
       </div>
   </div>
-</div>
+</div> --}}
 
 
 @endsection

@@ -10,11 +10,13 @@ class NewsController extends Controller
 {
     public function getNews(){
 
-        return view('page.page.chi-tiet-tin-tuc');
-    }  
+        $news = News::get();
+        return view('page.page.tintuc',compact('news'));
+    }   
     
-    public function News($id){
-        $getnews = News::where('id', $id)->first();
+    public function News($url){
+
+        $getnews = News::where('url', $url)->first();
 
         return view('page.page.chi-tiet-tin-tuc', compact('getnews'));
     }

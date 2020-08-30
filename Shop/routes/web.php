@@ -217,7 +217,7 @@ Route::namespace('Page')->group(function(){
 
     Route::get('tin-tuc','NewsController@getNews')->name('tin-tuc');
 
-    Route::get('chi-tiet-tin-tuc','NewsController@News')->name('chi-tiet-tin-tuc');
+    Route::get('chi-tiet-tin-tuc/{url}','NewsController@News')->name('chi-tiet-tin-tuc');
 
     Route::get('mon-ngon','FoodController@getFood')->name('mon-ngon');
 
