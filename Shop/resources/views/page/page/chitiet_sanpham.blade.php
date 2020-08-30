@@ -120,7 +120,7 @@
                                             <div>
                                                 <span><strong> </strong>{{$cmt->phone}}</span>
                                             </div>
-                                            <div>
+                                            {{-- <div>
                                                 @if ($user->rating == {{$cmt->rating}
                                                 ]]]
                                                 ]]]]]
@@ -131,8 +131,9 @@
                                             <div>
                                                 <span>{{$cmt->description}}</span>
                                             </div>
-                                            @endforeach
-                                        <div>
+                                            
+                                            <div> --}}
+                                                @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +194,7 @@
                                 <div class="media-body">
                                     {{$pro->name}}
                                     <br>
-                                    <a href="{{route('chi-tiet-san-pham',$pro->url)}}" style="color: blue">Chi tiết</a>
+                                    {{-- <a href="{{route('chi-tiet-san-pham',$pro->url)}}" style="color: blue">Chi tiết</a> --}}
                                     @if ($pro->promotion_price == 0)
                                         <span class="flash-sale">{{number_format($pro->unit_price)}} VNĐ</span>
                                     @else
