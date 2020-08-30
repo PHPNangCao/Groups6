@@ -52,19 +52,21 @@ Route::middleware('check_login')->group(function(){
             });
 
             Route::prefix('user')->name('user.')->group(function(){
-
                 Route::get('index',['as'=>'index','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
 
-                // Route::get('index','UserController@index')->name('index');
+                Route::get('create',['as'=>'create','uses'=>'UserController@create','middleware'=>'checkacl:user-add']);
+                Route::post('store',['as'=>'store','uses'=>'UserController@store','middleware'=>'checkacl:user-add']);
 
-                Route::get('create',['as'=>'create','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
-                Route::post('store',['as'=>'store','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
+                // Route::get('edit/{id}', 'UserController@edit')->name('edit');
+                // Route::post('update/{id}', 'UserController@update')->name('update');
+                Route::get('edit/{id}',['as'=>'edit','uses'=>'UserController@edit','middleware'=>'checkacl:user-edit']);
+                Route::post('update/{id}',['as'=>'update','uses'=>'UserController@update','middleware'=>'checkacl:user-edit']);
 
-                Route::get('edit/{id}', ['as'=>'edit','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
-                Route::post('update/{id}', ['as'=>'update','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
+                Route::get('status/{id}', 'UserController@status')->name('status');
+                Route::post('status/{id}',['as'=>'status','uses'=>'UserController@status','middleware'=>'checkacl:user-list']);
 
-                Route::get('status/{id}', ['as'=>'status','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
-                Route::get('destroy/{id}',  ['as'=>'destroy','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
+                // Route::get('destroy/{id}', 'UserController@destroy')->name('destroy');
+                Route::post('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delete']);
             });
 
             Route::prefix('typeuser')->name('typeuser.')->group(function(){
@@ -222,7 +224,7 @@ Route::middleware('check_login')->group(function(){
 
         });
     });
-    });
+});
 
 
 
