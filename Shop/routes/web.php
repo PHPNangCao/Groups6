@@ -66,7 +66,7 @@ Route::middleware('check_login')->group(function(){
                 Route::post('status/{id}',['as'=>'status','uses'=>'UserController@status','middleware'=>'checkacl:user-list']);
 
                 // Route::get('destroy/{id}', 'UserController@destroy')->name('destroy');
-                Route::post('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delete']);
+                Route::get('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delete']);
             });
 
             Route::prefix('typeuser')->name('typeuser.')->group(function(){

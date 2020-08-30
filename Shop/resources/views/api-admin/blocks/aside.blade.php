@@ -13,8 +13,8 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
                 <a href=""  style="font-size:20px" class="d-block"></a>
-                {{-- <h1 href="{{route('admin.user.index')}}"  style="font-size:20px; color:white" class="d-block">{{auth()->user()->name}}</h1>
-                <a href="{{route('logout')}}" style="font-size:13px" class="text-danger">Log Out</a> --}}
+                <h1 href="{{route('admin.user.index')}}"  style="font-size:20px; color:white" class="d-block">{{auth()->user()->name}}</h1>
+                <a href="{{route('logout')}}" style="font-size:13px" class="text-danger">Log Out</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
