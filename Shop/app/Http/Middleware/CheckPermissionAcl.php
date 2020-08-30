@@ -42,6 +42,6 @@ class CheckPermissionAcl
         if($listRoleOfUser->contains($checkPermission)){
             return $next($request);
         }
-        return abort(401);
+        return back();
     }
 }
