@@ -51,26 +51,31 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        <div class="single-item-header">
-                                        <a href="{{route('chi-tiet-san-pham',$new->url)}}"><img src="upload/product/{{$new->image}}" alt="" height="250px"></a>
-                                        </div>
-                                        <div class="single-item-body">
-                                        <p class="single-item-title">{{$new->name}}</p>
-                                            <p class="single-item-price">
-                                                {{-- <span class="single-item-title">Giá: <span style="color: red">LIÊN HỆ</span></span> --}}
-                                                @if ($new->promotion_price == 0)
-                                                <span class="flash-sale">{{number_format($new->unit_price)}} VNĐ</span>
-                                                @else
-                                                    <span class="flash-del">{{number_format($new->unit_price)}} VNĐ</span>
-                                                    <span class="flash-sale">{{number_format($new->promotion_price)}} VNĐ</span>
-                                                @endif
-                                            </p>
-                                        </div>
-                                        <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$new->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
-                                            <div class="clearfix"></div>
-                                        </div>
+
+
+                                        
+                                            <div class="single-item-header">
+                                            <a href="{{route('chi-tiet-san-pham',$new->url)}}"><img src="upload/product/{{$new->image}}" alt="" height="250px"></a>
+                                            </div>
+                                            <div class="single-item-body">
+                                            <p class="single-item-title">{{$new->name}}</p>
+                                                <p class="single-item-price">
+                                                    {{-- <span class="single-item-title">Giá: <span style="color: red">LIÊN HỆ</span></span> --}}
+                                                    @if ($new->promotion_price == 0)
+                                                    <span class="flash-sale">{{number_format($new->unit_price)}} VNĐ</span>
+                                                    @else
+                                                        <span class="flash-del">{{number_format($new->unit_price)}} VNĐ</span>
+                                                        <span class="flash-sale">{{number_format($new->promotion_price)}} VNĐ</span>
+                                                    @endif
+                                                </p>
+                                            </div>
+                                            {{-- href="{{route('themgiohang',$new->id)}}" --}}
+                                            <div class="single-item-caption">
+                                                <a class="add-to-cart pull-left" onclick="AddCart({{$new->id}})" href="javacript:"><i class="fa fa-shopping-cart"></i></a>
+                                                <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$new->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                                                <div class="clearfix"></div>
+                                            </div>
+
                                     </div>
                                     <br>
                                 </div>
@@ -109,7 +114,8 @@
                                             </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$spkm->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                            {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$spkm->id)}}"><i class="fa fa-shopping-cart"></i></a> --}}
+                                            <a class="add-to-cart pull-left" onclick="AddCart({{$spkm->id}})" href="javacript:"><i class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$spkm->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>

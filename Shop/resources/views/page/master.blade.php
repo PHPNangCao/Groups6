@@ -15,7 +15,9 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/rate.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
+	<link rel="stylesheet" href="source/assets/dest/css/sweetalert.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
 		.all-browsers {
 		  margin: 0;
@@ -89,5 +91,30 @@
 		)
 	})
 	</script>
+
+	<script src="source/assets/dest/js/sweetalert.min.js"></script>
+	
+	<script type="text/javascript">
+		function AddCart(id){
+			$.ajax({
+				type: "GET",
+				url: "add-to-cart/"+id,
+				success: function (response) {
+					swal("Đã thêm sản phẩm vào giỏ hàng!");
+					
+				}
+			});
+		}
+	</script>
+
+	{{-- <script type="text/javascript">
+		$(document).ready(function (){
+			$('.add-to-cart').click(function(){
+				swal("Hello world!");
+			});
+		});
+	</script> --}}
+
+
 </body>
 </html>

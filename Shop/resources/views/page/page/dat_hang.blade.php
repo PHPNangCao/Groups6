@@ -73,7 +73,8 @@
                                     <div class="media-body">
                                         <p class="font-large">{{$cart['item']['name']}}</p>
                                         <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price']/$cart['qty'])}} đồng</span>
-                                        <span class="color-gray your-order-info">Số lượng: {{$cart['qty']}}</span>
+                                        <br>
+                                        <span class="color-gray your-order-info">Số lượng: <input min="1" type="number" value="{{$cart['qty']}}"></span>
                                     </div>
                                 </div>
                             <!-- end one item -->

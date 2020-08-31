@@ -59,7 +59,8 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$sptl->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$sptl->id)}}"><i class="fa fa-shopping-cart"></i></a> --}}
+                                        <a class="add-to-cart pull-left" onclick="AddCart({{$sptl->id}})" href="javacript:"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$sptl->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
@@ -105,7 +106,8 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$spk->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$spk->id)}}"><i class="fa fa-shopping-cart"></i></a> --}}
+                                        <a class="add-to-cart pull-left" onclick="AddCart({{$spk->id}})" href="javacript:"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$spk->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
