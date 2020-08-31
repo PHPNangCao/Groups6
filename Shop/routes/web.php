@@ -52,33 +52,26 @@ Route::middleware('check_login')->group(function(){
             });
 
             Route::prefix('user')->name('user.')->group(function(){
-                Route::get('index',['as'=>'index','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
 
-                Route::get('create',['as'=>'create','uses'=>'UserController@create','middleware'=>'checkacl:user-add']);
-                Route::post('store',['as'=>'store','uses'=>'UserController@store','middleware'=>'checkacl:user-add']);
+                Route::get('index','UserController@index')->name('index');
 
-                // Route::get('edit/{id}', 'UserController@edit')->name('edit');
-                // Route::post('update/{id}', 'UserController@update')->name('update');
-                Route::get('edit/{id}',['as'=>'edit','uses'=>'UserController@edit','middleware'=>'checkacl:user-edit']);
-                Route::post('update/{id}',['as'=>'update','uses'=>'UserController@update','middleware'=>'checkacl:user-edit']);
+                Route::get('create','UserController@create')->name('create');
+                Route::post('store','UserController@store')->name('store');
+                // Route::get('index',['as'=>'index','uses'=>'UserController@index','middleware'=>'checkacl:user-list']);
 
-                // Route::get('status/{id}', 'UserController@status')->name('status');
-                Route::post('status/{id}',['as'=>'status','uses'=>'UserController@status','middleware'=>'checkacl:user-list']);
+                // Route::get('create',['as'=>'create','uses'=>'UserController@create','middleware'=>'checkacl:user-add']);
+                // Route::post('store',['as'=>'store','uses'=>'UserController@store','middleware'=>'checkacl:user-add']);
 
-                // Route::get('destroy/{id}', 'UserController@destroy')->name('destroy');
-                Route::get('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delele']);
-            });
+                Route::get('edit/{id}', 'UserController@edit')->name('edit');
+                Route::post('update/{id}', 'UserController@update')->name('update');
+                // Route::get('edit/{id}',['as'=>'edit','uses'=>'UserController@edit','middleware'=>'checkacl:user-edit']);
+                // Route::post('update/{id}',['as'=>'update','uses'=>'UserController@update','middleware'=>'checkacl:user-edit']);
 
-            Route::prefix('typeuser')->name('typeuser.')->group(function(){
-                Route::get('index','TypeUserController@index')->name('index');
+                Route::get('status/{id}', 'UserController@status')->name('status');
+                // Route::post('status/{id}',['as'=>'status','uses'=>'UserController@status', 'middleware'=>'checkacl:user-list']);
 
-                Route::get('create','TypeUserController@create')->name('create');
-                Route::post('store','TypeUserController@store')->name('store');
-
-                Route::get('edit/{id}', 'TypeUserController@edit')->name('edit');
-                Route::post('update/{id}', 'TypeUserController@update')->name('update');
-
-                Route::get('destroy/{id}', 'TypeUserController@destroy')->name('destroy');
+                Route::get('destroy/{id}', 'UserController@destroy')->name('destroy');
+                // Route::get('destroy/{id}',['as'=>'destroy','uses'=>'UserController@destroy','middleware'=>'checkacl:user-delete']);
             });
 
             Route::prefix('supplier')->name('supplier.')->group(function(){
@@ -177,6 +170,16 @@ Route::middleware('check_login')->group(function(){
 
                 Route::get('destroy/{id}', 'RoleController@destroy')->name('destroy');
 
+                // Route::get('index',['as'=>'index','uses'=>'RoleController@index','middleware'=>'checkacl:role-list']);
+
+                // Route::get('create',['as'=>'create','uses'=>'RoleController@create','middleware'=>'checkacl:role-add']);
+                // Route::post('store',['as'=>'store','uses'=>'RoleController@store','middleware'=>'checkacl:role-add']);
+
+                // Route::get('edit/{id}',['as'=>'edit','uses'=>'RoleController@edit','middleware'=>'checkacl:role-edit']);
+                // Route::post('update/{id}',['as'=>'update','uses'=>'RoleController@update','middleware'=>'checkacl:role-edit']);
+
+                // Route::get('destroy/{id}',['as'=>'destroy','uses'=>'RoleController@destroy','middleware'=>'checkacl:role-delete']);
+
             });
 
             Route::prefix('permission')->name('permission.')->group(function(){
@@ -189,6 +192,16 @@ Route::middleware('check_login')->group(function(){
                 Route::post('update/{id}', 'PermissionController@update')->name('update');
 
                 Route::get('destroy/{id}', 'PermissionController@destroy')->name('destroy');
+
+                // Route::get('index',['as'=>'index','uses'=>'PermissionController@index','middleware'=>'checkacl:permission-list']);
+
+                // Route::get('create',['as'=>'create','uses'=>'PermissionController@create','middleware'=>'checkacl:permission-add']);
+                // Route::post('store',['as'=>'store','uses'=>'PermissionController@store','middleware'=>'checkacl:permission-add']);
+
+                // Route::get('edit/{id}',['as'=>'edit','uses'=>'PermissionController@edit','middleware'=>'checkacl:permission-edit']);
+                // Route::post('update/{id}',['as'=>'update','uses'=>'PermissionController@update','middleware'=>'checkacl:permission-edit']);
+
+                // Route::get('destroy/{id}',['as'=>'destroy','uses'=>'PermissionController@destroy','middleware'=>'checkacl:permission-delete']);
 
             });
 
