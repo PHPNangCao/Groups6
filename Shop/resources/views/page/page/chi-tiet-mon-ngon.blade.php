@@ -21,10 +21,13 @@
         <div class="col-md-8">
             <img src="upload/food/{{$getfood->image}}" width="30%" height="30%" alt="">
             <br>
-            <h1>{{$getfood->title}} <div class="fb-share-button" data-href="http://localhost:8000/chi-tiet-mon-ngon/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fchi-tiet-mon-ngon%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div></h1>
+            <h1>{{$getfood->title}}</h1>
+            <br>
+            <div class="fb-like" data-href="http://localhost:8000/chi-tiet-san-pham/cai-thia-4kfarm-tui-400-500g" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>             
             <br>
             <h6><p>{!!$getfood->content!!}</p></h6>
             <hr>
+            <div class="fb-comments" data-href="http://localhost:8000/trang-chu" data-numposts="4" data-width=""></div>
         </div>
         
         {{-- Bài viết khác --}}
