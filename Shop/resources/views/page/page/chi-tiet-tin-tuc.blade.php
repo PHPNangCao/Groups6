@@ -28,7 +28,10 @@
         {{-- Bài viết khác --}}
         <div class="col-md-4 aside" >
           <div class="widget">
-              <h3 class="widget-title">Bài viết khác</h3>
+            <h3 class="widget-title">
+                <a href="{{route('tin-tuc')}}">Bài viết khác<a>                    
+            </h3>
+
               <div class="widget-body">
                   @foreach ($news as $news)
                   <div class="beta-sales beta-lists">

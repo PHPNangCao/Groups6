@@ -20,11 +20,17 @@
         <article class="all-browsers">
           @foreach ($news as $new)
           <article class="browser row">
-          <div class="col-md-2"><img src="upload/news/{{$new->image}}" alt="" width="100px"></div>
+            <div class="col-md-2">
+              <img src="upload/news/{{$new->image}}" alt="" width="100%" height="150">
+            </div>
+            
             <div class="col-md-10">
-            <h5>{{$new->title}}</h5>
-            <p style="text-overflow: ellipsis">{!! Str::limit($new->content,250,'...') !!}</p>
-            <span style="float: right"><a href="{{route('chi-tiet-tin-tuc', $new->url)}}" style="color: blue">Chi tiết</a></span>
+              <a href="{{route('chi-tiet-tin-tuc', $new->url)}}">
+                <h5>{{$new->title}}</h5>
+              </a>
+              <span style="font-size: 17px">
+                <p>{!! Str::limit($new->content,250,'...') !!}</p>
+              </span>
             </div>
           </article>
           @endforeach
@@ -32,32 +38,5 @@
       </div>
   </div>
 </div>
-
-{{-- <div class="container">
-  <div id="content" class="space-top-none">
-      <div class="main-content">
-        <article class="all-browsers">
-          @foreach ($news as $new)
-          <article class="browser row">
-            <div class="col-md-3">
-              <img src="upload/news/{{$new->image}}" width="100%" height="200" alt="">
-            </div>
-            <div class="col-md-9">
-              <span style="font-size: 15px">
-                  <a href="{{route('chi-tiet-mon-ngon', $news->id)}}">
-                    <h3><b>{{$news->title}}<b></h3>
-                    </a>
-              </span>
-              <span>
-                  <p>{!! Str::limit($news->content,250,'...') !!}</p>
-              </span>
-            </div>
-          </article>
-          @endforeach
-        </article>
-      </div>
-  </div>
-</div> --}}
-
 
 @endsection

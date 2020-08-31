@@ -18,7 +18,7 @@
     <div class="row">
 
         {{-- Bài viết chính --}}
-        <div class="col-md-10">
+        <div class="col-md-8">
             <img src="upload/food/{{$getfood->image}}" width="30%" height="30%" alt="">
             <h1>{{$getfood->title}}</h1>
             <h6><p>{!!$getfood->content!!}</p></h6>
@@ -26,26 +26,23 @@
         </div>
         
         {{-- Bài viết khác --}}
-        <div class="col-md-2">
-          <a href="{{route('mon-ngon')}}">
-            <h6><b>Bài Viết Khác<b></h6>            
-          </a>
-            <div id="content" class="space-top-none">
-                <div class="main-content">
+          <div class="col-md-4 aside" >
+            <div class="widget">
+                <h3 class="widget-title">
+                  <a href="{{route('mon-ngon')}}">Bài viết khác<a>                    
+                </h3>
+                
+                <div class="widget-body">
                   @foreach ($food as $food)
-                  <article class="all-browsers">
-                    <article class="browser row ">
-                      <img src="upload/food/{{$food->image}}" width="100%"  alt="">
-                        <span style="font-size: 5px">
-                            <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
-                              <h3><b>{{$food->title}}<b></h3>
-                              </a>
-                        </span>
+                  <div class="beta-sales beta-lists">
+                    <div class="media beta-sales-item"> 
+                      <a class="pull-left" href="{{route('chi-tiet-mon-ngon',$food->id)}}"><img src="upload/food/{{$food->image}}"  alt=""></a>
+                      <div class="media-body" style="font-size: 15px" >
+                        {!! $food->title !!}
                       </div>
-                    </article>
-                  </article>
+                    </div>
+                  </div>
                   @endforeach
-
                 </div>
             </div>        
           </div>

@@ -20,18 +20,9 @@
             </div>
             <div class="row">
             <div class="col-md-6">
-                {{-- <div class="form-group">
-                    <label>Ghi chú</label>
-                    <input type="text" name="note" class="form-control"   placeholder="Ghi Chú...">
-                    @if ($errors->has('note'))
-                        <div class="text-danger">
-                            {{$errors->first('note')}}
-                        </div>
-                    @endif
-                </div> --}}
                 <div class="form-group"> 
                     <label>Ghi chú</label>
-                    <textarea class="form-control" name="note" placeholder="Ghi Chú..."></textarea>
+                    <textarea class="form-control" name="note" rows="3" placeholder="Ghi Chú..."></textarea>
                     <script>
                         CKEDITOR.replace( 'note' );
                     </script>

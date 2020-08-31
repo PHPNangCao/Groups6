@@ -20,4 +20,6 @@ class FoodController extends Controller
 
         return view('page.page.chi-tiet-mon-ngon', compact('food','getfood'));
     }
+
+    
 }

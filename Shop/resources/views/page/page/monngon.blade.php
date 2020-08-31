@@ -24,13 +24,10 @@
               <img src="upload/food/{{$food->image}}" width="100%" height="150" alt="">
             </div>
 
-            <div class="col-md-9">
-              <span style="font-size: 15px">
+            <div class="col-md-10">
                   <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
-                    <h3><b>{{$food->title}}<b></h3>
-                    </a>
-              </span>
-              <br>
+                    <h5>{{$food->title}}</h5>
+                  </a>
               <span style="font-size: 17px">
                   <p>{!! Str::limit($food->note,250,'...') !!}</p>
               </span>
