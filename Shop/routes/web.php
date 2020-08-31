@@ -206,19 +206,11 @@ Route::middleware('check_login')->group(function(){
             });
 
             Route::prefix('bill')->name('bill.')->group(function(){
+                
                 Route::get('index','BillController@index')->name('index');
 
-                Route::get('show','BillController@show')->name('show');
-
-                Route::get('create','BillController@create')->name('create');
-                Route::post('store','BillController@store')->name('store');
-
-
-                Route::get('edit/{id}', 'BillController@edit')->name('edit');
-                Route::post('update/{id}', 'BillController@update')->name('update');
-
-                Route::get('destroy/{id}', 'BillController@destroy')->name('destroy');
-
+                Route::get('bill-detail/{id}','BillController@show')->name('show');
+                Route::get('status/{id}', 'BillController@status')->name('status');
             });
 
             Route::prefix('comment')->name('comment.')->group(function(){

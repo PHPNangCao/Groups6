@@ -12,7 +12,7 @@ class Bills extends Model
         return $this->hasMany('App\BillDetail','bill_id','id');
     }
 
-    public function bill(){
+    public function customer(){
         return $this->belongsTo('App\Customer','customer_id','id');
     }
 }

@@ -65,15 +65,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="{{route('admin.bill.create')}}" class="nav-link">
+                        <a href="{{route('admin.bill.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Tạo đơn hàng</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.bill.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Chi tiết đơn hàng</p>
+                                <p>Đơn hàng</p>
                             </a>
                         </li>
                     </ul>
