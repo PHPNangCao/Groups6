@@ -37,12 +37,12 @@
                 </tr>
             </thead> 
             <tbody style="text-align: center">   
-                @foreach ($billDetail as $Detail)
+                @foreach ($billDetail as $detail)
                 <tr>
-                    <td>{{$Detail->product->name}}</td>
-                    <td>{{$Detail->quantity}}</td>
-                    <td>{{number_format($Detail->unit_price)}} VNĐ</td>
-                    <td>{{$Detail->created_at}}</td>
+                    <td>{{$detail->product_id}}</td>
+                    <td>{{$detail->quantity}}</td>
+                    <td>{{number_format($detail->unit_price)}} VNĐ</td>
+                    <td>{{$detail->created_at}}</td>
                 </tr>
                 @endforeach
             </tbody>
