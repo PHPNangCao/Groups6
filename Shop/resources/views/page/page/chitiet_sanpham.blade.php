@@ -42,6 +42,7 @@
                         </div>
                         <br>
                         <a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                        <div class="fb-share-button" data-href="http://localhost:8000/chi-tiet-mon-ngon/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fchi-tiet-mon-ngon%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                     </div>
                 </div>
 
