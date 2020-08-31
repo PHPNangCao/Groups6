@@ -15,7 +15,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        
+        $comment = Comment::get();
+        return view('api-admin.modules.comment.index',compact('comment'));
     }
 
     /**
@@ -23,10 +24,12 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {
-
-        return view('page.chitiet_sanpham',compact('comment'));
+    public function status($id)
+    {   
+        $comment = Comment::find($id);
+        $comment->status = ! $comment->status;
+        $comment->save();
+        return redirect()->back();
     }
 
     public function store(Request $request)
@@ -60,7 +63,8 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comment = Comment::where('id', $id)->first();
+        return view('api-admin.modules.comment.edit', compact('comment'));
     }
 
     /**
@@ -72,7 +76,11 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        $data['updated_at'] = new DateTime;
+
+        Comment::where('id',$id)->update($data);
+        return redirect()->route('admin.comment.index');
     }
 
     /**
@@ -83,6 +91,7 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Comment::where('id',$id)->delete();
+        return redirect()->route('admin.comment.index');
     }
 }

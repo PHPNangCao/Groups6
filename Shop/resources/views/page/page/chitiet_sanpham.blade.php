@@ -139,9 +139,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">{{$comment->links()}}</div>
                     </div>
-                    </div>
-                </div>
+                </div>  
                 <div class="space50">
                 </div>
                 <div class="beta-products-list">

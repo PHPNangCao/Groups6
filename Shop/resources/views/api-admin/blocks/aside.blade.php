@@ -171,14 +171,14 @@
                         </a>
                     </li>
 
-                {{-- <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{route('admin.comment.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
-                            Kho hàng
+                            Bình luận
                         </p>
                     </a>
-                </li> --}}
+                </li>
 
                 {{-- <li class="nav-header">LABELS</li>
                 <li class="nav-item">

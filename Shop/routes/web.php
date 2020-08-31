@@ -208,21 +208,21 @@ Route::middleware('check_login')->group(function(){
 
             });
 
-        Route::prefix('comment')->name('comment.')->group(function(){
-            Route::get('index','CommentController@index')->name('index');
+            Route::prefix('comment')->name('comment.')->group(function(){
+                Route::get('index','CommentController@index')->name('index');
 
-            Route::get('show','CommentController@show')->name('show');
+                Route::get('status/{id}', 'CommentController@status')->name('status');
 
-            Route::get('create','CommentController@create')->name('create');
-            Route::post('store','CommentController@store')->name('store');
+                Route::get('create','CommentController@create')->name('create');
+                Route::post('store','CommentController@store')->name('store');
 
 
-            Route::get('edit/{id}', 'CommentController@edit')->name('edit');
-            Route::post('update/{id}', 'CommentController@update')->name('update');
+                Route::get('edit/{id}', 'CommentController@edit')->name('edit');
+                Route::post('update/{id}', 'CommentController@update')->name('update');
 
-            Route::get('destroy/{id}', 'CommentControllers@destroy')->name('destroy');
+                Route::get('destroy/{id}', 'CommentController@destroy')->name('destroy');
 
-        });
+            });
     });
 });
 
