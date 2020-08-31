@@ -27,11 +27,14 @@
         
         {{-- Bài viết khác --}}
         <div class="col-md-2">
+          <a href="{{route('mon-ngon')}}">
+            <h6><b>Bài Viết Khác<b></h6>            
+          </a>
             <div id="content" class="space-top-none">
                 <div class="main-content">
                   @foreach ($food as $food)
                   <article class="all-browsers">
-                    <article class="browser row">
+                    <article class="browser row ">
                       <img src="upload/food/{{$food->image}}" width="100%"  alt="">
                         <span style="font-size: 5px">
                             <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
