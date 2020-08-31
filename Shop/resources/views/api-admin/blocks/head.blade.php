@@ -15,4 +15,5 @@
 
 <link rel="stylesheet" href="api-admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="api-admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" title="style" href="source/assets/dest/css/rate.css">
 <script src="api-admin/ckeditor/ckeditor.js"></script>

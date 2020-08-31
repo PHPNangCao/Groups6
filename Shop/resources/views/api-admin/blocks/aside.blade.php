@@ -78,7 +78,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
@@ -92,12 +91,6 @@
                         <a href="{{route('admin.user.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.typeuser.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Loại User</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -171,14 +164,14 @@
                         </a>
                     </li>
 
-                {{-- <li class="nav-item">
-                    <a href="../gallery.html" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{route('admin.comment.index')}}" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
-                            Kho hàng
+                            Bình luận
                         </p>
                     </a>
-                </li> --}}
+                </li>
 
                 {{-- <li class="nav-header">LABELS</li>
                 <li class="nav-item">

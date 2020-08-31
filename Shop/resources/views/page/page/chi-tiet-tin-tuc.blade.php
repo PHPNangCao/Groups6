@@ -20,9 +20,14 @@
         {{-- Bài viết chính --}}
         <div class="col-md-8">
             <img src="upload/news/{{$getnews->image}}" width="30%" height="30%" alt="">
+            <br>
             <h1>{{$getnews->title}}</h1>
+            <br>
+            <div class="fb-like" data-href="http://localhost:8000/chi-tiet-san-pham/cai-thia-4kfarm-tui-400-500g" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>             
+            <br>
             <h6><p>{!!$getnews->content!!}</p></h6>
             <hr>
+            <div class="fb-comments" data-href="http://localhost:8000/trang-chu" data-numposts="4" data-width=""></div>
         </div>
         
         {{-- Bài viết khác --}}
