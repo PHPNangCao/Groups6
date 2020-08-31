@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title"><b>Tin tức  </b><div class="fb-share-button" data-href="http://localhost:8000/chi-tiet-mon-ngon/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fchi-tiet-mon-ngon%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div></h6>
+          <h6 class="inner-title" style="color: green" ><b>Bài Viết Tin Tức<b><div></a></div></h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Tin tức</span>
+              <a href="{{route('trang-chu')}}" style="color: blue">Trang Chủ </a> / <span>Tin tức</span>
             </div>
         </div>
         <div class="clearfix"></div>

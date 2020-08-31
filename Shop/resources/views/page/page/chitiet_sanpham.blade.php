@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Thông tin chi tiết sản phẩm</span>
+            <a href="{{route('trang-chu')}}" style="color: blue; " >Trang chủ</a> / <span>Thông tin chi tiết sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -43,7 +43,6 @@
                         <br>
 
                         <a class="add-to-cart" onclick="AddCart({{$sanpham->id}})" href="javacript:"><i class="fa fa-shopping-cart"></i></a>
-                        {{-- <a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a> --}}
 
                     </div>
                 </div>
@@ -55,7 +54,7 @@
                         <li><a href="#tab-description">Mô tả</a></li>
                     <li><a href="#tab-reviews">Đánh giá {{count($comment)}}</a></li>
                     
-                    <div class="fb-like" data-href="http://localhost:8000/chi-tiet-san-pham/cai-thia-4kfarm-tui-400-500g" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>             
+                    {{-- <div class="fb-like" data-href="{{route('chi-tiet-san-pham',$sanpham->url)}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>              --}}
 
                     </ul>
 
@@ -124,7 +123,7 @@
                                         <div class="border border-dark">
                                             @foreach ($comment as $cmt)
                                             <div>
-                                            <span><strong> </strong>{{$cmt->phone}}</span>
+                                            <span><strong>{{$cmt->name}}</strong></span>
                                             </div>
                                             <div>
                                                 @for ($i = 0; $i < $cmt->rating; $i++)
@@ -138,6 +137,7 @@
                                             <div>
                                                 <span>{{$cmt->description}}</span>
                                             </div>
+                                            <hr>
                                             @endforeach
                                         <div>
                                         </div>
@@ -150,8 +150,8 @@
                 </div>  
                 <div class="space50">
                 </div>
-                <div class="fb-comments" data-href="http://localhost:8000/trang-chu" data-numposts="4" data-width=""></div>
-                <div class="beta-products-list">
+                <div class="fb-comments" data-href="{{route('chi-tiet-san-pham',$sanpham->url)}}" data-numposts="4" data-width=""></div>
+                {{-- <div class="beta-products-list">
                     <h4>Sản phẩm tương tự</h4>
                     <br>
                     <div class="row">
@@ -178,7 +178,6 @@
                                     </p>
                                 </div>
                                 <div class="single-item-caption">
-                                    {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a> --}}
                                     <a class="add-to-cart pull-left" onclick="AddCart({{$sptt->id}})" href="javacript:"><i class="fa fa-shopping-cart"></i></a>
                                     <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$sptt->url)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                     <div class="clearfix"></div>
@@ -189,10 +188,10 @@
                         @endforeach                     
                     </div>
                 <div class="row">{{$sp_tuongtu->links()}}
-                </div>
+                </div> --}}
                 </div> <!-- .beta-products-list -->
             </div>
-            <div class="col-sm-3 aside" >
+            <div class="col-sm-3" >
                 <div class="widget">
                     <h3 class="widget-title">Sản phẩm khác</h3>
                     <div class="widget-body">
@@ -203,7 +202,7 @@
                                 <div class="media-body">
                                     {{$pro->name}}
                                     <br>
-                                    {{-- <a href="{{route('chi-tiet-san-pham',$pro->url)}}" style="color: blue">Chi tiết</a> --}}
+                                    <a href="{{route('chi-tiet-san-pham',$pro->url)}}" style="color: blue">Chi tiết</a>
                                     @if ($pro->promotion_price == 0)
                                         <span class="flash-sale">{{number_format($pro->unit_price)}} VNĐ</span>
                                     @else
@@ -213,6 +212,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         @endforeach  
                     </div>
                 </div> <!-- best sellers widget -->

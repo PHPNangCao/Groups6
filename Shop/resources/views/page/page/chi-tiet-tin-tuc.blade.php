@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-            <a href="{{route('trang-chu')}}" style="color: blue">Trang Chủ </a> / <span> Bài Viết</span>
+            <a href="{{route('trang-chu')}}" style="color: blue">Trang Chủ </a> / <span><a href="{{route('tin-tuc')}}">Bài Viết</a></span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -22,12 +22,13 @@
             <img src="upload/news/{{$getnews->image}}" width="30%" height="30%" alt="">
             <br>
             <h1>{{$getnews->title}}</h1>
-            <br>
-            <div class="fb-like" data-href="http://localhost:8000/chi-tiet-san-pham/cai-thia-4kfarm-tui-400-500g" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>             
-            <br>
+            <hr>
+            <div class="fb-like" data-href="{{route('chi-tiet-tin-tuc',$getnews->url)}}" data-width="300px" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>             
+            <hr>
             <h6><p>{!!$getnews->content!!}</p></h6>
             <hr>
-            <div class="fb-comments" data-href="http://localhost:8000/trang-chu" data-numposts="4" data-width=""></div>
+            <div class="fb-comments" data-href="{{route('chi-tiet-tin-tuc',$getnews->url)}}" data-numposts="10" data-width=""></div>
+            <hr>
         </div>
         
         {{-- Bài viết khác --}}
