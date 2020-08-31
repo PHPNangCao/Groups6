@@ -28,7 +28,7 @@
               <a href="{{route('chi-tiet-tin-tuc', $new->url)}}">
                 <h5>{{$new->title}}</h5>
               </a>
-              <span style="font-size: 17px">
+              <span style="font-weight: normal">
                 <p>{!! Str::limit($new->content,250,'...') !!}</p>
               </span>
             </div>

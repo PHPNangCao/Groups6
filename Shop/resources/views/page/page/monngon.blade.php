@@ -28,7 +28,7 @@
                   <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
                     <h5>{{$food->title}}</h5>
                   </a>
-              <span style="font-size: 17px">
+              <span style="font-weight: normal">
                   <p>{!! Str::limit($food->note,250,'...') !!}</p>
               </span>
             </div>
