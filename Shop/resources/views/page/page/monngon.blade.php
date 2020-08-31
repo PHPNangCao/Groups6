@@ -3,7 +3,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title" style="color: green" ><b>DANH SÁCH MÓN NGON<b></h6>
+            <h6 class="inner-title" style="color: green" ><b>Bài Viết Món Ngon  <b><div class="fb-share-button" data-href="http://localhost:8000/chi-tiet-mon-ngon/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fchi-tiet-mon-ngon%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div></h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">

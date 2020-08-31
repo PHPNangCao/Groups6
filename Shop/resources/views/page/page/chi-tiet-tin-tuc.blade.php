@@ -20,7 +20,9 @@
         {{-- Bài viết chính --}}
         <div class="col-md-8">
             <img src="upload/news/{{$getnews->image}}" width="30%" height="30%" alt="">
-            <h1>{{$getnews->title}}</h1>
+            <br>
+            <h1>{{$getnews->title}}<div class="fb-share-button" data-href="http://localhost:8000/chi-tiet-mon-ngon/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fchi-tiet-mon-ngon%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div></h1>
+            <br>
             <h6><p>{!!$getnews->content!!}</p></h6>
             <hr>
         </div>
