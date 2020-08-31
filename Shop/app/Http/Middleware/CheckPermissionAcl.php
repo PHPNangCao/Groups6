@@ -32,7 +32,7 @@ class CheckPermissionAcl
         //lấy quyền user login vào hệ thống
         $listRoleOfUser = DB::table('role')
             ->join('permission_role', 'role.id', '=', 'permission_role.role_id')
-            ->join('permissions', 'permission_role.permission_id', '=', 'permission.id')
+            ->join('permission', 'permission_role.permission_id', '=', 'permission.id')
             ->whereIn('role.id', $listRoleOfUser)
             ->select('permission.*')
             ->get()->pluck('id')->unique();
@@ -42,6 +42,6 @@ class CheckPermissionAcl
         if($listRoleOfUser->contains($checkPermission)){
             return $next($request);
         }
-        return abort(401);
+        return back();
     }
 }

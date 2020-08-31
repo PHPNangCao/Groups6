@@ -3,7 +3,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title" style="color: green" ><b>DANH SÁCH MÓN NGON<b></h6>
+            <h6 class="inner-title" style="color: green" ><b>Bài Viết Món Ngon  <b><div class="fb-share-button" data-href="http://localhost:8000/chi-tiet-mon-ngon/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fchi-tiet-mon-ngon%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div></h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
@@ -20,16 +20,15 @@
         <article class="all-browsers">
           @foreach ($food as $food)
           <article class="browser row">
-            <div class="col-md-3">
-              <img src="upload/food/{{$food->image}}" width="100%" height="200" alt="">
+            <div class="col-md-2">
+              <img src="upload/food/{{$food->image}}" width="100%" height="150" alt="">
             </div>
-            <div class="col-md-9">
-              <span style="font-size: 15px">
+
+            <div class="col-md-10">
                   <a href="{{route('chi-tiet-mon-ngon', $food->id)}}">
-                    <h3><b>{{$food->title}}<b></h3>
-                    </a>
-              </span>
-              <span>
+                    <h5>{{$food->title}}</h5>
+                  </a>
+              <span style="font-weight: normal">
                   <p>{!! Str::limit($food->note,250,'...') !!}</p>
               </span>
             </div>

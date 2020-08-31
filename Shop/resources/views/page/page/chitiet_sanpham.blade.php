@@ -42,6 +42,7 @@
                         </div>
                         <br>
                         <a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                        
                     </div>
                 </div>
 
@@ -51,6 +52,9 @@
                     <ul class="tabs">
                         <li><a href="#tab-description">Mô tả</a></li>
                     <li><a href="#tab-reviews">Đánh giá {{count($comment)}}</a></li>
+                    
+                    <div class="fb-like" data-href="http://localhost:8000/chi-tiet-san-pham/cai-thia-4kfarm-tui-400-500g" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>             
+
                     </ul>
 
                     <div class="panel" id="tab-description">
@@ -144,6 +148,7 @@
                 </div>  
                 <div class="space50">
                 </div>
+                <div class="fb-comments" data-href="http://localhost:8000/trang-chu" data-numposts="4" data-width=""></div>
                 <div class="beta-products-list">
                     <h4>Sản phẩm tương tự</h4>
                     <br>

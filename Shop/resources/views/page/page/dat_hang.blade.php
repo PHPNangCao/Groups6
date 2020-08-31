@@ -19,35 +19,37 @@
     
     <form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
+
+        <div class="row" style="color: green;text-align: left;">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif </div>
+
         <div class="row">
             <div class="col-sm-6">
                 <h4>Đặt hàng</h4>
                 <div class="space20">&nbsp;</div>
 
-                <div class="form-block">
+                <div class="form-group">
                     <label for="name">Họ tên*</label>
                     <input type="text" name="name" placeholder="Họ tên" required>
                 </div>
-                <div class="form-block">
-                    <label>Giới tính </label>
-                    <input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+                <div class="form-group">
+                    <label>Giới tính: </label>
+                    <input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span>Nam</span>
                     <input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
                                 
                 </div>
 
-                <div class="form-block">
+                <div class="form-group">
                     <label for="email">Email*</label>
                     <input type="email" id="email" name="email" required placeholder="expample@gmail.com">
                 </div>
 
-                <div class="form-block">
+                <div class="form-group">
                     <label for="adress">Địa chỉ*</label>
                     <input type="text" id="address" name="address" placeholder="Street Address" required>
                 </div>
                 
 
-                <div class="form-block">
+                <div class="form-group">
                     <label for="phone">Điện thoại*</label>
                     <input type="text" id="phone" name="phone" required>
                 </div>
@@ -70,7 +72,7 @@
                                     <img width="25%" src="upload/product/{{$cart['item']['image']}}" alt="" class="pull-left">
                                     <div class="media-body">
                                         <p class="font-large">{{$cart['item']['name']}}</p>
-                                        <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price'])}} đồng</span>
+                                        <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price']/$cart['qty'])}} đồng</span>
                                         <span class="color-gray your-order-info">Số lượng: {{$cart['qty']}}</span>
                                     </div>
                                 </div>
