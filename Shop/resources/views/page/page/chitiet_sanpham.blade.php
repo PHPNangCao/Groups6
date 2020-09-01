@@ -62,7 +62,7 @@
                         <p>{!! $sanpham->description !!}</p>
                     </div>
                     <div class="panel" id="tab-reviews">
-                        <form action="{{route('admin.comment.store')}}" method="POST">
+                        <form action="{{route('admin.comment.create')}}" method="POST">
                             @csrf
                             <div class="container">
                                 <div class="row">

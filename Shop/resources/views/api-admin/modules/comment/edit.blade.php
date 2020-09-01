@@ -18,12 +18,12 @@
 
                     <div class="form-group">
                         <label>Số điện thoại<span class="text-danger"></label>
-                    <input type="text" name="name" class="form-control" value="{{$comment->phone}}">
+                    <input type="text" name="phone" class="form-control" value="{{$comment->phone}}">
                     </div>
 
                     <div class="form-group">
                         <label>Đánh giá của khách</label>
-                        <textarea class="form-control" name="description" rows="3" placeholder="Mô tả" >{{$comment->description}}</textarea>
+                        <textarea class="form-control" name="description" >{{$comment->description}}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Lưu thông tin</button>
                 </div>

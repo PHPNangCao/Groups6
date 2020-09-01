@@ -44,7 +44,7 @@
                     <td>
                         <a href="{{route('admin.comment.edit',['id' => $cmt->id])}}" class="btn btn-success">Sửa <i class="fa fa-pencil"></a>
                         <a href="{{route('admin.comment.destroy',['id' => $cmt->id])}}" onclick="return checkDelete('Bạn có muốn xóa bình luận này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
-                    </td>3
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

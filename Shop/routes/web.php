@@ -219,7 +219,7 @@ Route::middleware('check_login')->group(function(){
                 Route::get('status/{id}', 'CommentController@status')->name('status');
 
                 Route::get('create','CommentController@create')->name('create');
-                Route::post('store','CommentController@store')->name('store');
+                Route::post('create','CommentController@store')->name('store');
 
 
                 Route::get('edit/{id}', 'CommentController@edit')->name('edit');
