@@ -58,7 +58,26 @@ class Cart{
 		$this->totalPrice -= $this->items[$id]['price'];
 		unset($this->items[$id]);
     }
-    
+	
+	public function updateitemcart($id, $quanty){
+
+		
+		if($this->items[$id]['item']['promotion_price'] == 0){
+			$priceItem = $this->items[$id]['item']['unit_price'];
+		}else{
+			$priceItem = $this->items[$id]['item']['promotion_price'];
+		}
+
+		$this->totalQty -= $this->items[$id]['qty'];
+		$this->totalPrice -= $this->items[$id]['price'];
+
+		$this->items[$id]['qty'] = $quanty;
+		$this->items[$id]['price'] = $quanty * $priceItem;
+
+		$this->totalQty += $this->items[$id]['qty'];
+		$this->totalPrice += $this->items[$id]['price'];
+
+	}
     // public $products = null;
     // public $totalPrice = 0;
     // public $totalQuanty = 0;

@@ -268,4 +268,6 @@ Route::namespace('Page')->group(function(){
     Route::get('dat-hang','CartController@getCheckout')->name('dathang');
     Route::post('dat-hang','CartController@postCheckout')->name('dathang');
 
+    Route::post('Save-All', 'CartController@SaveAllList');
+
 });
