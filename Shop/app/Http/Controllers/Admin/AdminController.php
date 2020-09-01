@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Bills;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
@@ -14,6 +15,8 @@ class AdminController extends Controller
         $user = User::get();
         $category = Category::get();
         $product = Product::get();
-        return view('api-admin.modules.dashboard',compact('user','category','product'));
+        $bills = Bills::get();
+        $billnew = Bills::where('status',1)->get();
+        return view('api-admin.modules.dashboard',compact('user','category','product','bills','billnew'));
     }
 }

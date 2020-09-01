@@ -27,8 +27,8 @@
             <a _ngcontent-ldw-c121="" class="small text-primary stretched-link" href="{{route('admin.product.index')}}">Xem chi tiết</a>
           </div>
         </div>
-    </div>
-    <div class="col-md-3 col-sm-6 col-xs-12">
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
           <span class="info-box-icon bg-success"><i class="fa fa-i-cursor"></i></span>
           <div class="info-box-content">
@@ -40,6 +40,31 @@
             <a _ngcontent-ldw-c121="" class="small text-primary stretched-link" href="{{route('admin.product.index')}}">Xem chi tiết</a>
           </div>
         </div>
-    </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-success"><i class="fa fa-icons"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text"><h3>Tất cả đơn hàng</h3></span>
+            <span class="info-box-number">TOTAL : {{count($bills)}}</span>
+            {{-- <p class="card-text"><small class="text-muted">Số lượng: {{count($user)}}</small></p> --}}
+            {{-- <p class="card-text"><small class="text-muted">{{$count['SanPham']}}</small></p> --}}
+            <br>
+            <a _ngcontent-ldw-c121="" class="small text-primary stretched-link" href="{{route('admin.bill.index')}}">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-success"><i class="fa fa-icons"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text"><h3>Đơn hàng mới</h3></span>
+            <span class="info-box-number">TOTAL : {{count($billnew)}}</span>
+            <br>
+            <a _ngcontent-ldw-c121="" class="small text-primary stretched-link" href="{{route('admin.bill.index')}}">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+      
 </div>
 @endsection
