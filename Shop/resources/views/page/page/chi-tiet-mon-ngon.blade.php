@@ -35,14 +35,13 @@
             <div class="widget">
                 <h3 class="widget-title">
                   <a href="{{route('mon-ngon')}}">Bài viết khác<a>                    
-                </h3>
-                
+                </h3>               
                 <div class="widget-body">
                   @foreach ($food as $food)
                   <div class="beta-sales beta-lists">
                     <div class="media beta-sales-item"> 
-                      <a class="pull-left" href="{{route('chi-tiet-mon-ngon',$food->id)}}"><img src="upload/food/{{$food->image}}"  alt=""></a>
-                      <div class="media-body" style="font-size: 15px" >
+                      <a class="pull-left" href="{{route('chi-tiet-mon-ngon',$food->id)}}"><img src="upload/food/{{$food->image}}" alt=""></a>
+                      <div class="media-body" style="font-size: 18px" >
                         {!! $food->title !!}
                       </div>
                     </div>

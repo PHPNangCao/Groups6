@@ -228,6 +228,22 @@ Route::middleware('check_login')->group(function(){
                 Route::get('destroy/{id}', 'CommentController@destroy')->name('destroy');
 
             });
+
+            Route::prefix('recruitment')->name('recruitment.')->group(function(){
+                Route::get('index','RecruitmentController@index')->name('index');
+
+                Route::get('status/{id}', 'RecruitmentController@status')->name('status');
+
+                Route::get('create','RecruitmentController@create')->name('create');
+                Route::post('store','RecruitmentController@store')->name('store');
+
+
+                Route::get('edit/{id}', 'RecruitmentController@edit')->name('edit');
+                Route::post('update/{id}', 'RecruitmentController@update')->name('update');
+
+                Route::get('destroy/{id}', 'RecruitmentController@destroy')->name('destroy');
+
+            });
     });
 });
 
@@ -260,6 +276,10 @@ Route::namespace('Page')->group(function(){
     Route::get('mon-ngon','FoodController@getFood')->name('mon-ngon');
 
     Route::get('chi-tiet-mon-ngon/{id}','FoodController@Food')->name('chi-tiet-mon-ngon');
+
+    Route::get('tuyen-dung','RecruitmentController@getRecruitment')->name('tuyen-dung');
+
+    Route::get('chi-tiet-tuyen-dung/{url}','RecruitmentController@Recruitment')->name('chi-tiet-tuyen-dung');
 
 
     Route::get('add-to-cart/{id}','CartController@getAddtoCart')->name('themgiohang');

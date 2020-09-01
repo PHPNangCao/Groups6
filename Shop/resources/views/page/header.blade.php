@@ -88,6 +88,7 @@
                     <li><a href="{{route('lien-he')}}">Liên hệ</a></li>
                     <li><a href="{{route('tin-tuc')}}">Tin tức</a></li>
                     <li><a href="{{route('mon-ngon')}}">Món Ngon</a></li>
+                    <li><a href="{{route('tuyen-dung')}}">Tuyển Dụng</a></li>
                 <div class="clearfix"></div>
             </nav>
         </div> <!-- .container -->

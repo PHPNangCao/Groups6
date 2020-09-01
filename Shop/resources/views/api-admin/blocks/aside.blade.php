@@ -167,6 +167,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('admin.recruitment.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Tuyển Dụng
+                        </p>
+                    </a>
+                </li>
+
                 {{-- <li class="nav-header">LABELS</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
