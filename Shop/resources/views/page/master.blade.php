@@ -102,47 +102,13 @@
 				type: "GET",
 				url: "add-to-cart/"+id,
 				success: function (response) {
-					location.reload();					
+					swal("Đã thêm sản phẩm vào giỏ hàng!");
+					
 				}
 			});
 		}
 	</script>
 
-	<script type="text/javascript">
-		function DelCart(id){
-			$.ajax({
-				type: "GET",
-				url: "del-cart/"+id,
-				success: function (response) {
-					location.reload();					
-				}
-			});
-		}
-	</script>
-
-	<script>
-		$("#edit-item-all").on("click", function(){
-			var lists = [];
-			$("span").each(function(){
-				$(this).find("input").each(function(){
-					var element = {key: $(this).data("id"), value: $(this).val()};
-					lists.push(element);
-				});
-			});
-			$.ajax({
-				url: 'Save-All',
-				type: 'POST',
-				data: {
-					"_token" : "{{csrf_token()}}",
-					"data" : lists,
-				}
-			}).done(function(reponse){
-				location.reload();
-				// swal("Đã cật nhật giỏ hàng!");
-			});
-		});
-
-	</script>
 	{{-- <script type="text/javascript">
 		$(document).ready(function (){
 			$('.add-to-cart').click(function(){
