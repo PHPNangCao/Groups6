@@ -74,7 +74,7 @@
                                         <p class="font-large">{{$cart['item']['name']}}</p>
                                         <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price']/$cart['qty'])}} đồng</span>
                                         <br>
-                                        <span class="color-gray your-order-info">Số lượng: {{$cart['qty']}}</span>
+                                    <span class="color-gray your-order-info">Số lượng: <input type="number" data-id="{{$cart['item']['id']}}" min="1" value="{{$cart['qty']}}" class="item"></span>
                                     </div>
                                 </div>
                             <!-- end one item -->
@@ -115,11 +115,12 @@
                         </ul>
                     </div>
 
-                    <div class="text-center"><button type="submit" class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
+                <div class="text-center"><button type="submit" class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
                 </div> <!-- .your-order -->
             </div>
         </div>
     </form>
+    <button class="pull-right" id="edit-item-all">Cật nhật</button>
 </div> <!-- #content -->
 </div> <!-- .container -->
 @endsection

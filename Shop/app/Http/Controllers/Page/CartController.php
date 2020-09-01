@@ -23,7 +23,7 @@ class CartController extends Controller
     }
  
     public function getDelItemCart($id){
-        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->removeItem($id);
         if(count($cart->items)>0){
@@ -71,5 +71,14 @@ class CartController extends Controller
         Session::forget('cart');
         return redirect()->back()->with('thongbao','Đặt hàng thành công');
 
+    }
+
+    public function SaveAllList(Request $request){        
+        foreach($request->data as $item){
+            $oldCart = Session('cart') ? Session('cart') : null;
+            $newCart = new Cart($oldCart);
+            $newCart->updateitemcart($item["key"], $item["value"]);
+            $request->session()->put('cart', $newCart);
+        }         
     }
 }

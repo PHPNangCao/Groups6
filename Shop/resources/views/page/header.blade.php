@@ -40,8 +40,9 @@
                         <div class="beta-dropdown cart-body">
                         @if(Session::has('cart'))
                         @foreach($product_cart as $product)
+                        {{-- href="{{route('xoagiohang',$product['item']['id'])}}" --}}
                             <div class="cart-item">
-                                <a class="cart-item-delete" href="{{route('xoagiohang',$product['item']['id'])}}"><i class="fa fa-times"></i></a>
+                                <a class="cart-item-delete" onclick="DelCart({{$product['item']['id']}})" href="javacript::"><i class="fa fa-times"></i></a>
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="upload/product/{{$product['item']['image']}}" alt=""></a>
                                     <div class="media-body">
@@ -52,7 +53,7 @@
                             </div>
                         @endforeach
                          <div class="cart-caption">
-                                <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif đồng</span></div>
+                                <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif VNĐ</span></div>
                                 <div class="clearfix"></div>
                     </div>
                                 <div class="center">
