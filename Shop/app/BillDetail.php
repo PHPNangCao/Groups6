@@ -9,7 +9,7 @@ class BillDetail extends Model
     protected $table = "bill_detail";
 
     public function product(){
-        return $this->belongsTo('APP\Product','product_id','id');
+        return $this->belongsTo('App\Product','product_id','id');
     }
 
     public function bill(){

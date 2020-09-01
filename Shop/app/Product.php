@@ -20,7 +20,7 @@ class Product extends Model
         return $this->hasMany('App\BillDetail','product_id','id');
     }
 
-    public function shipment_detail(){
-        return $this->hasMany('App\ShipmentDetail','product_id','id');
-    }
+    // public function shipment_detail(){
+    //     return $this->hasMany('App\ShipmentDetail','product_id','id');
+    // }
 }

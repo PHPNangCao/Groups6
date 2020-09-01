@@ -72,7 +72,7 @@
                                     <img width="25%" src="upload/product/{{$cart['item']['image']}}" alt="" class="pull-left">
                                     <div class="media-body">
                                         <p class="font-large">{{$cart['item']['name']}}</p>
-                                        <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price']/$cart['qty'])}} đồng</span>
+                                        <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price']/$cart['qty'])}} VNĐ</span>
                                         <br>
                                     <span class="color-gray your-order-info">Số lượng: <input type="number" data-id="{{$cart['item']['id']}}" min="1" value="{{$cart['qty']}}" class="item"></span>
                                     </div>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="your-order-item">
                             <div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
-                            <div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif đồng</h5></div>
+                            <div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif VNĐ</h5></div>
                             <div class="clearfix"></div>
                         </div>
                     </div>

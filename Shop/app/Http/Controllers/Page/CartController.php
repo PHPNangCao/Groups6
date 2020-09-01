@@ -9,6 +9,7 @@ use App\Customer;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -42,7 +43,7 @@ class CartController extends Controller
 
     public function postCheckout(Request $req){
         $cart = Session::get('cart');
-
+    
         $customer = new Customer;
         $customer->name = $req->name;
         $customer->gender = $req->gender;
@@ -65,11 +66,10 @@ class CartController extends Controller
             $bill_detail->product_id = $key;
             $bill_detail->quantity = $value['qty'];
             $bill_detail->unit_price = ($value['price']/$value['qty']);
-            $bill_detail->note = $req->note;
             $bill_detail->save();
         }
         Session::forget('cart');
-        return redirect()->back()->with('thongbao','Đặt hàng thành công');
+        return redirect()->back()->with('thongbao','Đặt hàng thành công');       
 
     }
 
