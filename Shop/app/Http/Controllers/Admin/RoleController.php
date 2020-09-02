@@ -24,6 +24,16 @@ class RoleController extends Controller
     }
 
     public function store(Request $request){
+
+        $valdidateData = $request->validate([
+            'name'              => 'required|unique:Role',
+            'display_name'             => 'required',
+        ],[
+            'name.required'                => 'Vui lòng nhập tên vai trò',
+            'display_name.required'               => 'Vui lòng nhập tên hiển thị',
+            'name.unique'                 => 'Tên Vai trò đã tồn tại',
+        ]);
+
         try {
             DB::beginTransaction();
 
@@ -52,6 +62,15 @@ class RoleController extends Controller
     }
 
     public function update(Request $request, $id){
+
+        $$valdidateData = $request->validate([
+            'name'             => 'required',
+            'display_name'          => 'required',
+        ],[
+            'name.required'               => 'Vui lòng nhập tên vai trò',
+            'display_name.required'            => 'Vui lòng nhập tên hiển thị',
+        ]);
+
         try {
             DB::beginTransaction();
 

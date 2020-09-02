@@ -11,6 +11,7 @@
 <script src="api-admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="api-admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 
+
 <script>
     $(function () {
       $("#example1").DataTable({
@@ -29,7 +30,7 @@
 
 {{-- <script type="text/javascript">
     $("#addd").click(function(){
-      
+
       $("#addproduct").append("<label>Chọn sản phẩm<span class="text-danger">(*)</label>")
     });
 </script> --}}

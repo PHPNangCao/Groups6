@@ -19,8 +19,29 @@ class UserController extends Controller
 
     public function create()
     {
+        $provinces = DB::table('provinces')->get();
         $roles = Role::all();
-        return view('api-admin.modules.user.create',compact('roles'));
+        return view('api-admin.modules.user.create',compact('roles', 'provinces'));
+    }
+
+    public function loadprovinces(Request $request){
+        $provinces = $request->provinces;
+        $districts =DB::table('provinces')->where('provinces_id',$provinces)->get();
+        $xhtml = null;
+        foreach($districts as $d){
+            $xhtml .='<option value="'.$d->id.'">'.$d->name.'</option>';
+        }
+        return $xhtml;
+    }
+
+    public function loaddistricts(Request $request){
+        $wards = $request->wards;
+        $wards =DB::table('wards')->where('districts_id',$wards)->get();
+        $xhtml ='';
+        foreach($wards as $w){
+            $xhtml .='<option value="'.$w->id.'">'.$w->name.'</option>';
+        }
+        return $xhtml;
     }
 
     public function store(Request $request)
@@ -66,7 +87,7 @@ class UserController extends Controller
         catch(\Exception $exception)
         {
             DB::rollBack();
-            return redirect()->route('admin.user.index');
+            return redirect()->back();
         }
 
 
@@ -136,11 +157,11 @@ class UserController extends Controller
         catch(\Exception $exception)
         {
             DB::rollBack();
-            return redirect()->route('admin.user.index');
+            return redirect()->back();
         }
     }
 
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         try
         {
@@ -152,15 +173,16 @@ class UserController extends Controller
             $user->roles()->detach();
 
             //xoa user
-            $user->delete($id);
+            $user->where('id',$id)->delete();
 
             DB::commit();
-            return redirect()->route('admin.user.index');
+            // return redirect()->route('admin.user.index');
+            return response()->json(['result', $id]);
         }
         catch(\Exception $exception)
         {
             DB::rollBack();
-            return redirect()->route('admin.user.index');
+            return redirect()->back();
         }
     }
 }

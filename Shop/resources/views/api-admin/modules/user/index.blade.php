@@ -2,6 +2,7 @@
 @section('title','Danh sách User')
 @section('content')
 <!-- Default box -->
+
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">
@@ -38,13 +39,15 @@
                     </td>
                     <td>
                         <a href="{{route('admin.user.edit',['id' => $user->id])}}" class="btn btn-primary">Sửa <i class="fa fa-pencil"></a>
-                        <a href="{{route('admin.user.destroy',['id' => $user->id])}}" onclick="return checkDelete('Bạn có muốn xóa user này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
+                        <a name="xoa" href="{{route('admin.user.destroy',['id' => $user->id])}}" onclick="return checkDelete('Bạn có muốn xóa user này không?')" class="btn btn-danger">Xóa <i class="fa fa-close"></a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+
+
 </div>
 
 @endsection
