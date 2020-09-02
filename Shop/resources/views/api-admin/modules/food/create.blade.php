@@ -1,5 +1,5 @@
 @extends('api-admin.master')
-@section('title','Thêm bài viết')
+@section('title','Thêm bài viết Món Ngon')
 @section('content')
 <!-- Default box -->
 <div class="card">
@@ -11,7 +11,7 @@
             @csrf
             <div class="form-group">
                 <label>Tiêu đề <span class="text-danger">(*)</label>
-                <input type="text" name="title" class="form-control"   placeholder="Tiêu đề...">
+                <input type="text" name="title" class="form-control" value="{{ old('title')}}"  placeholder="Tiêu đề...">
                 @if ($errors->has('title'))
                     <div class="text-danger">
                         {{$errors->first('title')}}
@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="form-group"> 
                     <label>Ghi chú</label>
-                    <textarea class="form-control" name="note" rows="3" placeholder="Ghi Chú..."></textarea>
+                    <textarea class="form-control" name="note" rows="3" placeholder="Ghi Chú...">{{ old('note')}}</textarea>
                     <script>
                         CKEDITOR.replace( 'note' );
                     </script>
@@ -31,7 +31,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Nội dung</label>
-                    <textarea class="form-control" name="content" rows="3" placeholder="Nội dung..."></textarea>
+                    <textarea class="form-control" name="content" rows="3" placeholder="Nội dung...">{{ old('content')}}</textarea>
                     <script>
                         CKEDITOR.replace( 'content' );
                     </script>
@@ -40,7 +40,7 @@
 
                 <div class="form-group">
                     <label>Ảnh <span class="text-danger">(*)</label>
-                    <input type="file" class="form-control-file"   name="image">
+                    <input type="file" class="form-control-file" name="image">
                     @if ($errors->has('image'))
                         <div class="text-danger">
                             {{$errors->first('image')}}
